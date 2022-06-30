@@ -102,28 +102,18 @@ display: cell;
     background-color: black;
 }
 
-.main_mars_couleur{
-    display: cell;
-    position: relative;
-    top: -250px;
 
-
-
-
-
-     width: 100%;
-     background-color: black;
-
-
-}
 .main_mars_content{
      color: white;
+     position: relative;
      font-family: cantarell;
      margin: 20px auto;
 
      max-width: 650px;
      text-align: center;
-     font-size: 23px;
+     font-size: 20px;
+     top: -250px;
 
 
 }
+
