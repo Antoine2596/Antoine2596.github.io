@@ -87,6 +87,15 @@ display: cell;
     font-size: 22px;
 }
 
+.dégradé_mars{
+    position: relative;
+    top: 300px;
+    width: 100%;
+    height: 1000px;
+
+    background-image: linear-gradient(to top, black 600px, transparent);
+}
+
 .main_mars{
     background-color: black;
     margin: -20px;
