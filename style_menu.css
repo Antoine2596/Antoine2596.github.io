@@ -30,7 +30,7 @@ header, body, html{
 .content_menu h1{
     font-size: 46px;
 }
-
+-
 .content_menu p{
     font-size: 22px;
 }
@@ -77,17 +77,43 @@ display: cell;
   font-family: cantarell;  
   text-align: center; 
   line-height: 20px;
-
-
-
-
 }
 
 .content_mars h1{
     font-size: 46px;
-
 }
 
 .content_mars p{
     font-size: 22px;
+}
+
+.main_mars{
+    background-color: black;
+    margin: -20px;
+}
+
+.main_mars_couleur{
+    display: cell;
+    position: relative;
+    top: 50px;
+
+
+
+
+
+     width: 100%;
+     background-color: black;
+
+
+}
+.main_mars_content{
+
+     color: white;
+     font-family: cantarell;
+     margin: 20px auto;
+
+     max-width: 650px;
+     text-align: center;
+
+
 }
