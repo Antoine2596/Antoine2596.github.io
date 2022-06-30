@@ -90,12 +90,13 @@ display: cell;
 .dégradé_mars{
     position: relative;
     display: flex;
-    bottom: 100px;
+    bottom: 0px;
     width: 100%;
-    height: 600px;
+    height: 1200px;
 
-    background-image: linear-gradient(to top, black 100px,transparent);
+    background-image: linear-gradient(to top, black 1000px,transparent);
 }
+
 
 .main_mars{
     background-color: black;
