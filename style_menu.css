@@ -1,0 +1,93 @@
+body, html, header, h1{
+    margin: 0px;
+    padding: 0px;
+}
+
+header, body, html{
+    width: 100%;
+    height: 100%;
+}
+
+.header_menu{
+    background: url(https://images7.alphacoders.com/123/1233933.png) no-repeat center center;
+    background-size: cover;
+    height: 100%;
+}
+
+.content_menu{
+    display: cell;
+    position: relative;
+
+    top: 40%;
+   height: 100%;
+   width: 100%;
+   color: white;
+   text-align: center;
+   font-family: 'Cantarell';
+
+}
+
+.content_menu h1{
+    font-size: 46px;
+}
+
+.content_menu p{
+    font-size: 22px;
+}
+
+.lien_menu{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-family: Cantarell;
+    top: 3%;
+    left: 1%;
+    font-size: 0.5cm;
+}
+
+.main_menu{
+    max-width: 650px;
+    text-align: center;
+    margin: 60px auto;
+    font-family: cantarell;
+}
+
+/*-------------------(MARS)---------------------*/
+
+.mars{
+    height: 100%;
+    width: 100%;
+}
+
+.header_mars{
+    background: url(https://wallpaper.dog/large/20532367.jpg) no-repeat center center;
+    background-size: cover;
+    height: 100%;
+
+}
+
+.content_mars{
+display: cell;
+  position: relative;
+
+  top: 40%;
+
+  width: 100%;
+  color: white;
+  font-family: cantarell;  
+  text-align: center; 
+  line-height: 20px;
+
+
+
+
+}
+
+.content_mars h1{
+    font-size: 46px;
+
+}
+
+.content_mars p{
+    font-size: 22px;
+}
