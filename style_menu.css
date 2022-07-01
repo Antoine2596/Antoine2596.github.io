@@ -104,11 +104,11 @@ display: cell;
      color: white;
      position: relative;
      font-family: cantarell;
-     margin: -20px auto;
+     margin: 20px auto;
 
      max-width: 650px;
-     text-align: center;
-     font-size: 20px;
+     text-align: justify;
+     font-size: 14px;
      top: 20px;
      font-size: auto;
 
