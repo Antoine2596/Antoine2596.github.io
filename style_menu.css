@@ -21,18 +21,18 @@ header, body, html{
     top: 40%;
    height: 100%;
    width: 100%;
-   color: blue;
+   color: white;
    text-align: center;
    font-family: 'Cantarell';
 
 }
 
 .content_menu h1{
-    font-size: 46px;
+    font-size: 50px;
 }
 
 .content_menu p{
-    font-size: 22px;
+    font-size: 26px;
 }
 
 .lien_menu{
@@ -80,11 +80,11 @@ display: cell;
 }
 
 .content_mars h1{
-    font-size: 46px;
+    font-size: 50px;
 }
 
 .content_mars p{
-    font-size: 22px;
+    font-size: 26px;
 }
 
 
