@@ -57,11 +57,12 @@ a:hover :not(.voirenbas){
 body{
 	background: #000000;
 	color: white;
+	
 }
 main{
 	max-width: 300px;
 	margin: 0px auto;
-	font-family: abhaya_libreregular;
+	font-family: 'Abhaya Libre', serif, impact;
 	text-align: justify;
 }
 
