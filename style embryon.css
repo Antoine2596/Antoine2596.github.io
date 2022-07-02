@@ -10,11 +10,11 @@ header, body, html{
     height: 100%;
 }
 
-.headerembryon{
+header {
 	background: url(https://dailygeekshow.com/wp-content/uploads/2021/03/une-embryon-laboratoire.jpeg) no-repeat center center;
 	background-size: cover;
 	color: white;
-	font-family: 'abhaya_libreregular', impact;
+	font-family: 'Abhaya Libre', serif, impact;
 }
 
 .fondembryon{
@@ -40,7 +40,8 @@ h1{
 a:visited{
 	color: white;
 }
-a:hover{ :not(.voirenbas)
+
+a:hover :not(.voirenbas){
 	font-size: 18px;
 }
 
