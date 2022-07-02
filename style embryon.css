@@ -60,14 +60,14 @@ body{
 	
 }
 main{
-	max-width: 300px;
-	margin: 0px auto;
+	max-width: 325px;
+	margin: 0 auto;
 	font-family: 'Abhaya Libre', serif, impact;
 	text-align: center;
 }
 
 .imagecentrer{
-	position: relative;
+	position: relative;	
 	text-align: center;
 }
 
