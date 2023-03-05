@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Charger les fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
+    <!-- testd-->
+    <link rel="stylesheet" href="style_VisuOmics.css">
+    <title>Titre</title>
+    <!-- Icône de l'onglet -->
+    <link rel="shortcut icon" href="log_HTML.svg.png">
+</head>
+<body>
+    <div class="video">
+        <video autoplay loop muted plays-inline class="backvideo">
+            <source src="dna-6973.mp4" type="video/mp4">
+        </video>
+    </div>
+    <header >
+        <div><!--  Encore un coup de tabulation plus loin -->
+            <div class="lien_menu">
+                <a href="index.html">Retourner dans l'index</a>
+            </div>
+        </div>
+        <div class="header_menu_h1">
+            <h1>Visualisation Données Omics</h1>
+        </div>
+        <div class="header_menu_sous-titre">
+            <h1>Avec des circos bien jolie :)</h1>
+        </div>
+    </header>
+    <section> <!-- Un cours de tabulation plus loin -->
+        
+        <div>
+            <h2>Photos - Titre - H2</h2>          <!-- Là on peut en mettre plusieurs par page -->
+
+            <!-- alt <-- description de l'image si elle ne charge pas -->
+            <img src="Circos 2.pdf" alt="C'est mon circos", height="200">
+        </div>
+        <div>
+            <h3>Listes - Titre - H3</h3>
+            <!-- UL = Unorder Listes -->
+            <ul>
+                <li>Liste 1</li>
+                <li>Liste 1</li>
+                <li>Liste 1</li>
+            </ul>
+            <!-- OL = Order Liste -->
+            <ol>
+                <li>liste 2</li>
+                <li>liste 2</li>
+                <li>liste 2</li>
+            </ol>
+        </div>
+        <div>
+            <h4>Tableau Titre - H4</h4>
+            <!-- border : épaisseur de la bordure -->
+            <!-- width: largeur -->
+            <table border="1" width="50%">
+                <!-- caption: légende -->
+                <caption>Population d'europe</caption>
+                <!-- En-tête -->
+                <thead>
+                    <tr>
+                        <th>pays</th>
+                        <th>population(M)</th>
+                    </tr>
+                </thead>
+                <!-- corps du tableau -->
+                <tbody>
+                    <tr>
+                        <td>France</td>
+                        <td>66</td>
+                    </tr>
+                    <tr>
+                        <td>Allemagne</td>
+                    <td>83</td>
+                    </tr>
+                    <tr>
+                        <td>Espagne</td>
+                        <td>47</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h5> <span>&#9755;</span>Liens - Titre - H5</h5>
+            <!-- la target=_blank signifie qu'on ouvre sur un nouvel onglet -->
+            <a href="https://htmlcheatsheet.com" target="_blank">HTML Cheat Sheet</a> <br> <!-- <br> sert à mettre un retour à la ligne (pour Break) -->
+            <a href="https://www.toptal.com/designers/htmlarrows/symbols/" target="_blank"> Icone en HTML</a>
+        </div>
+        <div>
+            <h6>Video Titre - H7</h6>
+            <img src="Visu Données Omics/Rplot.png"> <br>
+            <video src="Visu Données Omics/dna-6973.mp4" autoplay loop muted></video>
+        </div>
+    </section>
+</body>
+</html>
+
+<!-- L'extension "Live server" permet d'actualiser automatiquement la page dès qu'on enregistre le code -->
