@@ -190,6 +190,10 @@ header a:active {
     text-decoration: none;
   }
   
+.imgart{
+  max-width: 75%;
+  max-height: 75%;
+}
   /* Liens des articles du sommaire */
 .Art0 a:link {
     color: black;
