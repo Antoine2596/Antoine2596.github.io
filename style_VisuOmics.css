@@ -152,6 +152,10 @@ header, body, html{
   left: 44%;
 }
 
+.imgart{
+  max-width: 100%;
+  max-height: 100%;
+}
 .lien_circos3{
   color: white;
   text-decoration: none;
