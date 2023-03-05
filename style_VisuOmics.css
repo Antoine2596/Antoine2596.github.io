@@ -131,8 +131,9 @@ header, body, html{
 
   font-family: 'Poppins', sans-serif;
   position: absolute;
-  bottom: 5%;
-  left: 10%;
+  bottom: -15%;
+  left: 25%;
+  
 }
 
 .lien_circos2{
@@ -148,13 +149,12 @@ header, body, html{
 
   font-family: 'Poppins', sans-serif;
   position:absolute;
+
   bottom: 5%;
   left: 44%;
 }
 
-.imgart{
 
-}
 .lien_circos3{
   color: white;
   text-decoration: none;
