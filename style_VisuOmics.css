@@ -49,34 +49,165 @@ header, body, html{
 }
 
 
+.Sommaire_Circos{
+  position: absolute;
+  background: url(Whole-Genome-Sequencing-WGS_2000x1126\ \(1\).jpg) no-repeat center center;
+  background-size: cover;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+.titre_sommaire{
+  position:relative;
+  text-align: center;
+  top: 5%;
+  color: white;
+  text-decoration: none;
+  font-family:Cantarell;
+  font-size: 35px;
+}
+
+.Art0{
+  font-size:25px;
+  font-family: Cantarell;
+}
+
+.Art1{
+  position: absolute;
+  left: 5%;
+  top: 20%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: black;
+  height: 65%;
+  width: 25%;
+  text-align: center;
+  box-shadow: 0 0px 0px white;
+  color: black;
+}
+
+.Art2{
+  position: absolute;
+  left: 37.5%;
+  top: 20%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: black;
+  height: 65%;
+  width: 25%;
+  text-align: center;
+  box-shadow: 0 0px 0px white;
+  color: black;
+}
+
+.Art3{
+  position: absolute;
+  right: 5%;
+  top: 20%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: black;
+  height: 65%;
+  width: 25%;
+  text-align: center;
+  box-shadow: 0 0px 0px white;
+  color: black;
+}
+
+.contenu_Art{
+  color: black;
+}
 
 
+.lien_circos1{
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  border: 2px solid #fff;
 
+  padding: 14px 70px;
+  border-radius: 50px;
 
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+}
 
+.lien_circos2{
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  border: 2px solid #fff;
 
+  padding: 14px 70px;
+  border-radius: 50px;
 
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  bottom: 5%;
+  left: 44%;
+}
 
+.lien_circos3{
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  border: 2px solid #fff;
 
+  padding: 14px 70px;
+  border-radius: 50px;
 
-/* Gérer les liens */
-a:link {
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+}
+
+  /* Gérer les liens */
+  header a:link {
     color: white;
     text-decoration: none;
   }
   
-  a:visited {
+  header a:visited {
     color: white;
     text-decoration: none;
   }
   
-  a:hover {
+  header a:hover {
     color: white;
     text-decoration: none;
   }
   
-  a:active {
+header a:active {
     color: white;
+    text-decoration: none;
+  }
+  
+  /* Liens des articles du sommaire */
+.Art0 a:link {
+    color: black;
+    text-decoration: none;
+  }
+  
+.Art0 a:visited {
+    color: black;
+    text-decoration: none;
+  }
+  
+.Art0 a:hover {
+    color: black;
+    text-decoration:underline;
+  }
+  
+.Art0 a:active {
+    color: black;
     text-decoration: none;
   }
   
