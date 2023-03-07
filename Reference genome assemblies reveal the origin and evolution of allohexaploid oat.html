@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Charger les fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preload" href="/static/fonts/HardingText-Regular-Web-cecd90984f.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preconnect" href="https://push-content.springernature.io" crossorigin="">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
+    <!-- testd-->
+    <link rel="stylesheet" href="Reference genome assemblies reveal the origin and evolution of allohexaploid oat.css">
+    <title>Titre</title>
+    <!-- Icône de l'onglet -->
+    <link rel="shortcut icon" href="log_HTML.svg.png">
+</head>
+<body>
+    <!-- Je vais mettre une image de circos ici -->
+    <div class="background">
+        <img src="Visu Données Omics/Circo1.jpeg" alt="">
+    </div>
+
+        <div>
+            <header class="header_menu_h1">
+                Fig. 1: Circos display of the genomic features of the assembled diploid A. longiglumis, tetraploid A. insularis and hexaploid A. sativa ssp. nuda genomes.
+            </header>
+        </div>
+        <!-- Je vais mettre une bas supérieur pour cacher la bordure -->
+        <div class="bar_supérieur">
+        </div>
+        <div> <p class="version">Version : 0.1</p> </div>
+        <div class="lien_menu">
+        <a href="VisuOmics.html">Retourner dans le sommaire</a> <br>
+        </div>
+        <div class="icone_header">
+          <span>AntoineGenomic &#9816;</span>
+        </div>
+    <section>
+        <div class="bar_inférieur">
+            <div class="texte_bar_inférieur">
+            <p> Accès à l'article</p>
+            <p>Accès au script</p>
+            </div>
+        </div>
+    </section>
+    <!-- Maintenant je met une zone pour présenter mon code -->
+<section class="zone_script">
+    <div class="texte_script">
+        <p class="h1_script">
+            <strong> Présentation la figure et des données</strong> </p>
+        <h2>Présentation du circos</h2>
+        <div class="test">
+        <div class="imgart">
+        <img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41588-022-01127-7/MediaObjects/41588_2022_1127_Fig1_HTML.png?as=webp" alt="Circos1" height=auto >
+    </div>
+    <p>Il s'agit d'un circos constitué de 7 pistes heatmap, et d'un centre constitué de lien entre différents chromosomes.</p>
+</div>
+        <h2>Présentation des données</h2>
+        <p class="h1_script">
+            <strong> Présentation du script</strong> </p>
+        <h2>Libraires</h2>
+        <p>En premier temps, il est nécessaire de charger toutes les librairies nécessaires, certains packages doivent d'abord être installés une fois.</p>
+        <p>L'installation des packages s'effectue avec la fonction <strong>'install.packages'</strong>, la lecture du package s'effectue avec la fonction <strong>'library'</strong>.</p>
+        <div class="code">
+        <code># Installation des packages nécéssaires (ne dois être fais qu'une seule fois)<br>
+            install.packages("BioCircos")<br>
+            install.packages("htmlwidgets")<br>
+            install.packages("pagedown")<br>
+            <br>
+            # Chargement des librairies<br>
+            library(readr)<br>
+            library(readxl)<br>
+            library(BioCircos)<br>
+            library(RColorBrewer)<br>
+            library(dplyr)<br>
+            library(htmlwidgets)<br>
+            library(pagedown)<br>
+        </code>
+    </div>
+    <h2>Lecture des Données</h2>
+    <p>A présent, on peut lire l'ensemble des données nécessaires à la réalisation de la figure.</p>
+    <p>Les données étant concentrés dans un seule fichier excel, nous allons associé la lecture de chacun des onglets du ficher à un objet qui permettra la réalisation d'une piste.</p>
+    <p>On utilise la fonction 'read_excel' afin de lire notre fichier excel, le paramètre <strong>'sheet'</strong> permet de choisi l'onglet qui sera lu, le paramètre <strong>'skip'</strong> permet de sauter la première ligne qui contient des informations inutiles.</p>
+    <div class="code">
+        <code>
+            #Lecture des tableaux du ficher 41588_2022_1127_MOESM5_ESM.xlsx
+
+# ring_a<br>
+ring_a <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 3, skip = 1) <br>       
+# ring_b<br>
+ring_b <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 4, skip = 1)<br>
+# ring_c<br>
+ring_c <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 5, skip = 1)<br>
+# ring_d<br>
+ring_d <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 6, skip = 1)<br>
+# ring_e<br>
+ring_e <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 7, skip = 1)<br>
+# ring_f<br>
+ring_f <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 8, skip = 1)<br>
+# ring_g<br>
+ring_g <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 9, skip = 1)<br>
+# ring_h<br>
+ring_h <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 10, skip = 1)<br>
+<br>
+#innermost_links_1<br>
+innermost_links_1 <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 2, skip = 1)<br>
+#innermost_links_2<br>
+innermost_links_2 <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 1, skip = 1)<br>
+        </code>
+    </div>
+    </div>
+ </section>
+</body>
