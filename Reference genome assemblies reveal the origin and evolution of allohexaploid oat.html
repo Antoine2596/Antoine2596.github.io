@@ -37,7 +37,7 @@
         <!-- Je vais mettre une bas supérieur pour cacher la bordure -->
         <div class="bar_supérieur">
         </div>
-        <div> <p class="version">Version : 0.1</p> </div>
+        <div> <p class="version">Version : 0.11</p> </div>
         <div class="lien_menu">
         <a href="VisuOmics.html">Retourner dans le sommaire</a> <br>
         </div>
@@ -52,17 +52,40 @@
             </div>
         </div>
     </section>
+    <!-- Je mets toutes mes images ici afin de pouvoir les moduler à ma volonté -->
+
+    <img class ="circos1" src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41588-022-01127-7/MediaObjects/41588_2022_1127_Fig1_HTML.png?as=webp" alt="Circos1" height=auto title="Circos1" >
+    <img class="Heatmap_circos1"src="Visu Données Omics/Heatmap_circos1.png" alt="" height="300px" width="auto">
+    <img class="links_circos1" src="Visu Données Omics/Links_circos1.png" alt="" width="700">
+
+
     <!-- Maintenant je met une zone pour présenter mon code -->
 <section class="zone_script">
     <div class="texte_script">
         <p class="h1_script">
             <strong> Présentation la figure et des données</strong> </p>
         <h2>Présentation du circos</h2>
-        <div class="test">
-        <div class="imgart">
-        <img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41588-022-01127-7/MediaObjects/41588_2022_1127_Fig1_HTML.png?as=webp" alt="Circos1" height=auto >
-    </div>
-    <p>Il s'agit d'un circos constitué de 7 pistes heatmap, et d'un centre constitué de lien entre différents chromosomes.</p>
+        <div>
+        
+    <p>Il s'agit d'un circos constitué de 7 pistes heatmap, et d'un centre constitué de lien entre différents chromosomes. Il présente 42 chromosomes réparties sur 3 espèces : <em>A. longiglumis</em>, <em> A. insularis</em> et <em>A. sativa ssp. nuda</em>.</p>
+    <div class="espace_circos1"></div>
+    <h3>Les pistes heatmaps</h3>
+    <p>Chacunes des pistes de cette circos représente une heatmap :</p>
+    <ul>
+        <li>La piste <strong>(a)</strong> représente les positions inférées des centromères des chromosomes des génomes A et D.</li>
+        <li>La piste <strong>(b)</strong> représente la distribution de la répétition spécifique du génome C Am1 le long de chaque chromosome. </li>
+        <li>La piste <strong>(c)</strong> représente la distribution de la répétition spécifique du génome A As120a le long de chaque chromosome.</li>
+        <li>La piste <strong>(d)</strong> représente les fréquences k-mer (fréquence d'apparition de séquences de longueur k dans un génome ou une séquence d'ADN).</li>
+        <li>La piste <strong>(e)</strong> représente la densité de répétition en tandem (TR)</li>
+        <li>La piste <strong>(f)</strong> représente la densité de rétrotransposons LTR.</li>
+        <li>La piste <strong>(g)</strong> représente la densité génétique. </li>
+        <li>La piste <strong>(h)</strong> présente les noms et tailles des chromosomes.
+    </ul>
+    <div class="espace_heatmap_circos1"></div>
+
+    <h3>Les liens</h3>
+    <p>Les liens en couleurs représentent la présence sur le même chromosome de un ou plusieurs locus. Les liens en gris quant à eux montre des réarrangements chromosomiques pendant l'hexaploïdisation.</p>
+    <div class="espace_links_circos1"></div>
 </div>
         <h2>Présentation des données</h2>
         <p class="h1_script">

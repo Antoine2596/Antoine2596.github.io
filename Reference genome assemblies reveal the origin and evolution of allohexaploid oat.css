@@ -82,12 +82,31 @@ header, body, html{
 
 
 
+.circos1{
+    position: absolute;
+    top: 1200px;
+    right: 850px;
+}
 
-.imgart{
-    position: relative;
-    display: contents;
-    width: 100%;
-    
+.Heatmap_circos1{
+    position: absolute;
+    top: 2150px;
+    right: 1100px;
+}
+.links_circos1{
+    position: absolute;
+    top: 2600px;
+    left: 300px;
+}
+.espace_circos1{
+    margin-bottom: 750px;
+}
+
+.espace_heatmap_circos1{
+    margin-bottom: 350px;
+}
+.espace_links_circos1{
+    margin-bottom: 400px;
 }
 .zone_script{
     height: 1000%;
@@ -103,7 +122,7 @@ header, body, html{
 
 .texte_script{
     position: relative;
-    left: 25%;
+    left: 10%;
     width: 50%;
     height: 175%;
 }
