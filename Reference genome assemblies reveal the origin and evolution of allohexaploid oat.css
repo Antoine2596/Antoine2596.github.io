@@ -13,7 +13,10 @@ header, body, html{
 /* Faut mettre position: absolute pour modifier la position du texte */
 .image{
   position: relative;
-  left: 200px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
 
 }
 
@@ -78,7 +81,7 @@ header, body, html{
 }
 
 .texte_bar_inférieur{
-    top: 15px;
+    top: 70px;
     color: white;
     position: relative;
     text-align: center;
@@ -86,6 +89,32 @@ header, body, html{
     font-family: Cantarell, Arial, sans-serif;
 }
 
+.Accès_article{
+  position: absolute;
+  left: 400px;
+}
+
+.Accès_script{
+  position: absolute;
+  right: 400px;
+}
+
+.flèches_bas_gauche{
+  position: absolute;
+  color: white;
+  width: 100px;
+  font-size: 100px;
+  top: 50px;
+  left: 200px;
+}
+.flèches_bas_droite{
+  position: absolute;
+  color: white;
+  width: 100px;
+  font-size: 100px;
+  top: 50px;
+  right: 200px;
+}
 
 
 .circos1{
@@ -141,7 +170,7 @@ header, body, html{
 .zone_script{
     height: 1000%;
     position: absolute;
-    left: 0%;
+
     width: 100%;
     top: 950px;
     color: black;
@@ -152,11 +181,10 @@ header, body, html{
 
 .texte_script{
 position: relative;
-    left: 10%;
+    left: 25%;
     width: 50%;
     height: 175%;
 }
-
 
 .code{
     background-color: rgba(211, 211, 211, 0.4);
@@ -210,6 +238,27 @@ header a:active {
   }
   
   .lien_menu a:active {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Liens pour accès à l'article ou au script */
+  .texte_bar_inférieur a:link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .texte_bar_inférieur a:visited {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .texte_bar_inférieur a:hover {
+    color: white;
+    text-decoration:underline;
+  }
+  
+  .texte_bar_inférieur a:active {
     color: white;
     text-decoration: none;
   }

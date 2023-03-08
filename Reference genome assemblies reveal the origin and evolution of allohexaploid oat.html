@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<!-- Test Javascript -->
+<script>
+    function scrollToId(id) {
+        var element = document.getElementById(id);
+        element.scrollIntoView({behavior: "smooth"});
+    }
+</script>
+</head>
     <!-- Charger les fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,33 +49,35 @@
         <a href="VisuOmics.html">Retourner dans le sommaire</a> <br>
         </div>
         <div class="icone_header">
-          <span>AntoineGenomic &#9816;</span>w
+          <span>AntoineGenomic &#9816;</span>
         </div>
     <section>
         <div class="bar_inférieur">
             <div class="texte_bar_inférieur">
-            <p> Accès à l'article</p>
-            <p>Accès au script</p>
+            <a class="Accès_article" href="https://www.nature.com/articles/s41588-022-01127-7" target="_blank">Accès à l'article</a>
+            <a href="#Présentation_circos">Présentation Circos</a>
+            <a class="Accès_script" href="#Script">Accès au script</a>
             </div>
         </div>
     </section>
     <!-- Je mets toutes mes images ici afin de pouvoir les moduler à ma volonté -->
 
-    <img class ="circos1" src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41588-022-01127-7/MediaObjects/41588_2022_1127_Fig1_HTML.png?as=webp" alt="Circos1" height=auto title="Circos1" >
-    <img class="Heatmap_circos1"src="Visu Données Omics/Heatmap_circos1.png" alt="" height="300px" width="auto">
-    <img class="links_circos1" src="Visu Données Omics/Links_circos1.png" alt="" width="700">
-    <img class="data_heatmap_circos1" src="Visu Données Omics/data_ring_circos1.png" alt="">
-    <img class="data_track_circos1" src="Visu Données Omics/data_track_circos1.png" alt="">
+    
+    
+    
+    
+    
     <!-- Maintenant je met une zone pour présenter mon code -->
 <section class="zone_script">
     <div class="texte_script">
         <p class="h1_script">
-            <strong> Présentation la figure et des données</strong> </p>
-        <h2>Présentation du circos</h2>
+            <strong id="Présentation_circos"> Présentation la figure et des données</strong> </p>
+        <h2 >Présentation du circos</h2>
         <div>
         
     <p>Il s'agit d'un circos constitué de 7 pistes heatmap, et d'un centre constitué de lien entre différents chromosomes. Il présente 42 chromosomes réparties sur 3 espèces : <em>A. longiglumis</em>, <em> A. insularis</em> et <em>A. sativa ssp. nuda</em>.</p>
-    <div class="espace_circos1"></div>
+    <img class ="image" src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41588-022-01127-7/MediaObjects/41588_2022_1127_Fig1_HTML.png?as=webp" alt="Circos1" height=auto title="Circos1" >
+
     <h3>Les pistes heatmaps</h3>
     <p>Chacunes des pistes de cette circos représente une heatmap :</p>
     <ul>
@@ -81,12 +90,12 @@
         <li>La piste <strong>(g)</strong> représente la densité génétique. </li>
         <li>La piste <strong>(h)</strong> présente les noms et tailles des chromosomes.
     </ul>
-    <div class="espace_heatmap_circos1"></div>
+    <img class="image"src="Visu Données Omics/Heatmap_circos1.png" alt="" height="300px" width="auto">
 
     <h3>Les liens</h3>
     <p>Les liens en couleurs représentent la présence sur le même chromosome de un ou plusieurs locus. Les liens en gris quant à eux montre des réarrangements chromosomiques pendant l'hexaploïdisation.
         
-    <div class="espace_links_circos1"></div>
+        <img class="image" src="Visu Données Omics/Links_circos1.png" alt="" width="700">
 </div>
         <h2>Présentation des données</h2>
         <p>Un seul fichier excel contenant les données est fournit pour la réalisation de la figure. Il est composé de 10 onglets, dont chaques onglets correspond à une piste ou à des liens.</p>
@@ -99,10 +108,10 @@
                 <li><strong>End</strong> : La position de fin du chromosome.</li>   
                 <li><strong>Density/CopyNumber</strong> : la densité ou le nombre de copie d'un génome. C'est cette valeur qui va permettre de définir le niveau de couleur de la heatmap.</li>              
             </ul>
-            <div class="espace_data_heatmap_circos1"></div>
+            <img class="image" src="Visu Données Omics/data_ring_circos1.png" alt="">
             <h3>Présentation des données pour le track</h3>
             <p>L'onglet <em>ring_h</em> nous présente la liste des chromosomes, leur positions de début et de fin respectives, on peut utiliser cette onglet dans la réalisation du track.</p>
-            <div class="espace_track_circos1"></div>
+            <img class="image" src="Visu Données Omics/data_track_circos1.png" alt="">
             <h3>Présentation des données pour les liens</h3>
             <p>Il existe 2 onglets afin de réaliser les liens, les onglets <em>"Fig1 innermost_links_1"</em> et <em>"Fig1 innermost_links_2"</em>, ils ont tous les deux la même structure : un titre dans la première cellule, puis 7 colonnes:</p>
             <ul>
@@ -117,7 +126,7 @@
             <div class="espace_data_link_circos1"></div>
             <img class="image" src="Visu Données Omics/espace_data_link_circos1.png" alt="">
             <p class="h1_script">
-            <strong> Présentation du script</strong> </p>
+            <strong id="Script"> Présentation du script</strong> </p>
         <h2>Libraires</h2>
         <p>En premier temps, il est nécessaire de charger toutes les librairies nécessaires, certains packages doivent d'abord être installés une fois.</p>
         <p>L'installation des packages s'effectue avec la fonction <strong>'install.packages'</strong>, la lecture du package s'effectue avec la fonction <strong>'library'</strong>.</p>
@@ -328,6 +337,8 @@ Track <- Track + BioCircosHeatmapTrack("Ring_G", labels = FALSE,<br>
         </code>
        </div>
     <h3>Affichage des liens</h3>
+    <p class="h1_script">
+        <strong id="Présentation_circos"> Résultat</strong> </p>
     </div>
  </section>
 </body>
