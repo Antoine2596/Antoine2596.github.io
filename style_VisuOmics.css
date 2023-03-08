@@ -246,7 +246,7 @@ header a:active {
 
   /* 1366px x 663px */
 /* -----------------------------------RESPONSE XIAOMI REDMI NOTE 5 / PIXEL 5---------------------------------------------------------------------------------------- */
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 1080px) {
   .backvideo{
     position: absolute;
     right: 0;
