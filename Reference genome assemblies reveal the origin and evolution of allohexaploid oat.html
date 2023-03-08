@@ -42,7 +42,7 @@
         <a href="VisuOmics.html">Retourner dans le sommaire</a> <br>
         </div>
         <div class="icone_header">
-          <span>AntoineGenomic &#9816;</span>
+          <span>AntoineGenomic &#9816;</span>w
         </div>
     <section>
         <div class="bar_inférieur">
@@ -57,8 +57,8 @@
     <img class ="circos1" src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41588-022-01127-7/MediaObjects/41588_2022_1127_Fig1_HTML.png?as=webp" alt="Circos1" height=auto title="Circos1" >
     <img class="Heatmap_circos1"src="Visu Données Omics/Heatmap_circos1.png" alt="" height="300px" width="auto">
     <img class="links_circos1" src="Visu Données Omics/Links_circos1.png" alt="" width="700">
-
-
+    <img class="data_heatmap_circos1" src="Visu Données Omics/data_ring_circos1.png" alt="">
+    <img class="data_track_circos1" src="Visu Données Omics/data_track_circos1.png" alt="">
     <!-- Maintenant je met une zone pour présenter mon code -->
 <section class="zone_script">
     <div class="texte_script">
@@ -76,7 +76,7 @@
         <li>La piste <strong>(b)</strong> représente la distribution de la répétition spécifique du génome C Am1 le long de chaque chromosome. </li>
         <li>La piste <strong>(c)</strong> représente la distribution de la répétition spécifique du génome A As120a le long de chaque chromosome.</li>
         <li>La piste <strong>(d)</strong> représente les fréquences k-mer (fréquence d'apparition de séquences de longueur k dans un génome ou une séquence d'ADN).</li>
-        <li>La piste <strong>(e)</strong> représente la densité de répétition en tandem (TR)</li>
+        <li>La piste <strong>(e)</strong> représente la densité de répétition en tandem (TR).</li>
         <li>La piste <strong>(f)</strong> représente la densité de rétrotransposons LTR.</li>
         <li>La piste <strong>(g)</strong> représente la densité génétique. </li>
         <li>La piste <strong>(h)</strong> présente les noms et tailles des chromosomes.
@@ -84,11 +84,39 @@
     <div class="espace_heatmap_circos1"></div>
 
     <h3>Les liens</h3>
-    <p>Les liens en couleurs représentent la présence sur le même chromosome de un ou plusieurs locus. Les liens en gris quant à eux montre des réarrangements chromosomiques pendant l'hexaploïdisation.</p>
+    <p>Les liens en couleurs représentent la présence sur le même chromosome de un ou plusieurs locus. Les liens en gris quant à eux montre des réarrangements chromosomiques pendant l'hexaploïdisation.
+        
     <div class="espace_links_circos1"></div>
 </div>
         <h2>Présentation des données</h2>
-        <p class="h1_script">
+        <p>Un seul fichier excel contenant les données est fournit pour la réalisation de la figure. Il est composé de 10 onglets, dont chaques onglets correspond à une piste ou à des liens.</p>
+
+        <h3>Présentations des données de la heatmap</h3>    
+        <p>Les onglets "ring_<em>x</em>" permettent de réaliser des pistes heatmaps de (a) à (g), elles ont toutes la même structure : d'un titre, puis de 4 colonnes : </p>
+            <ul>
+                <li><strong>Chr</strong> : Le nom du chromosome.</li>
+                <li><strong>Start</strong> : La position de départ du chromosome.</li>
+                <li><strong>End</strong> : La position de fin du chromosome.</li>   
+                <li><strong>Density/CopyNumber</strong> : la densité ou le nombre de copie d'un génome. C'est cette valeur qui va permettre de définir le niveau de couleur de la heatmap.</li>              
+            </ul>
+            <div class="espace_data_heatmap_circos1"></div>
+            <h3>Présentation des données pour le track</h3>
+            <p>L'onglet <em>ring_h</em> nous présente la liste des chromosomes, leur positions de début et de fin respectives, on peut utiliser cette onglet dans la réalisation du track.</p>
+            <div class="espace_track_circos1"></div>
+            <h3>Présentation des données pour les liens</h3>
+            <p>Il existe 2 onglets afin de réaliser les liens, les onglets <em>"Fig1 innermost_links_1"</em> et <em>"Fig1 innermost_links_2"</em>, ils ont tous les deux la même structure : un titre dans la première cellule, puis 7 colonnes:</p>
+            <ul>
+                <li><strong>chromosome</strong> : Le nom du chromosome d'où commence le lien.</li>
+                <li><strong>Start</strong> : La position de départ du lien sur le premier chromosome.</li>
+                <li><strong>End</strong> : La position de fin du lien sur le premier chromosome.</li>
+                <li><strong>chromosome</strong> : Le nom du chromosome d'où se termine le lien</li>
+                <li><strong>Start</strong> : La position de départ du lien sur le second chromosome.</li>
+                <li><strong>End</strong> : La position de fin du lien sur le second chromosome.</li>
+                <li><strong>Color</strong> : La couleur du lien.</li>
+            </ul>
+            <div class="espace_data_link_circos1"></div>
+            <img class="image" src="Visu Données Omics/espace_data_link_circos1.png" alt="">
+            <p class="h1_script">
             <strong> Présentation du script</strong> </p>
         <h2>Libraires</h2>
         <p>En premier temps, il est nécessaire de charger toutes les librairies nécessaires, certains packages doivent d'abord être installés une fois.</p>
@@ -110,6 +138,7 @@
         </code>
     </div>
     <h2>Lecture des Données</h2>
+
     <p>A présent, on peut lire l'ensemble des données nécessaires à la réalisation de la figure.</p>
     <p>Les données étant concentrés dans un seule fichier excel, nous allons associé la lecture de chacun des onglets du ficher à un objet qui permettra la réalisation d'une piste.</p>
     <p>On utilise la fonction 'read_excel' afin de lire notre fichier excel, le paramètre <strong>'sheet'</strong> permet de choisi l'onglet qui sera lu, le paramètre <strong>'skip'</strong> permet de sauter la première ligne qui contient des informations inutiles.</p>
@@ -140,6 +169,165 @@ innermost_links_1 <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 2, sk
 innermost_links_2 <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 1, skip = 1)<br>
         </code>
     </div>
+    <p>On va modifier le nom des colonnes du tableau obtenu avec la fonction <strong>'names'</strong> afin de les rendres plus lisibles :</p>
+    <div class="code">
+        <code># innermost_links_1<br>
+            names(innermost_links_1)[names(innermost_links_1) == "Chromosome...1"] <- "chrA"<br>
+            names(innermost_links_1)[names(innermost_links_1) == "Start...2"] <- "startA"<br>
+            names(innermost_links_1)[names(innermost_links_1) == "End...3"] <- "endA"<br>
+            names(innermost_links_1)[names(innermost_links_1) == "Chromosome...4"] <- "chrB"<br>
+            names(innermost_links_1)[names(innermost_links_1) == "Start...5"] <- "startB"<br>
+            names(innermost_links_1)[names(innermost_links_1) == "End...6"] <- "endB"<br>
+            <br>
+            # innermost_links_2<br>
+            names(innermost_links_2)[names(innermost_links_2) == "Chromosome...1"] <- "chrA"<br>
+            names(innermost_links_2)[names(innermost_links_2) == "Start...2"] <- "startA"<br>
+            names(innermost_links_2)[names(innermost_links_2) == "End...3"] <- "endA"<br> </code>
+            
+    </div>
+    <h2>Construction des pistes</h2>
+    <h3>Construction du track</h3>
+    <p>Lorsqu'on veut réaliser des pistes sur Biocircos, dont doit d'abord définir la longueur des tracks, 
+        c'est-à-dire la longueur des chromosomes. Biocircos ne pouvant définir la track qu'à partir d'une liste, 
+        nous allons alors définir la liste via le tableau <em>"ring_h"</em>.</p>
+        <div class="code">
+            <code># On enlève tous les préfixes "chr -"<br>
+                ring_h$Chr <- sub("^chr - ", "", ring_h$Chr)<br>
+                <br>
+                # On elève la 2ème, 3ème et 5ème colonnes afin de laisser uniquement "Chr" et "End"<br>
+                ring_h <- ring_h[,-c(2,3,5)]<br>
+                <br>
+                # Récupérer les noms des chromosomes commençant par "al"<br>
+                chr_names <- unique(ring_h$Chr[grep("^al", ring_h$Chr)])<br>
+                <br>
+                # Inverser l'ordre des lignes des chromosomes commençant par "al"<br>
+                ring_h[ring_h$Chr %in% chr_names,] <- ring_h[ring_h$Chr %in% chr_names,][nrow(ring_h[ring_h$Chr %in% chr_names,]):1,]<br>
+                <br>
+                # Récupérer les noms des chromosomes commençant par "ai"<br>
+                chr_names <- unique(ring_h$Chr[grep("^ai", ring_h$Chr)])<br>
+                <br>
+                # Inverser l'ordre des lignes des chromosomes commençant par "ai"<br>
+                ring_h[ring_h$Chr %in% chr_names,] <- ring_h[ring_h$Chr %in% chr_names,][nrow(ring_h[ring_h$Chr %in% chr_names,]):1,]<br>
+                <br>
+                #On met les lignes des chromosomes commençant par "an" en premier<br>
+                ring_h <- ring_h[c(grep("^an", ring_h$Chr), setdiff(1:nrow(ring_h), grep("^an", ring_h$Chr))),]<br>
+                <br>
+                # On créer une liste à partir du tableau<br>
+                ring_h <- setNames(as.list(ring_h$End),as.list(ring_h$Chr))</code>
+        </div>
+        <h3>Affichage du titre</h3>
+       <p> Biocircos est un package qui à utilise des fonctions différentes selon le type de données qu'on souhaite afficher (heatmap, link, line,...), un circos a donc besoin d'une addition de chaque fonctions afin de contenir toutes les données.</p>
+       <p>Pour commencer, nous allons définir un objet nommé <em><strong> 'Track'</strong></em> qui en premier temps contenir la fonction <em><strong>'BioCircosTextTrack'</strong></em>, afin d'afficher un texte. Ici, nous allons afficher le titre de la figure.</p>
+       <div class="code">
+        <code>Track <- BioCircosTextTrack("MyTextTrack", #Nom sans importance qu'on donne pour nommé le rôle de cette fonction<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; #ci-dessous, le texte à afficher<br>
+            &nbsp; &nbsp; &nbsp; &nbsp;"Fig. 1: Circos display of the genomic features of the assembled diploid A. longiglumis, tetraploid A. insularis and hexaploid A. sativa ssp. nuda genomes.",<br>
+            &nbsp; &nbsp; &nbsp; &nbsp;x = -3, # Position en abscisse du texte<br>
+            &nbsp; &nbsp; &nbsp; &nbsp;y=-2.3, # Position en ordonnée du texte<br>
+            &nbsp; &nbsp; &nbsp; &nbsp;size = "1.5em" #taille du texte<br>
+            &nbsp; &nbsp; &nbsp; &nbsp;)</code>
+       </div>
+       <h3>Affichage des pistes heatmaps</h3>
+       <h4>Anneau A</h4>
+       <div class="code">
+        <code>
+            #ringA<br>
+Track <- Track + BioCircosHeatmapTrack("Ring_A", labels = FALSE, #Labels = FALSE signifie qu'on ne veut pas afficher les noms des chromosomes pour cette piste<br>
+&nbsp; &nbsp; &nbsp; &nbsp; chromosomes = ring_a$Chr, #Sélectionner la colonne des noms des chromosomes<br>
+&nbsp; &nbsp; &nbsp; &nbsp; starts = ring_a$Start,    #Sélectionner la colonne des débuts de positions<br>
+&nbsp; &nbsp; &nbsp; &nbsp;  ends = ring_a$End,        #Sélectionner la colonne des fins des positions<br>
+&nbsp; &nbsp; &nbsp; &nbsp;  values = ring_a$Density,  #Sélectionner la colonne des densité<br>
+&nbsp; &nbsp; &nbsp; &nbsp; maxRadius = 1.9,          #Définir le rayon maximal de la piste<br>
+&nbsp; &nbsp; &nbsp; &nbsp;  minRadius = 1.85,         #Définir le rayon minimale de la piste<br>
+&nbsp; &nbsp; &nbsp; &nbsp; color =c("#f2f2b5","#145059")) #Définir les couleurs en fonction des valeurs de densité minimale et maximale<br>
+        </code>
+       </div>
+       <p>On peut ensuite réaliser la même opérations pour chaques onglets possédants les valeurs nécessaires à la réalisations d'une heatmap en rempaçant les noms des colonnes.</p>
+       <h4>Anneau B</h4>
+       <div class="code">
+        <code>
+            #ringb<br>
+            Track <- Track + BioCircosHeatmapTrack("Ring_B", labels = FALSE,<br>
+                                                   chromosomes = ring_b$Chr,<br>
+                                                   starts = ring_b$Start,<br>
+                                                   ends = ring_b$End,<br>
+                                                   values = ring_b$Copy_number,<br>
+                                                   maxRadius = 1.8,<br>
+                                                   minRadius = 1.75,<br>
+                                                   color =c("#f2f2b5","#145059"))
+        </code>
+       </div>
+       <h4>Anneau C</h4>
+       <div class="code">
+        <code>
+            #ringC<br>
+Track <- Track + BioCircosHeatmapTrack("Ring_C", labels = FALSE,<br>
+                                       chromosomes = ring_c$Chr,<br>
+                                       starts = ring_c$Start,<br>
+                                       ends = ring_c$End,<br>
+                                       values = ring_c$Copy_number,<br>
+                                       maxRadius = 1.7,<br>
+                                       minRadius = 1.65,<br>
+                                       color =c("#f2f2b5","#145059"))
+        </code>
+       </div>
+       <h4>Anneau D</h4>
+       <div class="code">
+        <code>
+            #ringD<br>
+Track <- Track + BioCircosHeatmapTrack("Ring_D", labels = FALSE,<br>
+                                       chromosomes = ring_d$Chr,<br>
+                                       starts = ring_d$Start,<br>
+                                       ends = ring_d$End,<br>
+                                       values = ring_d$Number,<br>
+                                       maxRadius = 1.6,<br>
+                                       minRadius = 1.55,<br>
+                                       color =c("#f2f2b5","#145059"))<br>
+        </code>
+       </div>
+       <h4>Anneau E</h4>
+       <div class="code">
+        <code>
+            #ringE<br>
+Track <- Track + BioCircosHeatmapTrack("Ring_E", labels = FALSE,<br>
+                                       chromosomes = ring_e$Chr,<br>
+                                       starts = ring_e$Start,<br>
+                                       ends = ring_e$End,<br>
+                                       values = ring_e$Density,<br>
+                                       maxRadius = 1.5,<br>
+                                       minRadius = 1.45,<br>
+                                       color =c("#f2f2b5","#145059"))
+        </code>
+       </div>
+       <h4>Anneau F</h4>
+       <div class="code">
+        <code>
+            #ringF<br>
+Track <- Track + BioCircosHeatmapTrack("Ring_F", labels = FALSE,<br>
+                                       chromosomes = ring_f$Chr,<br>
+                                       starts = ring_f$Start,<br>
+                                       ends = ring_f$End,<br>
+                                       values = ring_f$Density,<br>
+                                       maxRadius = 1.4,<br>
+                                       minRadius = 1.35,<br>
+                                       color =c("#f2f2b5","#145059"))
+        </code>
+       </div>
+       <h4>Anneau G</h4>
+       <div class="code">
+        <code>
+            #ringG<br>
+Track <- Track + BioCircosHeatmapTrack("Ring_G", labels = FALSE,<br>
+                                       chromosomes = ring_g$Chr,<br>
+                                       starts = ring_g$Start,<br>
+                                       ends = ring_g$End,<br>
+                                       values = ring_g$Density,<br>
+                                       maxRadius = 1.3,<br>
+                                       minRadius = 1.25,<br>
+                                       color =c("#f2f2b5","#145059"))
+        </code>
+       </div>
+    <h3>Affichage des liens</h3>
     </div>
  </section>
 </body>

@@ -11,6 +11,12 @@ header, body, html{
 
 
 /* Faut mettre position: absolute pour modifier la position du texte */
+.image{
+  position: relative;
+  left: 200px;
+
+}
+
 .lien_menu{
     position: absolute; 
     color: white;
@@ -98,6 +104,19 @@ header, body, html{
     top: 2600px;
     left: 300px;
 }
+
+.data_heatmap_circos1{
+  position: absolute;
+  top: 3250px;
+  left: 350px;
+
+}
+.data_track_circos1{
+  position: absolute;
+  top: 3920px;
+  left: 350px;
+
+}
 .espace_circos1{
     margin-bottom: 750px;
 }
@@ -107,6 +126,17 @@ header, body, html{
 }
 .espace_links_circos1{
     margin-bottom: 400px;
+}
+
+.espace_data_heatmap_circos1{
+  margin-bottom: 600px;
+}
+
+.espace_track_circos1{
+  margin-bottom: 450px;
+}
+.espace_data_link_circos1{
+
 }
 .zone_script{
     height: 1000%;
@@ -121,7 +151,7 @@ header, body, html{
 }
 
 .texte_script{
-    position: relative;
+position: relative;
     left: 10%;
     width: 50%;
     height: 175%;
