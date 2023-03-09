@@ -244,7 +244,7 @@ header a:active {
 /* -----------------------------------RESPONSE XIAOMI REDMI NOTE 5 / PIXEL 5---------------------------------------------------------------------------------------- */
 /* N'oublie pas de mettre l'unité (les px) avec la valeur !!! */
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1400px) {
   .Sommaire_Circos{
     position: absolute;
     background: url(Whole-Genome-Sequencing-WGS_2000x1126\ \(1\).jpg) no-repeat center center;
