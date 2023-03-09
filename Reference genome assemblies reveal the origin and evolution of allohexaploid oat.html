@@ -222,7 +222,8 @@ innermost_links_2 <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 1, sk
                 ring_h <- ring_h[c(grep("^an", ring_h$Chr), setdiff(1:nrow(ring_h), grep("^an", ring_h$Chr))),]<br>
                 <br>
                 # On créer une liste à partir du tableau<br>
-                ring_h <- setNames(as.list(ring_h$End),as.list(ring_h$Chr))</code>
+                ring_h <- setNames(as.list(ring_h$End),<br>
+                as.list(ring_h$Chr))</code>
         </div>
         <h3>Affichage du titre</h3>
        <p> Biocircos est un package qui à utilise des fonctions différentes selon le type de données qu'on souhaite afficher (heatmap, link, line,...), un circos a donc besoin d'une addition de chaque fonctions afin de contenir toutes les données.</p>
