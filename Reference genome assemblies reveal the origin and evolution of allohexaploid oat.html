@@ -44,7 +44,7 @@
         <!-- Je vais mettre une bas supérieur pour cacher la bordure -->
         <div class="bar_supérieur">
         </div>
-        <div> <p class="version">Version : 0.4</p> </div>
+        <div> <p class="version">Version : 0.5</p> </div>
         <div class="lien_menu">
         <a href="VisuOmics.html">Retourner dans le sommaire</a> <br>
         </div>
@@ -90,7 +90,7 @@
         <li>La piste <strong>(g)</strong> représente la densité génétique. </li>
         <li>La piste <strong>(h)</strong> présente les noms et tailles des chromosomes.
     </ul>
-    <img class="image"src="Visu Données Omics/Heatmap_circos1.png" alt="" height="300px" width="auto">
+    <img class="gros_image"src="Visu Données Omics/Heatmap_circos1.png" alt="">
 
     <h3>Les liens</h3>
     <p>Les liens en couleurs représentent la présence sur le même chromosome de un ou plusieurs locus. Les liens en gris quant à eux montre des réarrangements chromosomiques pendant l'hexaploïdisation.
@@ -338,7 +338,7 @@ Track <- Track + BioCircosHeatmapTrack("Ring_G", labels = FALSE,<br>
         </code>
        </div>
        <p>Nous obtenons ainsi ce résultat :</p>
-       <img class="image" src="Visu Données Omics/piste_g_circos1.png" alt="" height="500px">
+       <img class="gros_image" src="Visu Données Omics/piste_g_circos1.png" alt="">
     <h3>Affichage des liens</h3>
     <p>Comme vu dans la présentation des données, les liens proviennent de deux onglets, <em>Fig1 innermost_links_1"</em> et <em>innermost_links_2</em>, 
         et nous avons observés qu'il y avait une colonne suplémentaire pour les couleurs correspondant à chaque chromosomes. 
@@ -399,7 +399,7 @@ innermost_links_2$Color <- gsub("color=set2-8-qual-8","#bbbcb9",innermost_links_
                       }
                 </code></div>
             <p>Nous obtenons ainsi ce résultat :</p>
-            <img class="image" src="Visu Données Omics/link1_gris_circos1.png" alt="" height="500px">
+            <img class="gros_image" src="Visu Données Omics/link1_gris_circos1.png" alt="">
             <h4>Liens gris de l'onglet 2</h4>
             <div class="code">
                 <code>for (i in 1:387) {<br>
@@ -442,7 +442,7 @@ innermost_links_2$Color <- gsub("color=set2-8-qual-8","#bbbcb9",innermost_links_
               }
             </code></div>
             <p> Après avoir charger tous les heatmaps et liens, nous obtenons ce résultat :</p>
-            <img src="Visu Données Omics/Tout_piste_circos1.png" alt="">
+            <img class="image" src="Visu Données Omics/Tout_piste_circos1.png" alt="">
             <h2>Réalisation des annotations</h2>
             <p>Une fois toutes les pistes chargées, il ne reste plus qu'à ajouter les annotations, le nom des espèces ainsi que la légende.</p>
             <h3>Annotation des pistes</h3>
@@ -477,7 +477,7 @@ innermost_links_2$Color <- gsub("color=set2-8-qual-8","#bbbcb9",innermost_links_
                                                     x = -0.035,y=-0.9, size = "1.2em",weight = "bold")</code></div>
                 <p>L'annotation "i" est écrit un peu plus grosse afin d'être visible parmit les liens.</p>
                 <p>Voici le résultat obtenu : </p>
-                <img image="image" src="Visu Données Omics/annotation_piste_circos1.png" alt="">
+                <img class="image" src="Visu Données Omics/annotation_piste_circos1.png" alt="">
                  <h3>Annotation de la légende</h3>
                  <p>Nous allons à présent la écrire signification de chacune des pistes annotées, que nous positionnerons à droite de la figure:</p>
                  <div class="code"><code># Légende<br>
@@ -511,7 +511,7 @@ innermost_links_2$Color <- gsub("color=set2-8-qual-8","#bbbcb9",innermost_links_
                     Track <- Track + BioCircosTextTrack("numérotation","chromosome hexaploïde et de son chromosome ancêtre, et la couche inférieure grise montre des réarrangements chromosomiques pendant l'hexaploïdisation.",<br>
                                                         x = 2.28,y=0.4, size = "1em")</code></div>
                  <p>Voici le résultat obtenu : </p>
-                 <img class="image" src="Visu Données Omics/légende_circos1.png" alt="" height="600px">
+                 <img class="gros_image" src="Visu Données Omics/légende_circos1.png" alt="">
                  <h3>Annotation heatmap</h3>
                  <p>Nous allons maintenant réaliser ce type de légende provenant de la figure de l'article :</p>
                  <img class="image" src="Visu Données Omics/légende_heatmap_article.png" alt="">
@@ -556,7 +556,7 @@ innermost_links_2$Color <- gsub("color=set2-8-qual-8","#bbbcb9",innermost_links_
                                                         x = 3.85,y=1.7, size = "1.2em")
                 </code></div>
                 <p>Voici le résultat obtenu :</p>
-                <img class="image" src="Visu Données Omics/heatmap_légende_circos1.png" alt="" height="500px">
+                <img class="gros_image" src="Visu Données Omics/heatmap_légende_circos1.png" alt="">
                 <h3>Annotation des espèces</h3>
                 <p>Enfin, la dernière chose à faire est d'annoter le nom de l'espèce des chromosomes.</p>
                 <div class="code"><code>
