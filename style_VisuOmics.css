@@ -272,7 +272,7 @@ header a:active {
   .Art1{
     position: absolute;
     left: 5%;
-    top: 20%;
+    top: 15%;
     background-color: rgba(255, 255, 255, 0.8);
     border-color: black;
     height: 450px;
@@ -285,7 +285,7 @@ header a:active {
   .Art2{
     position: absolute;
     left: 37.5%;
-    top: 20%;
+    top: 15%;
     background-color: rgba(255, 255, 255, 0.8);
     border-color: black;
     height: 450px;
@@ -298,7 +298,7 @@ header a:active {
   .Art3{
     position: absolute;
     right: 5%;
-    top: 20%;
+    top: 15%;
     background-color: rgba(255, 255, 255, 0.8);
     border-color: black;
     height: 450px;
@@ -321,12 +321,12 @@ header a:active {
     font-size: 20px;
     border: 2px solid #fff;
   
-    padding: 14px 70px;
+    padding: 10px 35px;
     border-radius: 50px;
   
     font-family: 'Poppins', sans-serif;
     position: relative;
-    top: 10px;
+    top: 15px;
   
     
   }
@@ -339,12 +339,12 @@ header a:active {
     font-size: 20px;
     border: 2px solid #fff;
   
-    padding: 14px 70px;
+    padding: 10px 35px;
     border-radius: 50px;
   
     font-family: 'Poppins', sans-serif;
     position: relative;
-    top: 10px;
+    top: 15px;
   }
   
   
@@ -356,12 +356,12 @@ header a:active {
     font-size: 20px;
     border: 2px solid #fff;
   
-    padding: 14px 70px;
+    padding: 10px 35px;
     border-radius: 50px;
   
     font-family: 'Poppins', sans-serif;
     position: relative;
-    top: 43px;
+    top: 48px;
   }
 }
 
