@@ -79,7 +79,7 @@ header, body, html{
   top: 20%;
   background-color: rgba(255, 255, 255, 0.8);
   border-color: black;
-  height: 65%;
+  height: 600px;
   width: 25%;
   text-align: center;
   box-shadow: 0 0px 0px white;
@@ -92,7 +92,7 @@ header, body, html{
   top: 20%;
   background-color: rgba(255, 255, 255, 0.8);
   border-color: black;
-  height: 65%;
+  height: 600px;
   width: 25%;
   text-align: center;
   box-shadow: 0 0px 0px white;
@@ -105,7 +105,7 @@ header, body, html{
   top: 20%;
   background-color: rgba(255, 255, 255, 0.8);
   border-color: black;
-  height: 65%;
+  height: 600px;
   width: 25%;
   text-align: center;
   box-shadow: 0 0px 0px white;
@@ -129,18 +129,17 @@ header, body, html{
   border-radius: 50px;
 
   font-family: 'Poppins', sans-serif;
-  position: absolute;
-  top: 1760px;
-  left: 12%;
+  position: relative;
+  top: 70px;
 
   
 }
 
 .lien_circos2{
-  color: white;
+
   text-decoration: none;
   display: inline-block;
-  color: #fff;
+
   font-size: 20px;
   border: 2px solid #fff;
 
@@ -148,10 +147,8 @@ header, body, html{
   border-radius: 50px;
 
   font-family: 'Poppins', sans-serif;
-  position:absolute;
-
-  top: 1760px;
-  left: 45%;
+  position: relative;
+  top: 40px;
 }
 
 
@@ -167,9 +164,8 @@ header, body, html{
   border-radius: 50px;
 
   font-family: 'Poppins', sans-serif;
-  position: absolute;
-  top: 1760px;
-  right: 12%;
+  position: relative;
+  top: 80px;
 }
 
 
