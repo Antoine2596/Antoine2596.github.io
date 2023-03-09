@@ -279,7 +279,7 @@ header a:active {
 .header_menu_sous-titre{
     position:relative;
     text-align: center;
-    top: 80px;
+    top: 100px;
     color: white;
     text-decoration: none;
     font-family:sans-serif;
@@ -318,7 +318,7 @@ header a:active {
   top: 20%;
   background-color: rgba(255, 255, 255, 0.8);
   border-color: black;
-  height: 25%;
+  height: 30%;
   width: 25%;
   text-align: center;
   box-shadow: 0 0px 0px white;
@@ -331,7 +331,7 @@ header a:active {
   top: 20%;
   background-color: rgba(255, 255, 255, 0.8);
   border-color: black;
-  height: 25%;
+  height: 30%;
   width: 25%;
   text-align: center;
   box-shadow: 0 0px 0px white;
@@ -344,7 +344,7 @@ header a:active {
   top: 25%;
   background-color: rgba(255, 255, 255, 0.8);
   border-color: black;
-  height: 20%;
+  height: 25%;
   width: 25%;
   text-align: center;
   box-shadow: 0 0px 0px white;
