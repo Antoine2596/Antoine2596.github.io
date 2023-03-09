@@ -96,8 +96,15 @@ header, body, html{
   left: 400px;
 }
 
+.Accès_article{
+  position: absolute;
+  left: 400px;
+}
 
-
+.Accès_script{
+  position: absolute;
+  right: 400px;
+}
 
 .zone_script{
 
@@ -491,31 +498,7 @@ position: relative;
     text-decoration: underline;
 }
 
-/* Gérer les liens */
-  header a:link {
-    color: white;
-    text-decoration: none;
-  }
-  
-  header a:visited {
-    color: white;
-    text-decoration: none;
-  }
-  
-  header a:hover {
-    color: white;
-    text-decoration: none;
-  }
-  
-header a:active {
-    color: white;
-    text-decoration: none;
-  }
-  
-.imgart{
-  max-width: 75%;
-  max-height: 75%;
-}
+
   
 }
 

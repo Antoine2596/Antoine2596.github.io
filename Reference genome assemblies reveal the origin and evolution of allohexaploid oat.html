@@ -337,8 +337,113 @@ Track <- Track + BioCircosHeatmapTrack("Ring_G", labels = FALSE,<br>
                                        color =c("#f2f2b5","#145059"))
         </code>
        </div>
+       <p>Nous obtenons ainsi ce résultat :</p>
+       <img class="image" src="Visu Données Omics/piste_g_circos1.png" alt="" height="500px">
     <h3>Affichage des liens</h3>
-    <p class="h1_script">
+    <p>Comme vu dans la présentation des données, les liens proviennent de deux onglets, <em>Fig1 innermost_links_1"</em> et <em>innermost_links_2</em>, 
+        et nous avons observés qu'il y avait une colonne suplémentaire pour les couleurs correspondant à chaque chromosomes. 
+        Nous allons en premier temps remplacer les valeurs des couleurs par des couleurs hexadécimal que le script pourra interpréter: </p>
+        <div class="code"><code>
+innermost_links_1$Color <- gsub("color=set2-7-qual-1","#66c2a5",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-7-qual-2","#fd8b62",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-7-qual-3","#8ea0cc",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-7-qual-4","#e78ac3",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-7-qual-5","#a7da55",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-7-qual-6","#ffd930",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-7-qual-7","#e3c496",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-8-qual-8","#bbbcb9",innermost_links_1$Color)<br>
+<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-1","#66c2a5",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-2","#fd8b62",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-3","#8ea0cc",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-4","#e78ac3",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-5","#a7da55",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-6","#ffd930",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-7","#e3c496",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-8-qual-8","#bbbcb9",innermost_links_2$Color)<br>
+        </code></div>
+        <p>Nous observons sur la figure que les liens en couleurs sont au premier temps, tandis que les couleurs grises sont en arrière plan.</p>
+        <img  class="image" src="Visu Données Omics/Links_circos1.png" alt="">
+        <p>Cependant toutes les couleurs ce situent dans les deux onglets.</p>
+        <p>L'objectif ici est donc de d'abord charger les liens de couleurs grises des deux onglets, puis ensuite charger les liens d'autres couleurs qui vont se positionner en premier-plan.
+            Pour cela j'ai réaliser un tableaux contenant les liens de couleurs grises pour chaque onglet, et la même choses pour les liens d'autres couleurs, on aura donc 4 tableaux.</p>
+            <div class="code"><code># Faire un tableau contenant les liens de couleurs grises de l'onglet innermost_links_1<br>
+                innermost_links_1_gris<- subset(innermost_links_1, Color=="#bbbcb9")<br>
+                innermost_links_1_sans_gris <- subset(innermost_links_1, Color != "#bbbcb9")<br>
+                <br>
+                # Faire un tableau contenant les liens de couleurs grises de l'onglet innermost_links_2<br>
+                innermost_links_2_gris<- subset(innermost_links_2, Color=="#bbbcb9")<br>
+                innermost_links_2_sans_gris <- subset(innermost_links_2, Color != "#bbbcb9")</code></div>
+                <p>On a donc :</p>
+                <ul>
+                    <li><strong>innermost_links_1_gris</strong> : Liens gris provenant de l'onglet <em>innermost_links_1</em>.</li>
+                    <li><strong>innermost_links_1_sans_gris</strong> : Liens d'autres couleurs provenant de l'onglet <em>innermost_links_1</em>.</li>
+                    <li><strong>innermost_links_2_gris</strong> : Liens gris provenant de l'onglet <em>innermost_links_2</em>.</li>
+                    <li><strong>innermost_links_2_sans_gris</strong> : Liens d'autres couleurs  provenant de l'onglet <em>innermost_links_2</em>.</li>
+                </ul>
+                <h4>Liens gris de l'onglet 1</h4>
+               <p> A présent pour charger chacun des liens avec leur couleur respectif, on peut éxécuter la fonction <strong>'BioCircosLinkTrack'</strong> dans une boucle.</p>
+               <p>Dans le script ci-dessous, j'ai utiliser une boucle <strong>'for'</strong> où la variable i sera répété 515 fois (qui est le nombre de ligne du tableau obtenu en faisant <code>dim(innermost_links_1_gris)</code>.</p>
+                <div class="code"><code>
+                    for (i in 1:515) {<br>
+                        Track <-Track + BioCircosLinkTrack("innermost_links_1_gris",<br>
+                                                           gene1Chromosomes = innermost_links_1_gris$chrA[i],<br>
+                                                           innermost_links_1_gris$startA[i],<br>
+                                                           innermost_links_1_gris$endA[i],<br>
+                                                           gene2Chromosomes = innermost_links_1_gris$chrB[i],<br>
+                                                           innermost_links_1_gris$startB[i],<br>
+                                                           innermost_links_1_gris$endB[i], <br>
+                                                           color = innermost_links_1_gris$Color[i],<br>
+                                                           maxRadius = 1, displayLabel = FALSE,width = 1, axisPadding = "white")<br>
+                      
+                      }
+                </code></div>
+            <p>Nous obtenons ainsi ce résultat :</p>
+            <img class="image" src="Visu Données Omics/link1_gris_circos1.png" alt="" height="500px">
+            <h4>Liens gris de l'onglet 2</h4>
+            <div class="code">
+                <code>for (i in 1:387) {<br>
+                    Track <-Track + BioCircosLinkTrack("innermost_links_2_gris",<br>
+                                                       gene1Chromosomes = innermost_links_2_gris$chrA[i],<br>
+                                                       innermost_links_2_gris$startA[i],<br>
+                                                       innermost_links_2_gris$endA[i],<br>
+                                                       gene2Chromosomes = innermost_links_2_gris$chrB[i],<br>
+                                                       innermost_links_2_gris$startB[i],<br>
+                                                       innermost_links_2_gris$endB[i], <br>
+                                                       color = innermost_links_2_gris$Color[i],<br>
+                                                       maxRadius = 1, displayLabel = FALSE,width = 1, axisPadding = "white")<br>
+                    
+                  }</code>
+            </div>
+            <h4>Liens de couleurs de l'onglet 1</h4>
+            <div class="code"><code>for (i in 1:174) {<br>
+                Track <-Track + BioCircosLinkTrack("innermost_links_1_sans_gris",<br>
+                                                   gene1Chromosomes = innermost_links_1_sans_gris$chrA[i],<br>
+                                                   innermost_links_1_sans_gris$startA[i],<br>
+                                                   innermost_links_1_sans_gris$endA[i],<br>
+                                                   gene2Chromosomes = innermost_links_1_sans_gris$chrB[i],<br>
+                                                   innermost_links_1_sans_gris$startB[i],<br>
+                                                   innermost_links_1_sans_gris$endB[i], <br>
+                                                   color = innermost_links_1_sans_gris$Color[i],<br>
+                                                   maxRadius = 1, displayLabel = FALSE,width = 2, axisPadding = "white")
+                
+              }</code></div>
+              <h4>Liens de couleurs de l'onglet 2</h4>
+              <div class="code"><code>for (i in 1:329) {<br>
+                Track <-Track + BioCircosLinkTrack("innermost_links_2_sans_gris",<br>
+                                                   gene1Chromosomes = innermost_links_2_sans_gris$chrA[i],<br>
+                                                   innermost_links_2_sans_gris$startA[i],<br>
+                                                   innermost_links_2_sans_gris$endA[i],<br>
+                                                   gene2Chromosomes = innermost_links_2_sans_gris$chrB[i],<br>
+                                                   innermost_links_2_sans_gris$startB[i],<br>
+                                                   innermost_links_2_sans_gris$endB[i], <br>
+                                                   color = innermost_links_2_sans_gris$Color[i],<br>
+                                                   maxRadius = 1, displayLabel = FALSE,width = 2, axisPadding = "white")<br>
+              }
+            </code></div>
+            <p> Après avoir charger tous les heatmaps et liens, nous obtenons ce résultat :</p>
+            <img src="Visu Données Omics/Circo1.jpeg" alt="">
+            <p class="h1_script">
         <strong id="Présentation_circos"> Résultat</strong> </p>
     </div>
  </section>
