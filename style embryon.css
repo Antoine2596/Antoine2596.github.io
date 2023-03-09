@@ -133,7 +133,11 @@ main{
     background: #000000;
 }
 
+.video_embryon{
+	height: 500px;
+	width: auto;
 
+}
 
 
 a:hover{

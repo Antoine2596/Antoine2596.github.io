@@ -238,18 +238,19 @@ header a:active {
   
 
 }
-/* Cela permet de positionner la video et de la bien dimensionner */
+
 
   /* 1366px x 663px */
 /* -----------------------------------RESPONSE XIAOMI REDMI NOTE 5 / PIXEL 5---------------------------------------------------------------------------------------- */
-@media screen and (max-width: 1500) {
+/* N'oublie pas de mettre l'unité (les px) avec la valeur !!! */
+
+@media screen and (max-width: 398px) {
   .backvideo{
     position: absolute;
     right: 0;
     bottom: 0;
     z-index: -1;
 }
-
 /* Faut mettre position: absolute pour modifier la position du texte */
 .lien_menu{
     position: absolute; 
@@ -287,8 +288,7 @@ header a:active {
   position: absolute;
   background: url(Whole-Genome-Sequencing-WGS_2000x1126\ \(1\).jpg) no-repeat center center;
   background-size: cover;
-  margin: 0px;
-  padding: 0px;
+
   height: 100%;
   width: 100%;
 }
@@ -296,11 +296,11 @@ header a:active {
 .titre_sommaire{
   position:relative;
   text-align: center;
-  top: 5%;
+  top: 0%;
   color: white;
   text-decoration: none;
   font-family:Cantarell;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .Art0{
@@ -314,7 +314,7 @@ header a:active {
   top: 20%;
   background-color: rgba(255, 255, 255, 0.8);
   border-color: black;
-  height: 30%;
+  height: 200px;
   width: 25%;
   text-align: center;
   box-shadow: 0 0px 0px white;
@@ -327,7 +327,7 @@ header a:active {
   top: 20%;
   background-color: rgba(255, 255, 255, 0.8);
   border-color: black;
-  height: 30%;
+  height: 220px;
   width: 25%;
   text-align: center;
   box-shadow: 0 0px 0px white;
@@ -337,10 +337,10 @@ header a:active {
 .Art3{
   position: absolute;
   right: 5%;
-  top: 25%;
+  top: 20%;
   background-color: rgba(255, 255, 255, 0.8);
   border-color: black;
-  height: 25%;
+  height: 200px;
   width: 25%;
   text-align: center;
   box-shadow: 0 0px 0px white;
@@ -348,21 +348,23 @@ header a:active {
 }
 
 .lien_circos1{
-
+  color: white;
   text-decoration: none;
   display: inline-block;
-
+  color: #fff;
   font-size: 10px;
   border: 2px solid #fff;
 
-  padding: 7px 21px;
+  padding: 7px 35px;
   border-radius: 50px;
 
   font-family: 'Poppins', sans-serif;
-  position: absolute;
-  top: 1250px;
-  left: 7%;
+  position: relative;
+  top: 67px;
+
+  
 }
+
 .lien_circos2{
 
   text-decoration: none;
@@ -371,30 +373,29 @@ header a:active {
   font-size: 10px;
   border: 2px solid #fff;
 
-  padding: 7px 21px;
+  padding: 7px 35px;
   border-radius: 50px;
 
   font-family: 'Poppins', sans-serif;
-  position: absolute;
-  top: 1250px;
-  right: 40%;
+  position: relative;
+  top: 40px;
 }
 
-.lien_circos3{
 
+.lien_circos3{
+  color: white;
   text-decoration: none;
   display: inline-block;
-
+  color: #fff;
   font-size: 10px;
   border: 2px solid #fff;
 
-  padding: 7px 21px;
+  padding: 7px 35px;
   border-radius: 50px;
 
   font-family: 'Poppins', sans-serif;
-  position: absolute;
-  top: 1250px;
-  right: 7%;
+  position: relative;
+  top: 88px;
 }
 
 }
