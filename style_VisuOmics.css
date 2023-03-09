@@ -54,18 +54,16 @@ header, body, html{
   position: absolute;
   background: url(Whole-Genome-Sequencing-WGS_2000x1126\ \(1\).jpg) no-repeat center center;
   background-size: cover;
-  margin: 0px;
-  padding: 0px;
-  height: 1000px;
+
+  height: 100%;
   width: 100%;
 }
 
 .titre_sommaire{
+
   position:relative;
   text-align: center;
-  top: 5%;
   color: white;
-  text-decoration: none;
   font-family:Cantarell;
   font-size: 35px;
 }
@@ -118,6 +116,7 @@ header, body, html{
   color: black;
 }
 
+
 .lien_circos1{
   color: white;
   text-decoration: none;
@@ -131,8 +130,9 @@ header, body, html{
 
   font-family: 'Poppins', sans-serif;
   position: absolute;
-  top: 1725px;
-  left: 10%;
+  top: 1760px;
+  left: 12%;
+
   
 }
 
@@ -150,8 +150,8 @@ header, body, html{
   font-family: 'Poppins', sans-serif;
   position:absolute;
 
-  top: 1725px;
-  left: 40%;
+  top: 1760px;
+  left: 45%;
 }
 
 
@@ -168,8 +168,8 @@ header, body, html{
 
   font-family: 'Poppins', sans-serif;
   position: absolute;
-  top: 1725px;
-  right: 10%;
+  top: 1760px;
+  right: 12%;
 }
 
 
@@ -246,7 +246,7 @@ header a:active {
 
   /* 1366px x 663px */
 /* -----------------------------------RESPONSE XIAOMI REDMI NOTE 5 / PIXEL 5---------------------------------------------------------------------------------------- */
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1200) {
   .backvideo{
     position: absolute;
     right: 0;
