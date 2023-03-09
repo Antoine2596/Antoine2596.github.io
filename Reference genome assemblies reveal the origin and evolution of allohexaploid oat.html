@@ -44,7 +44,7 @@
         <!-- Je vais mettre une bas supérieur pour cacher la bordure -->
         <div class="bar_supérieur">
         </div>
-        <div> <p class="version">Version : 0.2</p> </div>
+        <div> <p class="version">Version : 0.4</p> </div>
         <div class="lien_menu">
         <a href="VisuOmics.html">Retourner dans le sommaire</a> <br>
         </div>
@@ -442,9 +442,139 @@ innermost_links_2$Color <- gsub("color=set2-8-qual-8","#bbbcb9",innermost_links_
               }
             </code></div>
             <p> Après avoir charger tous les heatmaps et liens, nous obtenons ce résultat :</p>
-            <img src="Visu Données Omics/Circo1.jpeg" alt="">
+            <img src="Visu Données Omics/Tout_piste_circos1.png" alt="">
+            <h2>Réalisation des annotations</h2>
+            <p>Une fois toutes les pistes chargées, il ne reste plus qu'à ajouter les annotations, le nom des espèces ainsi que la légende.</p>
+            <h3>Annotation des pistes</h3>
+          <p>  Dans la figure d'origine, nous allons annoter chacunes des pistes pour la légende, la fonction <strong>'BioCircosTextTrack'</strong> 
+            sera donc utiliser dans le script ci-dessous:</p>
+            <div class="code"><code>#Annotation des pistes<br>
+                Track <- Track + BioCircosTextTrack("numérotation","a",
+                                            x = -0.05,y=-1.86, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","b",
+                                            x = -0.05,y=-1.76, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","c",
+                                            x = -0.05,y=-1.66, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","d",
+                                            x = -0.05,y=-1.56, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","e",
+                                            x = -0.05,y=-1.46, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","f",
+                                            x = -0.05,y=-1.36, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","g",
+                                            x = -0.05,y=-1.25, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","h",
+                                            x = -0.04,y=-1.05, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","i",
+                                                    x = -0.035,y=-0.9, size = "1.2em",weight = "bold")</code></div>
+                <p>L'annotation "i" est écrit un peu plus grosse afin d'être visible parmit les liens.</p>
+                <p>Voici le résultat obtenu : </p>
+                <img image="image" src="Visu Données Omics/annotation_piste_circos1.png" alt="">
+                 <h3>Annotation de la légende</h3>
+                 <p>Nous allons à présent la écrire signification de chacune des pistes annotées, que nous positionnerons à droite de la figure:</p>
+                 <div class="code"><code># Légende<br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(a) Les positions inférées des centromères des chromosomes des génomes A et D.",<br>
+                                                        x = 2.2,y=-0.5, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(b) La distribution de la répétition spécifique du génome C Am1 le long de chaque chromosome.",<br>
+                                                        x = 2.2,y=-0.4, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(c) La distribution de la répétition spécifique du génome A As120a le long de chaque chromosome.",<br>
+                                                        x = 2.2,y=-0.3, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(d) fréquences k-mères.",<br>
+                                                        x = 2.2,y=-0.2, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(e) Densité de répétition en tandem (TR) (MaxPeriod ≤ 500 bp).",<br>
+                                                        x = 2.2,y=-0.1, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(f) densité de rétrotransposons LTR.",<br>
+                                                        x = 2.2,y=0, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(g) Densité génétique.",<br>
+                                                        x = 2.2,y=0.1, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(h) Noms et tailles des chromosomes",<br>
+                                                        x = 2.2,y=0.2, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(i)  Synténie de l'hexaploïde et de son espèce ancêtre, avec des liens de couche supérieure colorés représentant des blocs synténiques de chaque",<br>
+                                                        x = 2.2,y=0.3, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","chromosome hexaploïde et de son chromosome ancêtre, et la couche inférieure grise montre des réarrangements chromosomiques pendant l'hexaploïdisation.",<br>
+                                                        x = 2.28,y=0.4, size = "1em")</code></div>
+                 <p>Voici le résultat obtenu : </p>
+                 <img class="image" src="Visu Données Omics/légende_circos1.png" alt="" height="600px">
+                 <h3>Annotation heatmap</h3>
+                 <p>Nous allons maintenant réaliser ce type de légende provenant de la figure de l'article :</p>
+                 <img class="image" src="Visu Données Omics/légende_heatmap_article.png" alt="">
+                 <p>Pour ce faire, allons toujours utiliser la fonction <strong>'BioCircosTextTrack'</strong>, et nous allons utiliser le caractère ■ (trouvable n'importe où sur internet).
+                Nous allons afficher ce carré plusieurs fois de différentes couleurs afin de recréer la légende:</p>
+                <div class="code"><code>
+                    #Légende heatmap<br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 2.4,y=1.6, size = "5em", color = "#f2f2b5")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 2.55,y=1.6, size = "5em", color = "#d9e2aa")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 2.7,y=1.6, size = "5em", color = "#c2cda0")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 2.85,y=1.6, size = "5em", color = "#a7bb95")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 3,y=1.6, size = "5em", color = "#8eaa8c")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 3.15,y=1.6, size = "5em", color = "#749880")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 3.3,y=1.6, size = "5em", color = "#5c8577")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 3.45,y=1.6, size = "5em", color = "#43736e")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 3.6,y=1.6, size = "5em", color = "#286162")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 3.75,y=1.6, size = "5em", color = "#145059")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","Min",<br>
+                                                        x = 2.35,y=1.7, size = "1.2em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","Max",<br>
+                                                        x = 3.85,y=1.7, size = "1.2em")
+                </code></div>
+                <p>Voici le résultat obtenu :</p>
+                <img class="image" src="Visu Données Omics/heatmap_légende_circos1.png" alt="" height="500px">
+                <h3>Annotation des espèces</h3>
+                <p>Enfin, la dernière chose à faire est d'annoter le nom de l'espèce des chromosomes.</p>
+                <div class="code"><code>
+                    #Annotation des espèces<br>
+Track <- Track + BioCircosTextTrack("Annotation espèce","A. longiglumis",<br>
+                                    x = -1.65,y=-1.6, size = "1.2em")<br>
+                                    <br>
+Track <- Track + BioCircosTextTrack("Annotation espèce","A. sativa ssp. nuda cv. Sanfensan",<br>
+                                    x = 1.4,y=-1.4, size = "1.2em")<br>
+                                    <br>
+Track <- Track + BioCircosTextTrack("Annotation espèce","A. insularis",<br>
+                                    x = -1.7,y=1.55, size = "1.2em")<br>
+                </code></div>
             <p class="h1_script">
         <strong id="Présentation_circos"> Résultat</strong> </p>
     </div>
+    <div class="résultat">
+    <img class="image" src="Visu Données Omics/Circos1.png" alt="">
+</div>
  </section>
 </body>
