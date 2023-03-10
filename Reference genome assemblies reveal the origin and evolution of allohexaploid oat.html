@@ -241,13 +241,13 @@ innermost_links_2 <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 1, sk
        <div class="code">
         <code>
             #ringA<br>
-Track <- Track + BioCircosHeatmapTrack("Ring_A", labels = FALSE, #Labels = FALSE signifie qu'on ne veut pas afficher les noms des chromosomes pour cette piste<br>
+Track <- Track + BioCircosHeatmapTrack("Ring_A", labels = FALSE, #Labels = FALSE signifie qu'on ne veut pas afficher les noms des chromosomes pour cette piste<br> 
 &nbsp; &nbsp; &nbsp; &nbsp; chromosomes = ring_a$Chr, #Sélectionner la colonne des noms des chromosomes<br>
 &nbsp; &nbsp; &nbsp; &nbsp; starts = ring_a$Start,    #Sélectionner la colonne des débuts de positions<br>
 &nbsp; &nbsp; &nbsp; &nbsp;  ends = ring_a$End,        #Sélectionner la colonne des fins des positions<br>
 &nbsp; &nbsp; &nbsp; &nbsp;  values = ring_a$Density,  #Sélectionner la colonne des densité<br>
 &nbsp; &nbsp; &nbsp; &nbsp; maxRadius = 1.9,          #Définir le rayon maximal de la piste<br>
-&nbsp; &nbsp; &nbsp; &nbsp;  minRadius = 1.85,         #Définir le rayon minimale de la piste<br>
+&nbsp; &nbsp; &nbsp; &nbsp;  minRadius = 1.85,         #Définir le rayon minimale de la piste<br> 
 &nbsp; &nbsp; &nbsp; &nbsp; color =c("#f2f2b5","#145059")) #Définir les couleurs en fonction des valeurs de densité minimale et maximale<br>
         </code>
        </div>

@@ -43,7 +43,7 @@
         <!-- Je vais mettre une bas supérieur pour cacher la bordure -->
         <div class="bar_supérieur">
         </div>
-        <div> <p class="version">Version : 0.1</p> </div>
+        <div> <p class="version">Version : 0.23</p> </div>
         <div class="lien_menu">
         <a href="VisuOmics.html">Retourner dans le sommaire</a> <br>
         </div>
@@ -111,43 +111,315 @@
             library(pagedown) #convertir .html en .pdf</code></div>
     <h2>Lecture des Données</h2>
     <div class="code"><code>#Lecture des onglets<br>
-        FigA <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 1, skip = 0) <br>
-        FigB <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 2, skip = 0) <br>
-        FigC <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 3, skip = 0) <br>
-        FigD <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 4, skip = 0) <br>
-        FigE <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 5, skip = 0)<br>
-        FigF <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 6, skip = 0) <br>
-        FigG <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 7, skip = 0)<br>
-        FigH <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 8, skip = 0)<br>
-        FigI <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 9, skip = 0) <br>
-        FigJ <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 10, skip = 0) <br>
-        FigK <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 11, skip = 0) <br>
-        FigL <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 12, skip = 0) <br>
-        FigM <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 13, skip = 0)<br>
-        FigN <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 14, skip = 0)<br>
-        # skip = 1 permet de sauter la première ligne qui contient des informations inutiles
+
         </code></div>
         <h3>Remaniement des données pour la piste (n)</h3>
-        
-
+        <div class="code"><code># Filtrer les indices de lignes impairs<br>
+            indices_impairs <- seq(1, nrow(FigN), by = 2)<br>
+            <br>
+            # Supprimer les lignes impaires du tableau<br>
+            ChrA <- FigN[indices_impairs, ]<br>
+            <br>
+            # Filtrer les indices de lignes pairs<br>
+            indices_pairs <- seq(2, nrow(FigN), by = 1)<br>
+            <br>
+            # Supprimer les lignes paires du tableau<br>
+            ChrB <- FigN[indices_pairs, ]<br>
+            <br>
+            #On fait une fusion des tableaux à partir de la colonne commune "Links"<br>
+            FigN <- merge(ChrA, ChrB, by = "Links")<br></code></div> 
+<h3>Modification de quelques valeurs</h3>
+<div class="code"><code>
+    #On augmente la position de fin des données des pistes de E à L afin de les rendre visibles<br>
+FigE$End <- FigE$End + 50000<br>
+FigF$End <- FigF$End + 50000<br>
+FigG$End <- FigG$End + 50000<br>
+FigH$End <- FigH$End + 50000<br>
+<br>
+FigI$End <- FigI$End + 50000<br>
+FigI$End <- FigJ$End + 50000<br>
+FigK$End <- FigK$End + 50000<br>
+FigL$End <- FigL$End + 50000<br>
+</code></div>
     <h2>Construction des pistes</h2>
     <h3>Construction du track</h3>
     <p>Lorsqu'on veut réaliser des pistes sur Biocircos, dont doit d'abord définir la longueur des tracks, 
         c'est-à-dire la longueur des chromosomes. Biocircos ne pouvant définir la track qu'à partir d'une liste, 
         nous allons alors définir la liste via le tableau <em>"ring_h"</em>.</p>
+        <div class="code"><code>#On créer une liste qui comporte le nom et la longueur de chaques chromosome
+            MyGenome <- list(<br>
+              "Pn1" =48451882,<br>
+              "Pn2" =43104928,<br>
+              "Pn3" =39384597,<br>
+              "Pn4" =37189380,<br>
+              "Pn5" =36778867,<br>
+              "Pn6" =33612360,<br>
+              "Pn7" =32737202,<br>
+              "Pn8" =32725476,<br>
+              "Pn9" =32482239,<br>
+              "Pn10" =31231022,<br>
+              "Pn11"  =29812524,<br>
+              "Pn12"  =29600758,<br>
+              "Pn13"  =29427894,<br>
+              "Pn14"  =29032553,<br>
+              "Pn15"  =28693427,<br>
+              "Pn16"  =27948387,<br>
+              "Pn17"  =25720905,<br>
+              "Pn18"  =25555373,<br>
+              "Pn19"  =24808771,<br>
+              "Pn20"  =24284306,<br>
+              "Pn21"  =22260265,<br>
+              "Pn22"  =22167516,<br>
+              "Pn23"  =20442519,<br>
+              "Pn24"  =19853247,<br>
+              "Pn25"  =18224315,<br>
+              "Pn26"  =14906710)</code></div>
         
         <h3>Affichage du titre</h3>
        <p> Biocircos est un package qui à utilise des fonctions différentes selon le type de données qu'on souhaite afficher (heatmap, link, line,...), un circos a donc besoin d'une addition de chaque fonctions afin de contenir toutes les données.</p>
        <p>Pour commencer, nous allons définir un objet nommé <em><strong> 'Track'</strong></em> qui en premier temps contenir la fonction <em><strong>'BioCircosTextTrack'</strong></em>, afin d'afficher un texte. Ici, nous allons afficher le titre de la figure.</p>
-       <div class="code">
-        
-       </div>
-       
+       <div class="code"> <code>#Créer un titre<br>
+        Track <- BioCircosTextTrack("MyTextTrack",#Nom sans importance qu'on donne pour nommé le rôle de cette fonction<br>
+                                    "Genome of black pepper", #Le texte à afficher<br>
+                                    x = -0.4 # Position en abscisse du texte<br>
+                                    ,y=-1.5, # Position en ordonnée du texte<br>
+                                    size = "1em") #taille du texte</code>
+        </div>
+        <h3>Affichage de la piste b</h3>
+        <div class="code"><code>
+            # Créer la première piste (B)<br>
+Track <- Track + BioCircosBarTrack("FigB",<br>
+                                   chromosomes = FigB$Chromosome,<br>
+                                   starts = FigB$Start,<br>
+                                   ends = FigB$End,<br>
+                                   values = FigB$GCcontent,<br>
+                                   labels = FALSE,<br>
+                                   maxRadius = 1,<br>
+                                   minRadius = 0.95,<br>
+                                   color = "green",<br>
+                                   range = 0)<br>
+        </code></div>
+        <h3>Affichage de la piste c</h3>
+        <div class="code"><code># Créer la piste C
+            Track <- Track + BioCircosLineTrack("FigC",<br>
+                                                chromosomes = FigC$Chromosome, #Nom du chromosome<br>
+                                                positions = FigC$End, #Position sur le chromosome<br>
+                                                values = FigC$`Repeat Number`, #Nombre de répétition<br>
+                                                maxRadius = 0.95, #Définir le rayon maximal de la piste<br>
+                                                minRadius = 0.85,  #Définir le rayon minimale de la piste<br>
+                                                color = "blue", #Définir les couleurs en fonction des valeurs de densité minimale et maximale<br>
+                                                width = 0.5) #Epaisseur du tracé<br>
+            </code></div>
+        <h3>Affichage de la piste d</h3>
+        <div class="code"><code>#Piste D
+            Track <- Track + BioCircosBarTrack("FigD",<br>
+                                               chromosomes = FigD$Chromosome,#Nom du chromosome<br>
+                                               starts = FigD$Start, #Début de position sur me chromosome<br>
+                                               ends = FigD$End, #Fin de position sur le chromosome<br>
+                                               values = FigD$`Gene Number`, #Nombre de répétition<br>
+                                               labels = FALSE, #Ne pas afficher les nom des chromosomes<br>
+                                               maxRadius = 0.90, #Rayon maximale<br>
+                                               minRadius = 0.85, #Rayon minimale<br>
+                                               color = "#FE6214", #Couleur<br>
+                                               range = 0)</code></div>
+        <h3>Affichage de la piste e,f,g,h</h3>
+        <div class="code"><code>#Créer la piste E<br>
+            Track <- Track + BioCircosBarTrack("FigE",<br>
+                                               chromosomes = FigE$Chromosome, #Nom du chromosome<br>
+                                               starts = FigE$Start, #Début de position du gène sur le chromosome<br>
+                                               ends = FigE$End, #Fin de position sur le chromosome<br>
+                                               values = FigE$`Transcriptional level (Log(TPM))`, #Valeur de transcription<br>
+                                               labels = FALSE, #Ne pas afficher les étiquettes<br>
+                                               maxRadius = 0.85, #Rayon maximale<br>
+                                               minRadius = 0.80, # Rayon minimal<br>
+                                               color = "#1A9100", #Couleur<br>
+                                               range = 0) #Range doit être égale à 0 pour éviter les problèmes<br>
+                                               <br>
+            #Créer la piste F<br>
+            Track <- Track + BioCircosBarTrack("FigF",<br>
+                                               chromosomes = FigF$Chromosome,<br>
+                                               starts = FigF$Start,<br>
+                                               ends = FigF$End,<br>
+                                               values = FigF$`Transcriptional level (Log(TPM))`,<br>
+                                               labels = FALSE,<br>
+                                               maxRadius = 0.80,<br>
+                                               minRadius = 0.75,<br>
+                                               color = "#8971FF",<br>
+                                               range = 0)<br>
+                                               <br>
+            #Créer la piste G<br>
+            Track <- Track + BioCircosBarTrack("FigG",<br>
+                                               chromosomes = FigG$Chromosome,<br>
+                                               starts = FigG$Start,<br>
+                                               ends = FigG$End,<br>
+                                               values = FigG$`Transcriptional level (Log(TPM))`,<br>
+                                               labels = FALSE,<br>
+                                               maxRadius = 0.75,<br>
+                                               minRadius = 0.70,<br>
+                                               color = "#FF381C",<br>
+                                               range = 0)<br>
+            #Créer la piste H<br>
+            <br>
+            Track <- Track + BioCircosBarTrack("FigH",<br>
+                                               chromosomes = FigH$Chromosome,<br>
+                                               starts = FigH$Start,<br>
+                                               ends = FigH$End,<br>
+                                               values = FigH$`Transcriptional level (Log(TPM))`,<br>
+                                               labels = FALSE,<br>
+                                               maxRadius = 0.70,<br>
+                                               minRadius = 0.65,<br>
+                                               color = "#6D9FC9",<br>
+                                               range = 0)</code></div>
+        <h3>Affichage de la piste i,j,k,l</h3>
+        <div class="code"><code>
+            #Créer la piste I<br>
+            Track <- Track + BioCircosCNVTrack("FigI",<br>
+                                               chromosomes = FigI$Chromosome,<br>
+                                               starts = FigI$Start,<br>
+                                               ends = FigI$End,<br>
+                                               values = FigI$`Transcriptional level (Log(TPM))`,<br>
+                                               labels = FALSE,<br>
+                                               maxRadius = 0.65,<br>
+                                               minRadius = 0.60,<br>
+                                               color = "#EF0000",<br>
+                                               range = 0)<br>
+                                               <br>
+            #Créer la piste J<br>
+            Track <- Track + BioCircosCNVTrack("FigJ",<br>
+                                               chromosomes = FigJ$Chromosome,<br>
+                                               starts = FigJ$Start,<br>
+                                               ends = FigJ$End,<br>
+                                               values = FigJ$`Transcriptional level (Log(TPM))`,<br>
+                                               labels = FALSE,<br>
+                                               maxRadius = 0.60,<br>
+                                               minRadius = 0.55,<br>
+                                               color = "#92FFFC",<br>
+                                               range = 0)<br>
+                                               <br>
+            #Créer la piste K<br>
+            Track <- Track + BioCircosCNVTrack("Figk",<br>
+                                               chromosomes = FigH$Chromosome,<br>
+                                               starts = FigH$Start,<br>
+                                               ends = FigH$End,<br>
+                                               values = FigH$`Transcriptional level (Log(TPM))`,<br>
+                                               labels = FALSE,<br>
+                                               maxRadius = 0.55,<br>
+                                               minRadius = 0.50,<br>
+                                               color = "#7B4D92",<br>
+                                               range = 0)<br>
+                                               <br>
+            #Créer la piste L<br>
+            Track <- Track + BioCircosCNVTrack("FigL",<br>
+                                               chromosomes = FigL$Chromosome,<br>
+                                               starts = FigL$Start,<br>
+                                               ends = FigL$End,<br>
+                                               values = FigL$`Transcriptional level (Log(TPM))`,<br>
+                                               labels = FALSE,<br>
+                                               maxRadius = 0.50,<br>
+                                               minRadius = 0.45,<br>
+                                               color = "#E0A3FF",<br>
+                                               range = 0)</code></div>
+        <h3>Affichage de la piste m</h3>
+        <div class="code"><code>#Figure M<br>
+            # On remplace la colonne des Pathway par une couleurs selon la caractéristique<br>
+            FigM$Pathway <- gsub("alkaloid","green", FigM$Pathway)<br>
+            FigM$Pathway <- gsub("secondary_metabolite","orange", FigM$Pathway)<br>
+            <br>
+            #On créer une colonne "Value" pour pouvoir afficher les pathway sur la heatmap<br>
+            FigM$Value <- rep(1)<br>
+            # On augmente artificiellement la largeur des bandes pour améliorer la visibilité<br>
+            FigM$End <- FigM$End + 500000<br>
+            <br>
+            # On créer une boucle qui va chargée les heat une par une afin d'avoir leur couleurs correspondante<br>
+            for (i in 1:1041) {<br>
+              Track <- Track + BioCircosHeatmapTrack("Ring_A", labels = FALSE, #Labels = FALSE signifie qu'on ne veut pas afficher les noms des chromosomes pour cette piste<br>
+                                                     chromosomes = FigM$Chromosome[i], #Sélectionner la colonne des noms des chromosomes<br>
+                                                     starts = FigM$Start[i],    #Sélectionner la colonne des débuts de positions<br>
+                                                     ends = FigM$End[i],        #Sélectionner la colonne des fins des positions<br>
+                                                     values = FigM$Value[i],  #Sélectionner la colonne des densité<br>
+                                                     maxRadius = 0.45,          #Définir le rayon maximal de la piste<br>
+                                                     minRadius = 0.4,         #Définir le rayon minimale de la piste<br>
+                                                     color =c("#f2f2b5","#145059")) #Définir les couleurs en fonction des valeurs de densité minimale et maximale<br>
+              
+            }
+            </code></div>
+        <h3>Affichage de la piste n</h3>
+        <div class="code"><code># Créer les noms de lignes<br>
+            Chromosome <- c(paste0("Pn", 1:26)) #Créer une liste "Chromosome" contenant les Pn de Pn1 à Pn26<br>
+            table_couleurs <- as.data.frame(Chromosome) #On fait un tableau à partir de la liste<br>
+            <br>
+            #Ajout des couleurs<br>
+            for(i in 1:26){<br>
+              couleur_aleatoire <- paste0("#", paste(sample(c(0:9, letters[1:6]), 6, replace = TRUE), collapse = "")) #On créer une couleur aléaloitre en hexadécimal<br>
+              table_couleurs$couleurs[i] <- couleur_aleatoire #On place cette couleur dans une case du tableau<br>
+              table_couleurs <- rbind(table_couleurs, couleur_aleatoire) #combiner les tableaux<br>
+            }<br>
+            <br>
+            #On renomme les lignes par les noms des chromosomes<br>
+            rownames(table_couleurs) <- table_couleurs$Chromosome <br>
+            <br>
+            #On doit au préalable avoir une variable définit avant de lancer la boucle, peut importe combien elle vaut.<br>
+            NomPn<-1 <br>
+            # Dans ce script, j'ai réaliser un tableau de couleur avec une couleur pour chaque PN, ainsi les liens auront des couleurs en fonction du chromosome de départ<br>
+            # On créer une boucle qui va chargée les liens une par une afin d'avoir leur couleurs correspondante<br>
+            for (i in 1:2589){ <br>
+              Track <- Track + BioCircosLinkTrack("FigN",<br>
+                                                  FigN$Chromosome.x[i],<br>
+                                                  FigN$Start.x[i],<br>
+                                                  FigN$End.x[i],<br>
+                                                  FigN$Chromosome.y[i],<br>
+                                                  FigN$Start.y[i],<br>
+                                                  FigN$End.y[i], <br>
+                                                  maxRadius = 0.4, <br>
+                                                  NomPn <- FigN$Chromosome.x[i],<br>
+                                                  color = table_couleurs[NomPn,2],<br>
+                                                  displayLabel = FALSE)<br>
+              
+            }</code></div>
+       <h3>Ajout des couleurs en arrière plan</h3>
+            <div class="code"><code>#On ajoute des couleurs de fond pour chaque chromosome<br>
+                Track <- Track + BioCircosBackgroundTrack("Fond figure B",fillColors = "#DFDFDF",maxRadius = 1,minRadius = 0.95,borderSize = 0)<br>
+                Track <- Track + BioCircosBackgroundTrack("Fond figure CD",fillColors = "#FACBA4",maxRadius = 0.95,minRadius = 0.85,borderSize = 0)<br>
+                Track <- Track + BioCircosBackgroundTrack("Fond figure EFGH",fillColors = "#DFDFDF",maxRadius = 0.85,minRadius = 0.65,borderSize = 0)<br>
+                Track <- Track + BioCircosBackgroundTrack("Fond figure EFGH",fillColors = "#D4EBFF",maxRadius = 0.65,minRadius = 0.40,borderSize = 0)<br>
+                </code></div>
+            <h3>Création du circos</h3>
+            <div class="code"><code># On définit un objet qui contient une commande pour afficher le circos<br>
+                Projet_Antoine <- BioCircos(Track, # Track contenant toutes les pistes et liens<br>
+                                            genome = MyGenome, #Liste contenant la taille et les noms des chromosomes<br>
+                          genomeTicksDisplay = TRUE, # Afficher la graduation<br>
+                          genomeLabelDisplay = TRUE, #Afficher le nom des chromosomes<br>
+                          genomeLabelDx = 0, <br>
+                          displayGenomeBorder = TRUE, # Ne pas afficher les bordures<br>
+                          genomeTicksLen = 4, #Longueur de la graduation<br>
+                          genomeTicksScale = 5000000, #Nombre de paires de bases entre chaques graduations<br>
+                          genomeTicksTextSize = "0.5em", #Taille des chiffres de la graduation<br>
+                          genomeLabelTextSize = "10",#Taille des noms des chromosomes<br>
+                          genomeLabelDy = 10, #Position du nom des chromosome par rapport à la piste de référence<br>
+                          zoom = TRUE,<br>
+                          width="2000",<br>
+                          height="1000") #épaisseur de la bordure de la légende <br>
+                          <br>
+                #Afficher le circos<br>
+                Projet_Antoine</code></div>
+            <h3>Exportation du circos sous pdf</h3>
+            <div class="code"><code>#Enregistrer le cirocs en .html<br>
+                saveWidget(Projet_Antoine, "Graphique_prod_final.html", title = "Musa genomes architecture comparison.") # "titre =..." permet 
+                d'avoir le titre dans le nom de la page web<br>
+                <br>
+                #Convertir le .html en .pdf<br>
+                chrome_print("Graphique_prod_final.html", output = "Antoine_graphique_prod_final.pdf", format="pdf",<br>
+                             options=list(paperWidth=20, paperHeight=10, preferCSSPageSize=TRUE), extra_args = c("--window-size=2800,1200"))<br>
+                
+                </code></div>
             <p class="h1_script">
         <strong id="Présentation_circos"> Résultat</strong> </p>
-    </div> 
+        
+     
     <div class="résultat">
-
+        <img class="gros_image" src="Visu Données Omics/Article_2/Tous_pistes_Circos2.png" alt="">
+        <p><em>(les pistes i,j,k,l n'ont pas été chargées pour des soucis de performances de mon ordinateur)</em></p>
+</div>
 </div>
  </section>
 </body>
