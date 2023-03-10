@@ -75,17 +75,61 @@
        <p>Il s'agit d'un circos constitué de 12 tracks et d'un centre constitué de lien entre différents gène du génome de référence du poivre noir <em>(Piper nigrum)</em>. </p>
         <img class="gros_image" src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-019-12607-6/MediaObjects/41467_2019_12607_Fig1_HTML.png?as=webp" alt="">
         <h3>La piste b</h3>
-        La 
+        <p> La piste <strong>(b)</strong> représente la distribution de la densité GC sous forme d'histogramme.</p>
+        <img class="image" src="Visu Données Omics/Article_2/presentation_piste_b_circos2.png" alt="">
+        <h3>La piste c</h3>
+        <p> La piste <strong>(c)</strong> représente la densité de répétition sous forme d'un tracé de trait.</p>
+        <img class="image" src="Visu Données Omics/Article_2/presentation_piste_c_circos2.png" alt="">
+        <h3>La piste d</h3>
+      <p>  La piste <strong>(d)</strong> représente la densité de gènes sous forme d'histogramme</p>
+        <img class="image" src="Visu Données Omics/Article_2/presentation_piste_d_circos2.png" alt="">
+        <h3>La piste e,f,g,h</h3>
+        Les pistes <strong>(e), (f), (g)</strong> et<strong></strong> (g)</strong> représente l'expression de gènes spécifiques à la baie sous forme d'histogramme.
+        <img class="image" src="Visu Données Omics/Article_2/presentation_piste_efgh_circos2.png" alt="">
+        <h3>La piste i,j,k,l</h3>
+        Les pistes <strong>(i), (j), (k)</strong> et<strong></strong> (l)</strong> représente le niveau de transcription sous forme de nuage de points.
+        <img class="image" src="Visu Données Omics/Article_2/presentation_piste_ijkl_circos2.png" alt="">
+        <h3>La piste m</h3>
+        La piste <strong>(m)</strong> reflète les emplacements des gènes cartographiés sur les voies du métabolisme secondaire et du métabolisme des alcaloïdes.
+        <img class="image" src="Visu Données Omics/Article_2/presentation_piste_m_circos2.png" alt="">
+        <h3>La piste n</h3>
+        La piste <strong>(n)</strong> représente les blocs synténiques (présence simultanée sur le même chromosome de deux ou plusieurs locus).
+        <img class="gros_image" src="Visu Données Omics/Article_2/presentation_piste_n_circos2.png" alt="">
+
         <h2>Présentation des données</h2>
         
             
             <p class="h1_script">
             <strong id="Script"> Présentation du script</strong> </p>
         <h2>Libraires</h2>
-        
+        <div class="code"><code>#Chargement des librairies <br>
+            library(readxl) # Permet de lire les fichiers .xls<br>
+            library(BioCircos) #Permet d'afficher des valeurs sous forme de circos<br>
+            library(RColorBrewer) #Librairie pour ajouter des palettes de couleurs<br>
+            library(grDevices)<br>
+            library(htmlwidgets) #Créer un fichier html<br>
+            library(pagedown) #convertir .html en .pdf</code></div>
     <h2>Lecture des Données</h2>
+    <div class="code"><code>#Lecture des onglets<br>
+        FigA <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 1, skip = 0) <br>
+        FigB <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 2, skip = 0) <br>
+        FigC <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 3, skip = 0) <br>
+        FigD <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 4, skip = 0) <br>
+        FigE <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 5, skip = 0)<br>
+        FigF <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 6, skip = 0) <br>
+        FigG <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 7, skip = 0)<br>
+        FigH <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 8, skip = 0)<br>
+        FigI <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 9, skip = 0) <br>
+        FigJ <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 10, skip = 0) <br>
+        FigK <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 11, skip = 0) <br>
+        FigL <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 12, skip = 0) <br>
+        FigM <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 13, skip = 0)<br>
+        FigN <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 14, skip = 0)<br>
+        # skip = 1 permet de sauter la première ligne qui contient des informations inutiles
+        </code></div>
+        <h3>Remaniement des données pour la piste (n)</h3>
+        
 
-    
     <h2>Construction des pistes</h2>
     <h3>Construction du track</h3>
     <p>Lorsqu'on veut réaliser des pistes sur Biocircos, dont doit d'abord définir la longueur des tracks, 
@@ -101,7 +145,7 @@
        
             <p class="h1_script">
         <strong id="Présentation_circos"> Résultat</strong> </p>
-    </div>
+    </div> 
     <div class="résultat">
 
 </div>
