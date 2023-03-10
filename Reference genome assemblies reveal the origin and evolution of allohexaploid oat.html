@@ -136,14 +136,13 @@
             install.packages("htmlwidgets")<br>
             install.packages("pagedown")<br>
             <br>
-            # Chargement des librairies<br>
-            library(readr)<br>
-            library(readxl)<br>
-            library(BioCircos)<br>
-            library(RColorBrewer)<br>
-            library(dplyr)<br>
-            library(htmlwidgets)<br>
-            library(pagedown)<br>
+            #Chargements des librairies<br>
+            library(readxl) # Permet de lire les fichiers .xls<br>
+            library(BioCircos) #Permet d'afficher des valeurs sous forme de circos<br>
+            library(RColorBrewer) #Librairie pour ajouter des palettes de couleurs<br>
+            library(htmlwidgets) #Convertir le résultat en fichier .html<br>
+            library(pagedown) #Convertir le fichier .html en .pdf<br>
+            
         </code>
     </div>
     <h2>Lecture des Données</h2>
@@ -570,6 +569,29 @@ Track <- Track + BioCircosTextTrack("Annotation espèce","A. sativa ssp. nuda cv
 Track <- Track + BioCircosTextTrack("Annotation espèce","A. insularis",<br>
                                     x = -1.7,y=1.55, size = "1.2em")<br>
                 </code></div>
+                <h2>Affichage du circos</h2>
+            <p>On peut a présent afficher le circos à partir de toutes les pistes et liens contenues dans l'objet <em>Track</em> avec la fonction <strong>'BioCircos()'</strong> :</p>
+            <div class="code"><code>
+                # Afficher le Circos<br>
+BioCircos(Track, # Track contenant toutes les pistes et liens<br>
+          genome = ring_h, #Liste contenant la taille et les noms des chromosomes<br>
+                 genomeFillColor = c(<br>
+                    "#66c2a5","#fd8b62","#8ea0cc","#e78ac3","#a7da55","#ffd930","#e3c496","#66c2a5",<br>
+                                              "#fd8b62","#8ea0cc","#e78ac3","#a7da55","#ffd930","#e3c496","#66c2a5",<br>
+                                              "#fd8b62","#8ea0cc","#e78ac3","#a7da55","#ffd930","#e3c496","#e3c496",<br>
+                                              "#ffd930","#a7da55","#e78ac3","#8ea0cc","#fd8b62","#66c2a5","#e3c496",<br>
+                                              "#ffd930","#a7da55","#e78ac3","#8ea0cc","#fd8b62","#66c2a5","#e3c496",<br>
+                                              "#ffd930","#a7da55","#e78ac3","#8ea0cc","#fd8b62","#66c2a5"), #Couleur de chaques chromosomes<br>
+                   genomeTicksDisplay = TRUE, # Afficher la graduation<br>
+                  genomeLabelDisplay = TRUE, #Afficher le nom des chromosomes<br>
+                   displayGenomeBorder = FALSE, # Ne pas afficher les bordures<br>
+                   genomeTicksLen = 4, #Longueur de la graduation<br>
+                   genomeTicksScale = 140000000, #Nombre de paires de bases entre chaques graduations<br>
+                   genomeTicksTextSize = "0.6em", #Taille des chiffres de la graduation<br>
+                   genomeLabelTextSize = "10", #Taille des noms des chromosomes<br>
+                   genomeLabelDy = -25, #Position du nom des chromosome par rapport à la piste de référence<br>
+          )
+            </code></div>
             <p class="h1_script">
         <strong id="Présentation_circos"> Résultat</strong> </p>
     </div>
