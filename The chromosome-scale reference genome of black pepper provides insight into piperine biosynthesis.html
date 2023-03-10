@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Test Javascript -->
+<script>
+    function scrollToId(id) {
+        var element = document.getElementById(id);
+        element.scrollIntoView({behavior: "smooth"});
+    }
+</script>
+</head>
+    <!-- Charger les fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preload" href="/static/fonts/HardingText-Regular-Web-cecd90984f.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preconnect" href="https://push-content.springernature.io" crossorigin="">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
+    <!-- testd-->
+    <link rel="stylesheet" href="The chromosome-scale reference genome of black pepper provides insight into piperine biosynthesis.css">
+    <title>The chromosome-scale reference genome of black pepper provides insight into piperine biosynthesis</title>
+    <!-- Icône de l'onglet -->
+    <link rel="shortcut icon" href="Visu Données Omics/logo_AntoineGenomic.png">
+</head>
+<body>
+    <!-- Je vais mettre une image de circos ici -->
+
+        <img class="background" src="Visu Données Omics/Article_2/Tous_pistes_Circos2.png" alt="">
+
+        <div>
+            <header class="header_menu_h1">
+                Fig. 1: The chromosome-scale reference genome <br>of black pepper provides insight into piperine biosynthesis.
+            </header>
+        </div>
+        <!-- Je vais mettre une bas supérieur pour cacher la bordure -->
+        <div class="bar_supérieur">
+        </div>
+        <div> <p class="version">Version : 0.1</p> </div>
+        <div class="lien_menu">
+        <a href="VisuOmics.html">Retourner dans le sommaire</a> <br>
+        </div>
+        <div class="icone_header">
+          <span>AntoineGenomic &#9816;</span>
+        </div>
+    <section>
+        <div class="bar_inférieur">
+            <div class="texte_bar_inférieur">
+            <a class="Accès_article" href="https://www.nature.com/articles/s41467-019-12607-6#" target="_blank">Accès à l'article</a>
+            <a class="Présentation_circos" href="#Présentation_circos">Présentation Circos</a>
+            <a class="Accès_script" href="#Script">Accès au script</a>
+            </div>
+        </div>
+    </section>
+    <!-- Je mets toutes mes images ici afin de pouvoir les moduler à ma volonté -->
+
+    
+    
+    
+    
+    
+    <!-- Maintenant je met une zone pour présenter mon code -->
+<section class="zone_script">
+    <div class="texte_script">
+        <p class="h1_script">
+            <strong id="Présentation_circos"> Présentation la figure et des données</strong> </p>
+        <h2 >Présentation du circos</h2>
+       <p>Il s'agit d'un circos constitué de 12 tracks et d'un centre constitué de lien entre différents gène du génome de référence du poivre noir <em>(Piper nigrum)</em>. </p>
+        <img class="gros_image" src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-019-12607-6/MediaObjects/41467_2019_12607_Fig1_HTML.png?as=webp" alt="">
+        <h3>La piste b</h3>
+        La 
+        <h2>Présentation des données</h2>
+        
+            
+            <p class="h1_script">
+            <strong id="Script"> Présentation du script</strong> </p>
+        <h2>Libraires</h2>
+        
+    <h2>Lecture des Données</h2>
+
+    
+    <h2>Construction des pistes</h2>
+    <h3>Construction du track</h3>
+    <p>Lorsqu'on veut réaliser des pistes sur Biocircos, dont doit d'abord définir la longueur des tracks, 
+        c'est-à-dire la longueur des chromosomes. Biocircos ne pouvant définir la track qu'à partir d'une liste, 
+        nous allons alors définir la liste via le tableau <em>"ring_h"</em>.</p>
+        
+        <h3>Affichage du titre</h3>
+       <p> Biocircos est un package qui à utilise des fonctions différentes selon le type de données qu'on souhaite afficher (heatmap, link, line,...), un circos a donc besoin d'une addition de chaque fonctions afin de contenir toutes les données.</p>
+       <p>Pour commencer, nous allons définir un objet nommé <em><strong> 'Track'</strong></em> qui en premier temps contenir la fonction <em><strong>'BioCircosTextTrack'</strong></em>, afin d'afficher un texte. Ici, nous allons afficher le titre de la figure.</p>
+       <div class="code">
+        
+       </div>
+       
+            <p class="h1_script">
+        <strong id="Présentation_circos"> Résultat</strong> </p>
+    </div>
+    <div class="résultat">
+
+</div>
+ </section>
+</body>
