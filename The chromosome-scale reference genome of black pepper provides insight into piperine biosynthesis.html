@@ -34,10 +34,11 @@
     <!-- Je vais mettre une image de circos ici -->
 
         <img class="background" src="Visu Données Omics/Article_2/Tous_pistes_Circos2.png" alt="">
+        
 
         <div>
             <header class="header_menu_h1">
-                Fig. 1: The chromosome-scale reference genome <br>of black pepper provides insight into piperine biosynthesis.
+                Fig. 1: The chromosome-scale reference genome of black pepper provides insight into piperine biosynthesis.
             </header>
         </div>
         <!-- Je vais mettre une bas supérieur pour cacher la bordure -->
@@ -97,7 +98,12 @@
         <img class="gros_image" src="Visu Données Omics/Article_2/presentation_piste_n_circos2.png" alt="">
 
         <h2>Présentation des données</h2>
-        
+       <p>Toutes les données nécéssaires à la réalisation de ce circos se situent dans le fichier <strong>41467_2019_12607_MOESM4_ESM.xlsx</strong>. </p>
+    <p>A l'intérieur, toutes plupart des données des pistes sont structuré de façon à être interprétable par la librarie <strong>'BioCircos'</strong>.</p>
+    <img class="image" src="Visu Données Omics/Article_2/tableau_c_circos2.png" alt="">
+    <p>Cependant le tableau pour la réalisation du track (n), c'est à dire celui des liens, ne peut pas être interprété.</p>
+    <img class="image" src="Visu Données Omics/Article_2/tableau_n_circos2.png" alt="">
+    <p> Il faudra ici mettre les données possèdant le même nom "links" sur la même ligne.</p>
             
             <p class="h1_script">
             <strong id="Script"> Présentation du script</strong> </p>
@@ -114,6 +120,7 @@
 
         </code></div>
         <h3>Remaniement des données pour la piste (n)</h3>
+        <p>On créer deux tableaux, un contenant les lignes pairs, et un autre contenant les lignes impaires. On fait ensuite une fusion des deux tableau à partir de leur colonne commune "links".</p>
         <div class="code"><code># Filtrer les indices de lignes impairs<br>
             indices_impairs <- seq(1, nrow(FigN), by = 2)<br>
             <br>
@@ -129,6 +136,7 @@
             #On fait une fusion des tableaux à partir de la colonne commune "Links"<br>
             FigN <- merge(ChrA, ChrB, by = "Links")<br></code></div> 
 <h3>Modification de quelques valeurs</h3>
+<p>Les longueurs des gène sont beaucoup trop faibles pour être visible sur le circos, on va donc augmenter artificiellement leur longueur afin de pouvoir les observés.</p>
 <div class="code"><code>
     #On augmente la position de fin des données des pistes de E à L afin de les rendre visibles<br>
 FigE$End <- FigE$End + 50000<br>
@@ -148,16 +156,16 @@ FigL$End <- FigL$End + 50000<br>
         nous allons alors définir la liste via le tableau <em>"ring_h"</em>.</p>
         <div class="code"><code>#On créer une liste qui comporte le nom et la longueur de chaques chromosome
             MyGenome <- list(<br>
-              "Pn1" =48451882,<br>
-              "Pn2" =43104928,<br>
-              "Pn3" =39384597,<br>
-              "Pn4" =37189380,<br>
-              "Pn5" =36778867,<br>
-              "Pn6" =33612360,<br>
-              "Pn7" =32737202,<br>
-              "Pn8" =32725476,<br>
-              "Pn9" =32482239,<br>
-              "Pn10" =31231022,<br>
+              "Pn1" = 48451882,<br>
+              "Pn2" = 43104928,<br>
+              "Pn3" = 39384597,<br>
+              "Pn4" = 37189380,<br>
+              "Pn5" = 36778867,<br>
+              "Pn6" = 33612360,<br>
+              "Pn7" = 32737202,<br>
+              "Pn8" = 32725476,<br>
+              "Pn9" = 32482239,<br>
+              "Pn10"  =31231022,<br>
               "Pn11"  =29812524,<br>
               "Pn12"  =29600758,<br>
               "Pn13"  =29427894,<br>
@@ -186,6 +194,7 @@ FigL$End <- FigL$End + 50000<br>
                                     size = "1em") #taille du texte</code>
         </div>
         <h3>Affichage de la piste b</h3>
+        <p>La piste b s'agit d'un histogramme, on utilise donc la fonction <strong>'BioCircosBarTrack'.</strong></p>
         <div class="code"><code>
             # Créer la première piste (B)<br>
 Track <- Track + BioCircosBarTrack("FigB",<br>
@@ -200,6 +209,7 @@ Track <- Track + BioCircosBarTrack("FigB",<br>
                                    range = 0)<br>
         </code></div>
         <h3>Affichage de la piste c</h3>
+        <p>La piste b s'agit d'un tracé de trait, on utilise donc la fonction <strong>'BioCircosLineTrack'</strong>.</p>
         <div class="code"><code># Créer la piste C
             Track <- Track + BioCircosLineTrack("FigC",<br>
                                                 chromosomes = FigC$Chromosome, #Nom du chromosome<br>
@@ -211,6 +221,7 @@ Track <- Track + BioCircosBarTrack("FigB",<br>
                                                 width = 0.5) #Epaisseur du tracé<br>
             </code></div>
         <h3>Affichage de la piste d</h3>
+        <p>La piste d s'agit d'un histogramme, on utilise donc la fonction <strong>'BioCircosBarTrack'.</strong></p>
         <div class="code"><code>#Piste D
             Track <- Track + BioCircosBarTrack("FigD",<br>
                                                chromosomes = FigD$Chromosome,#Nom du chromosome<br>
@@ -271,6 +282,7 @@ Track <- Track + BioCircosBarTrack("FigB",<br>
                                                color = "#6D9FC9",<br>
                                                range = 0)</code></div>
         <h3>Affichage de la piste i,j,k,l</h3>
+        <p>Les pistes i,j,k,l sont des nuages de points, on utilise alors la fonction <strong>'BioCircosCNVTrack'</strong>.</p>
         <div class="code"><code>
             #Créer la piste I<br>
             Track <- Track + BioCircosCNVTrack("FigI",<br>
@@ -320,6 +332,7 @@ Track <- Track + BioCircosBarTrack("FigB",<br>
                                                color = "#E0A3FF",<br>
                                                range = 0)</code></div>
         <h3>Affichage de la piste m</h3>
+        <p>La piste m est une heatmap, j'ai utiliser une boucle afin de charger chaque ligne avec une couleur correspondant au <em>Pathway</em>.</p>
         <div class="code"><code>#Figure M<br>
             # On remplace la colonne des Pathway par une couleurs selon la caractéristique<br>
             FigM$Pathway <- gsub("alkaloid","green", FigM$Pathway)<br>
@@ -344,6 +357,7 @@ Track <- Track + BioCircosBarTrack("FigB",<br>
             }
             </code></div>
         <h3>Affichage de la piste n</h3>
+        <p>La piste m est un ensemble de liens interchromosomique, j'ai utiliser une boucle afin de charger chaque ligne avec une couleur différentes aléatoirement afin que chacunes de ces liens puissent être distinguées.</p>
         <div class="code"><code># Créer les noms de lignes<br>
             Chromosome <- c(paste0("Pn", 1:26)) #Créer une liste "Chromosome" contenant les Pn de Pn1 à Pn26<br>
             table_couleurs <- as.data.frame(Chromosome) #On fait un tableau à partir de la liste<br>

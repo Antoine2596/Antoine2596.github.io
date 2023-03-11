@@ -409,6 +409,16 @@ header a:active {
   max-height: 400px;
   max-width: 100%;
 }
+
+.grosse_image{
+  position: relative;
+  display: block;
+  left: 20px;
+  margin-top: 20px;
+  max-height: 400px;
+  max-width: 80%;
+}
+
 .lien_menu{
     position: absolute; 
     color: white;
