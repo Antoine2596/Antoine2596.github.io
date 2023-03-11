@@ -69,7 +69,7 @@ header, body, html{
 }
 
 .Art0{
-  font-size:20px;
+  font-size:25px;
   font-family: Cantarell;
 }
 
@@ -79,7 +79,7 @@ header, body, html{
   top: 20%;
   background-color: rgba(255, 255, 255, 0.8);
   border-color: black;
-  height: 460px;
+  height: 600px;
   width: 25%;
   text-align: center;
   box-shadow: 0 0px 0px white;
@@ -92,7 +92,7 @@ header, body, html{
   top: 20%;
   background-color: rgba(255, 255, 255, 0.8);
   border-color: black;
-  height: 500px;
+  height: 600px;
   width: 25%;
   text-align: center;
   box-shadow: 0 0px 0px white;
@@ -105,7 +105,7 @@ header, body, html{
   top: 20%;
   background-color: rgba(255, 255, 255, 0.8);
   border-color: black;
-  height: 460px;
+  height: 600px;
   width: 25%;
   text-align: center;
   box-shadow: 0 0px 0px white;
@@ -129,9 +129,8 @@ header, body, html{
   border-radius: 50px;
 
   font-family: 'Poppins', sans-serif;
-  position: absolute;
-  top: 520px;
-  left: 100px;
+  position: relative;
+  top: 70px;
 
   
 }
@@ -148,9 +147,8 @@ header, body, html{
   border-radius: 50px;
 
   font-family: 'Poppins', sans-serif;
-  position: absolute;
-  top: 520px;
-  left: 100px;
+  position: relative;
+  top: 40px;
 }
 
 
@@ -166,9 +164,8 @@ header, body, html{
   border-radius: 50px;
 
   font-family: 'Poppins', sans-serif;
-  position: absolute;
-  top: 520px;
-  left: 100px;
+  position: relative;
+  top: 80px;
 }
 
 

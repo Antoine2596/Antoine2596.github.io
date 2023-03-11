@@ -131,9 +131,7 @@
         FigL <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 12, skip = 0) <br>
         FigM <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 13, skip = 0)<br>
         FigN <- read_excel("41467_2019_12607_MOESM4_ESM.xlsx", sheet = 14, skip = 0) <br>
-        # skip = 1 permet de sauter la première ligne qui contient des informations inutiles
-
-        </code></div>
+        # skip = 1 permet de sauter la première ligne qui contient des informations inutiles</code></div>
         <h3>Remaniement des données pour la piste (n)</h3>
         <p>On créer deux tableaux, un contenant les lignes pairs, et un autre contenant les lignes impaires. On fait ensuite une fusion des deux tableau à partir de leur colonne commune "links".</p>
         <div class="code"><code># Filtrer les indices de lignes impairs<br>
