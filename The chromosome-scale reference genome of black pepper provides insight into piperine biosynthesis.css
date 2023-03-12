@@ -224,7 +224,10 @@ header a:active {
     /* Faut mettre position: absolute pour modifier la position du texte */
 .background{
   position: absolute;
-  width: 100%;
+  width: 700px;
+  height: 100%;
+  top: 5px;
+
 }
 .image{
   position: relative;
