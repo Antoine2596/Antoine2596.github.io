@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header{
+    height: 10dvh;
+    width: 100dvw;
+    background-color: #006699;
+}
+
+.navbar{
+    position: absolute;
+    padding : 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.navbar a{
+    color: white;
+}
+
+.navbar .logo{
+    font-size: 3em;
+    font-weight: 500;
+}
+
+
+
+.navbar .nav-links ul{
+    display: flex;
+}
+
+.navbar .nav-links ul li{
+    margin: 0 50px ;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.background{
+    position: relative;
+    height: 80dvh;
+    width: 100dvw;
+}
+
+.background .background_image{
+    position: relative;
+    left: 55%;
+}
+
+.background .background_text{
+    display: block;
+    position: absolute;
+    font-size: 3em;
+    bottom: 50%;
+    left: 10%;
+}
+
+.bar_inferieur{
+    position: relative;
+    height: 10dvh;
+    width: 100dwh;
+    background-color: #006699;
+}
+
+.zone-script{
+
+    height: 2864px;
+    width: 100%;
+    padding: 50px;
+    
+}
+
+.zone-script .texte_script{
+    display: flex;
+    position: absolute;
+    border: 1px;
+    border-color: black;
+    text-align: justify;
+    width: 60%;
+    left: 100px;
+}
+
+.zone-script .zone_sommaire{
+    display: block;
+    position: absolute;
+    right: 100px;
+    width: 20%;
+    height: 2864px;
+}
+
+.zone-script .zone_sommaire .sommaire{
+    display: block;
+    position: sticky;
+    height: 500px;
+    width: 300px;
+    top: 100px;
+    border: 1px solid;
+    border-color: grey;
+    
+}
+
+.zone-script .zone_sommaire .sommaire a{
+    display: block;
+    color: black;
+
+}
+
+.zone-script .zone_sommaire .sommaire li{
+    margin: 25px 0;
+}
+
+.zone-script .zone_sommaire .sommaire ul{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 20px;
+    left: 50px;
+    justify-content: center;
+}
+
+/* à suppr */
+.autre{
+
+    display: flex;
+    position: absolute;
+    border: 1px solid;
+    border-width: 2px;
+    padding: 5px;
+    border-color: grey;
+    text-align: justify;
+    width: 60%;
+    left: 100px;
+}

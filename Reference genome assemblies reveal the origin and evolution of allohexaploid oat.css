@@ -126,7 +126,7 @@ header, body, html{
     
 }
 
-.texte_script{
+.zone_script .texte_script{
 position: relative;
     left: 25%;
     width: 50%;
@@ -169,6 +169,8 @@ header a:active {
   max-width: 75%;
   max-height: 75%;
 }
+
+
   /* Liens des articles du sommaire */
  .lien_menu a:link {
     color: white;
@@ -210,6 +212,7 @@ header a:active {
     color: white;
     text-decoration: none;
   }
+
 
     /* 1366px x 663px */
   /* ---------------------------------------------ECRAN PC ---------------------------------------- */
