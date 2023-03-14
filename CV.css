@@ -67,3 +67,54 @@ body a{
     font-size: 1em;
     font-weight:200;
 }
+
+@media screen and (max-width:900px) {
+    .case1{
+        display: block;
+        position: absolute;
+        padding: 20px;
+        border: 2px solid;
+        border-radius: 50px;
+        border-color: blueviolet;
+        top: 100px;
+        left: 12.5%;
+        width: 200px;
+    }
+    
+    .case2{
+        display: block;
+        position: absolute;
+        padding: 20px;
+        border: 2px solid;
+        border-radius: 50px;
+        border-color: blueviolet;
+        top: 350px;
+        left: 12.5%;
+        width: 200px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    
+    .case3{
+        display: block;
+        position: relative;
+        padding: 20px;
+        border: 2px solid;
+        border-radius: 50px;
+        border-color: blueviolet;
+        top: 750px;
+        left: 12.5%;
+        width: 200px;
+        margin-bottom: 50px;
+    }
+    .titre_case{
+        font-size: 1.2em;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+    
+    .texte_case{
+        font-size: 0.8em;
+        font-weight:200;
+    }
+}
