@@ -97,7 +97,7 @@ body a{
     
     .case3{
         display: block;
-        position: relative;
+        position: absolute;
         padding: 20px;
         border: 2px solid;
         border-radius: 50px;
