@@ -22,7 +22,6 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     box-sizing: border-box;
 
 }
@@ -54,7 +53,7 @@ header{
     width: 35px;
 }
 
-
+/* Sur PC Fixe c'ezst 1920x937 */
 
 
 @media screen and (max-width:900px) {

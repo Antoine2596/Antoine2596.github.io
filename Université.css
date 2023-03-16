@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+.navbar{
+    position: fixed;
+    width: 100dvw;
+    height: 142px;
+    align-items: center;
+    z-index: 1;
+}
+
+.fond{
+    background-color: #00558b;
+    transition: background-color 0.4s ease;
+}
+
+.espace-logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.logo{
+    display: block;
+    height: auto;
+    width: 250px;
+    margin: auto;
+
+}
+
+.navbar a {
+    color: white;
+    font-size: 1.1em;
+    font-family: 'Poppins';
+}
+
+.navlinksG{
+    position: absolute;
+    display: grid;
+    top: 50px;
+    width: 40%;
+}
+
+.navlinksG ul{
+    display: flex;
+    text-align: center;
+}
+
+.navlinksG ul li{
+    margin: 0 100px;
+}
+
+.navlinksD{
+    position: absolute;
+    display: grid;
+    width: 40%;
+    top: 50px;
+    right: 0;
+}
+
+.navlinksD ul{
+    display: flex;
+}
+
+.navlinksD ul li{
+    margin: 0 60px;
+}
+
+/* Image de la fac en fond */
+
+.image-fac{
+    background-image: url(https://www.univ-amu.fr/system/files/styles/illustration_contenu_redactionnel/private/2021-05/Bandeau%20campus%20Marseille%20Etoile.jpg?itok=fJih6U9u);
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+}
+
+.filtre-noir-fac{
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    transition: background-color 1s ease;
+}
+
+.petit-filtre-sombre{
+    background-color: rgba(0, 0, 0, 0.315);
+}
+
+.paragraphe{
+    text-align: justify;
+    padding: 50px;
+}
