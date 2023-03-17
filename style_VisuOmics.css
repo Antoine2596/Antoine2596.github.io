@@ -52,13 +52,18 @@ header, body, html{
 
 .Sommaire_Circos{
   position: absolute;
-  background: url(Whole-Genome-Sequencing-WGS_2000x1126\ \(1\).jpg) no-repeat center center;
+  background: url(https://www.biomerieux-industry.com/sites/default/files/2021-03/Whole%20Genome%20Sequencing%20WGS.jpg) no-repeat center center;
   background-size: cover;
 
   height: 100%;
   width: 100%;
 }
 
+.filtre-flou{
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+}
 .titre_sommaire{
 
   position:relative;

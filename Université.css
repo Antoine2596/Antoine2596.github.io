@@ -98,13 +98,78 @@
     transition: background-color 1s ease;
 }
 
-.petit-filtre-sombre{
-    background-color: rgba(0, 0, 0, 0);
-}
+
+
+
+
+/* body */
 
 .paragraphe{
     text-align: justify;
     padding: 50px;
+}
+.col{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 50px;
+}
+.card{
+    width: 350px;
+    height: 400px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.card1{
+    background-image: url(image/Whole-Genome-Sequencing-WGS_2000x1126\ \(1\).jpg);
+}
+
+.card2{
+    background-image: url(image/embryon.png);
+}
+
+.card3{
+    background-image: url(https://alaingrandjean.fr/wp-content/uploads/2016/03/phages-phagotherapie-bacterie.jpg);
+}
+.card4{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f0/FreeBSD_10_vi_RC_Firewall.png);
+}
+.card h5{
+    color: white;
+    font-size: 1.2em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 0 0px 5px #999;
+}
+
+
+
+.card p{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    text-align: left;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+.petit-filtre-sombre{
+    width: 350px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.281);
 }
 
 @media screen and (max-width:1555px) {
@@ -231,6 +296,26 @@
         width: 150px;
         margin: auto;
     
+    }
+
+    .col{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 20px;
+    }
+    .card{
+        width: 200px;
+        height: 300px;
+        display: inline-block;
+        border-radius: 10px;
+        padding: 5px 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+        margin: 1px 5px;
+        background-position: center;
+        background-size: cover;
+        transition: all 0.5s ease;
     }
     
 }
