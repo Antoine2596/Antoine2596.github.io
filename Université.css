@@ -8,15 +8,24 @@
 .navbar{
     position: fixed;
     width: 100dvw;
-    height: 142px;
+    height: 120px;
     align-items: center;
-    z-index: 1;
+    z-index: 10;
 }
 
-.fond{
+.fondb{
     background-color: #00558b;
     transition: background-color 0.4s ease;
 }
+
+.menu-bouton{
+    display: none;
+}
+
+.navlist{
+    display: none;
+}
+
 
 .espace-logo{
     display: flex;
@@ -54,7 +63,7 @@
 }
 
 .navlinksG ul li{
-    margin: 0 100px;
+    margin: 0 90px;
 }
 
 .navlinksD{
@@ -96,4 +105,114 @@
 .paragraphe{
     text-align: justify;
     padding: 50px;
+}
+
+@media screen and (max-width:1555px) {
+    .navlinksG{
+        position: absolute;
+        display: grid;
+        top: 50px;
+        width: 40%;
+        left: 60px;
+    }
+    
+    .navlinksG ul{
+        display: flex;
+        text-align: center;
+    }
+    
+    .navlinksG ul li{
+        margin: 0 60px;
+        right: 0;
+    }   
+
+}
+
+@media screen and (max-width:1300px) {
+    .navlinksG{
+        position: absolute;
+        display: grid;
+        top: 50px;
+        width: 40%;
+        left: 0px;
+    }
+    
+    .navlinksG ul{
+        display: flex;
+        text-align: center;
+    }
+    
+    .navlinksG ul li{
+        margin: 0 30px;
+        right: 0;
+    }   
+
+    .navlinksD{
+        position: absolute;
+        display: grid;
+        width: 30%;
+        top: 50px;
+        right: 10px;
+    }
+    
+    .navlinksD ul{
+        display: flex;
+    }
+    
+    .navlinksD ul li{
+        margin: 0 40px;
+    }
+}
+
+@media screen and (max-width:1150px) {
+    .navlinksG{
+        display: none;
+    }
+   
+    .navlinksD{
+    display: none;
+    }
+    .espace-menu{
+        width: 100%;
+        height: 100%;
+    }
+    .menu-bouton{
+        position: absolute;
+        display: grid;
+        width: 40px;
+        right: 50px;
+        top: 50px;
+    }
+
+    
+    .navlist{
+        top: 120px;
+        left: 0;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.233);
+        backdrop-filter: blur(2px);
+        width : 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+        z-index: -8;
+        
+    }
+
+    .navlistlink ul a{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .mobile-menu{
+        margin-left: 0;
+    }
+    
+    
 }

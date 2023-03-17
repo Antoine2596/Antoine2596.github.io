@@ -10,24 +10,46 @@
 </head>
 <body>
     <header>
+        <!-- Fond sur PC -->
         <nav class="navbar">
             <div class="espace-logo">
             <img src="https://www.univ-amu.fr/system/files/2021-01/DIRCOM-Logo_AMU_Blanc.png" class="logo" alt="">
             </div>
             <div class="navlinksG">
                 <ul>
-                    <li><a href="#">Retourner dans l'index</a></li>
-                    <li><a href="#">Adresse</a></li>
+                    <li><a href="index.html">Retourner dans l'index</a></li>
+                    <li><a href="https://annuaire-entreprises.data.gouv.fr/entreprise/130015332">Adresse</a></li>
                 </ul>
             </div>
             <div class="navlinksD">
                 <ul>
-                    <li><a href="#">A propos</a></li>
+                    <li><a href="CV.html">A propos</a></li>
                     <li><a href="#">Contacts</a></li>
-                    <li><a href="#">Version</a></li>
+  
                 </ul>
             </div>
+
+            <img class="menu-bouton" src="image/menu-btn.png" alt="">
+
+        <nav class="navlist">
+            <div class="navlistlink">
+
+            <ul>
+                <div class="fond-index-menu">
+            <li><a href="index.html">Retourner dans l'index</a></li>
+                </div>
+            <li><a href="https://annuaire-entreprises.data.gouv.fr/entreprise/130015332">Adresse</a></li> 
+            <li><a href="CV.html">A propos</a></li>
+            <li><a href="#">Contacts</a></li>
+
+         </ul>
+        </div>
+        </div>
         </nav>
+        </nav>
+
+        <!-- Fond sur Tel -->
+
     </header>
 </body>
 <div class="image-fac">
@@ -43,9 +65,9 @@
    
    // Ajoute la classe "fond" lorsque la position de défilement est supérieure à 0
    if(window.scrollY > 0) {
-      navbar.classList.add("fond");
+      navbar.classList.add("fondb");
    } else {
-      navbar.classList.remove("fond");
+      navbar.classList.remove("fondb");
    }
 });
     </script>
@@ -59,11 +81,18 @@
    if(window.scrollY > 0) {
     navbar.classList.remove("petit-filtre-sombre");
    } else {
-
       navbar.classList.add("petit-filtre-sombre");
    }
 });
     </script>
-
 </div>
+<!-- Afficher le menu sur tel -->
+<script>
+    const menuHamburger = document.querySelector(".menu-bouton")
+    const navLinks = document.querySelector(".navlist")
+
+    menuHamburger.addEventListener('click',()=>{
+    navLinks.classList.toggle('mobile-menu')
+    })
+</script>
 </html>

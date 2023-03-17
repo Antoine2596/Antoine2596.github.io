@@ -56,7 +56,7 @@ header{
 /* Sur PC Fixe c'ezst 1920x937 */
 
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:1270px) {
     .navbar .menu{
         display: block;
     }
