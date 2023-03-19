@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: rgba(0.25, 0.25, 0.25, 0.7);
+    height: 5000px;
+}
+
+.zonerouge{
+    margin: 0 20px;
+    position: relative;
+    top: 100px;
+
+    /* left: 50px;
+    top: 75px; */
+    width: 500px;
+    height: 500px;
+    background-color: rgba(156, 1, 143, 0.308);
+
+}
+
+.rouge{
+    position:absolute;
+    right: 20px;
+    left: 20px;
+    height: 100px;
+    background-color: red;
+    top: 100px;
+}
+.bleu{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+
+}
