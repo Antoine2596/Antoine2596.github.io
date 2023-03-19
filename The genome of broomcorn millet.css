@@ -11,7 +11,7 @@ body {
 
 header{
     height: 10dvh;
-    width: 100dvw;
+    width: 100%;
     background-color: #006699;
 }
 
@@ -49,7 +49,7 @@ header{
 .background{
     position: relative;
     height: 80dvh;
-    width: 100dvw;
+    width: 100%;
 }
 
 .background .background_image{
@@ -72,15 +72,32 @@ header{
     background-color: #006699;
 }
 
-.zone-script{
+.contenu-bar_inferieur{
+    position: absolute;
+    left: 200px;
+    right: 200px;
+    top: 20px;
+    height: 100%;
+    justify-content: space-between; 
+    display: flex;
+}
 
+.bar_inferieur a{
+    position: relative;
+    color: white;
+    font-size: 2em;   
+
+}
+
+.zone-script{
+    position: relative;
     height: 2864px;
-    width: 100%;
+    width: 100dw;
     padding: 50px;
     
 }
 
-.zone-script .texte_script{
+.zone-script .texte_script {
     display: flex;
     position: absolute;
     border: 1px;
@@ -89,6 +106,7 @@ header{
     width: 60%;
     left: 100px;
 }
+
 
 .zone-script .zone_sommaire{
     display: block;
@@ -104,9 +122,32 @@ header{
     height: 500px;
     width: 300px;
     top: 100px;
-    border: 1px solid;
-    border-color: grey;
+    border: 3px solid;
+    border-color: black;
     
+}
+
+.zone-script .zone_sommaire .sommaire .plan-sommaire{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.zone-script .zone_sommaire .sommaire .plan-sommaire .zone-h3{
+    position: relative;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 3px;
+    font-size: 1.3em;
+    margin: 3px;
+    background-color: #d5d5d5;
+}
+
+.zone-script .zone_sommaire .sommaire .plan-sommaire .zone-texte{
+    position: relative;
+    text-align: left;
+    left: 3px;
 }
 
 .zone-script .zone_sommaire .sommaire a{
@@ -116,7 +157,7 @@ header{
 }
 
 .zone-script .zone_sommaire .sommaire li{
-    margin: 25px 0;
+    margin: 15px 0;
 }
 
 .zone-script .zone_sommaire .sommaire ul{
@@ -128,16 +169,18 @@ header{
     justify-content: center;
 }
 
-/* à suppr */
-.autre{
 
-    display: flex;
+.zone-script .texte-script{
     position: absolute;
-    border: 1px solid;
-    border-width: 2px;
-    padding: 5px;
-    border-color: grey;
-    text-align: justify;
     width: 60%;
-    left: 100px;
+    height: auto;
+
+}
+
+.img-script{
+    position: relative;
+    height: auto;
+    width: 500px;
+    left: 200px;
+    margin: 15px
 }
