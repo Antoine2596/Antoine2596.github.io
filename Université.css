@@ -259,6 +259,10 @@ a .card{
     .navlinksD ul li{
         margin: 0 40px;
     }
+    
+    .col1{
+        width: auto;
+    }
 }
 
 @media screen and (max-width:1150px) {
@@ -334,7 +338,10 @@ a .card{
         justify-content: space-between;
         align-items: center;
         height: 1000px;
-        padding: 20px 20px;
+        padding: 20px 0px;
+        position: relative;
+        margin: 0;
+        left: 0;
     }
     .card{
         width: 200px;
@@ -350,8 +357,19 @@ a .card{
         transition: all 0.5s ease;
     }
     
+    .col1{
+        width: auto;
+    }
+
     .body{
         width: 900px;
+    }
+
+    .card{
+        left: -25px;
+    }
+    .card h5{
+        font-size: 1em;
     }
 
 }
