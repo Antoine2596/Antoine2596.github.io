@@ -54,7 +54,7 @@
     position: absolute;
     display: grid;
     top: 50px;
-    width: 40%;
+    left: 100px;
 }
 
 .navlinksG ul{
@@ -76,6 +76,8 @@
 
 .navlinksD ul{
     display: flex;
+    text-align: center;
+
 }
 
 .navlinksD ul li{
@@ -108,12 +110,16 @@
     text-align: justify;
     padding: 50px;
 }
-.col{
+.col .col1{
+    margin-top: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 50px;
+    padding: 0px 50px;
 }
+
+
+
 .card{
     position: relative;
     width: 350px;
@@ -172,8 +178,23 @@
     text-align: left;
 }
 
+a .card{
+    top: 10px;
+}
+
 .card:hover{
     transform: translateY(-10px);
+}
+
+
+
+.col1:hover > .card{
+    opacity: 0.5;
+}
+
+.col1:hover > .card:hover{
+    transform: translateY(-10px);
+    opacity: 1;
 }
 
 .petit-filtre-sombre{
@@ -310,9 +331,9 @@
     }
 
     .col{
-        display: flex;
         justify-content: space-between;
         align-items: center;
+        height: 1000px;
         padding: 20px 20px;
     }
     .card{
@@ -332,4 +353,5 @@
     .body{
         width: 900px;
     }
+
 }

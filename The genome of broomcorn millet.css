@@ -10,7 +10,7 @@ body {
 }
 
 header{
-    height: 10dvh;
+    height: 100px;
     width: 100%;
     background-color: #006699;
 }
@@ -55,6 +55,7 @@ header{
 .background .background_image{
     position: relative;
     left: 55%;
+    height: 80dvh;
 }
 
 .background .background_text{
@@ -67,7 +68,8 @@ header{
 
 .bar_inferieur{
     position: relative;
-    height: 10dvh;
+    bottom: 60px;
+    height: 100px;
     width: 100dwh;
     background-color: #006699;
 }
@@ -119,35 +121,48 @@ header{
 .zone-script .zone_sommaire .sommaire{
     display: block;
     position: sticky;
-    height: 500px;
+    height: 450px;
     width: 300px;
     top: 100px;
     border: 3px solid;
-    border-color: black;
+    border-color: #006699;
     
 }
+
+.zone-script .zone_sommaire .sommaire a:hover{
+    font-size: larger;
+    color: #006699;
+}
+
 
 .zone-script .zone_sommaire .sommaire .plan-sommaire{
     position: relative;
     height: 100%;
     width: 100%;
+
 }
 
-.zone-script .zone_sommaire .sommaire .plan-sommaire .zone-h3{
+.zone-h3{
     position: relative;
     height: 40px;
-    text-align: center;
-    justify-content: center;
-    padding-top: 3px;
     font-size: 1.3em;
     margin: 3px;
-    background-color: #d5d5d5;
+    background-color: #70badf;
+}
+
+.zone-script .zone_sommaire .sommaire .plan-sommaire .zone-h3 h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
 
 .zone-script .zone_sommaire .sommaire .plan-sommaire .zone-texte{
     position: relative;
     text-align: left;
     left: 3px;
+    list-style: none;
 }
 
 .zone-script .zone_sommaire .sommaire a{
@@ -177,10 +192,70 @@ header{
 
 }
 
+.texte-script h1{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.texte-script h2{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.texte-script h3{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.texte-script li{
+    position: relative;
+    margin: 5px;
+    left: 5%;
+    list-style:circle;
+}
+
+.texte-script .script{
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(211, 211, 211, 0.4);
+}
+
 .img-script{
     position: relative;
     height: auto;
     width: 500px;
     left: 200px;
     margin: 15px
+}
+
+.petit-img-script{
+    position: relative;
+    height: auto;
+    margin-top: 20px;
+    width: 200px;
+    left: 300px;
+    margin: 15px 
+}
+
+@media screen and (max-width:1400px) {
+    .background{
+        position: relative;
+        height: 80dvh;
+        width: 100%;
+    }
+    
+    .background .background_image{
+        position: relative;
+        height: 600px;
+        left: 55%;
+        bottom: 50px;
+        z-index: -1;
+    }
+
+    .background .background_text{
+        display: block;
+        position: absolute;
+        font-size: 3em;
+        bottom: 50%;
+        left: 5%;
+    }
 }

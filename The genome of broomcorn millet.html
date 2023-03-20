@@ -51,27 +51,90 @@
     <div class="texte-script">
         <h1 id="1">Présentation Circos</h1>
         <img class="img-script" src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41467-019-08409-5/MediaObjects/41467_2019_8409_Fig1_HTML.png?as=webp" alt="">
+        <p>Il s'agit d'un circos constitué de 6 tracks, il présente la synténie et distribution des caractéristiques dans le génome du millet à balais. Le nombre et la longueur (Mb) des pseudochromosomes sont indiqués à l'extérieur de l'anneau.</p>
         <h2>Piste a</h2>
+        <p>Il s'agit d'une heatmap représentant le taux de couverture TE.</p>
+        <img class="petit-img-script"src="Visu Données Omics/Circos3/figA.png" alt="">
         <h2>Piste b</h2>
+        <p>Il s'agit également d'une heatmap, cette fois-ci de la densité de gène dans chaque région de chromosome.</p>
+        <img class="petit-img-script" src="Visu Données Omics/Circos3/figB.png" alt="">
         <h2>Piste c</h2>
+        <p>C'est une linetrack, c'est à dire d'une courbe dont la hauteur dépend du niveau moyen de gène transcrit.</p>
+        <img class="petit-img-script" src="Visu Données Omics/Circos3/FigC.png" alt="">
         <h2>Piste d</h2>
+        <p>La piste d est un histogramme, représentant la densité de marqueurs représentés par le nombre de SNP (<em>Single Nucleotide Polymorphism</em>).</p>
+        <img class="petit-img-script" src="Visu Données Omics/Circos3/FigD.png" alt="">
         <h2>Piste e</h2>
+        <p>Il s'agit d'une linetrack présentant la teneur en GC (guanine-cytosine) du génome dans des fenêtres non superposées de 1 Mb.</p>
+        <img class="petit-img-script" src="Visu Données Omics/Circos3/FigE.png" alt="">
         <h2>Piste f</h2>
+        <p>Enfin, la piste F est une linktrack, chaques liens représentent les blocs de synténie > 1 Mb de long parmi les chromosomes homologues du millet à balai sont indiqués.</p>
+        <img class="petit-img-script" src="Visu Données Omics/Circos3/FigF.png" alt="">
         <h1 id="2">Présentation des données</h1>
+        <p>Toutes les données nécessaires sont disponible sur le site de l'article, disponible en cliquant <a href="https://www.nature.com/articles/s41467-019-08409-5"><strong>ici</strong></a>.</p>
         <h2>Piste a,b,c,d,e</h2>
+        <!-- https://www.jqueryscript.net/table/advanced-interactive-data-table.html -->
+        <p>Les pistes a,b,c,d et e ont toutes la même structure, ce sont des tableaux constitué de 4 colonnes :
+            <ul>
+                <li>La colonne <strong>chromosome</strong> : le nom du chromosome dont se situe la région</li>
+                <li>La colonne <strong>Start</strong> : position du premier nucleotide de la région</li>
+                <li>La colonne <strong>End</strong> : position du dernier nucleotide de la région</li>
+                <li>Une quatrième et dernière colonne dont le nom varie entre les différents onglets <strong>(a)</strong> à <strong>(e)</strong>, elle présente la valeur des différentes caractéristiques de la région.</li>
+            </ul>
+            La structure des tableaux peut être parfaitement lu par les fonctions de <strong>'BioCircos'</strong>, ainsi aucun modification sera nécéssaire.
+        </p>
         <h2>Piste f</h2>
+        <p>La piste <strong>(f)</strong>, représentant les différents synténies sous forme de lien inter-chromosomique, provient de ce tableau:</p>
+        <p>Le tableau contient 4 colonnes :
+            <ul>
+                <li>La colonne <strong>Links</strong>: le nom du lien.</li>
+                <li>La colonne <strong>Chromosome</strong> : le nom du chromosome auquel appartient le lien.</li>
+                <li>La colonne <strong>Start</strong> : début de la région d'où commence le lien.</li>
+                <li>La colonne <strong>End</strong> : fin de position de la région d'où commence de lien.</li>
+            </ul>
+            Le tableau n'est pas adapté pour être lu par <strong>'BioCircos'</strong>, il sera nécessaire d'apporter des modification afin d'arranger le tableau.
+        </p>
         <h1 id="3">Présentation du script</h1>
         <h2 id="4">Les librairies</h2>
+        <p>En premier temps, nous allons charger tous les packages nécéssaires au bon fonctionnement du script.</p>
+        <code>
+            <div class="script">
+            #Installer le package une seule fois  <br>
+install.packages("BioCircos") <br>
+ <br>
+library(readxl) # Permet de lire les fichiers .xls <br>
+library(BioCircos) #Permet d'afficher des valeurs sous forme de circos <br>
+library(RColorBrewer) #Librairie les couleurs <br>
+</div>        
+</code>
+        
         <h2 id="5">Lecture des données</h2>
+        <p>Nous allons charger les différents tableau issue du fichier <strong>41467_2019_8409_MOESM5_ESM</strong> avec la fonction <strong><em>'read_excel'</em></strong>, chaque onglet correspondant à une piste, nous allons utiliser le paramètre <em><strong>'sheet'</strong></em> afin de sélectionner l'onget du fichier que nous allons associer à un objet :</p>
+
         <h3>Arrangement de la piste f</h3>
+        <p>Comme vu précédemment, le tableau <strong>(f)</strong> n'a pas une structure adapté à <strong>'BioCircos'</strong>, il faut donc s'arranger afin que ce tableau ait une structure de ce genre :
+        <ul>
+            <li>Une colonne <strong>Chromosome A</strong> :Le nom du chromosome de la région d'où part le lien.</li>
+        <li>Une colonne <strong>Start A</strong>: La position de départ de la région d'où part le lien.</li>
+        <li>Une colonne <strong>End A</strong> : La position de fin d'où part le lien.</li>
+        <li>Une colonne <strong>Chromosome B</strong> : Le nom du chromosome de la région d'où arrive le lien.</li>
+        <li>Une colonne <strong>Start B</strong> : La position de départ de la région d'où arrive.</li>
+        <li>Une colonne <strong>End B</strong> : La position de fin d'où arrive.</li></ul>
+    Pour cela, nous allons modifier le tableau étape par étape afin de l'adapter :</p>
+    <p>En premier temps, nous allons séparer les lignes de chaque même links, en effet chaque link apparait 2 fois, il s'agit en vérité du même lien, le lien impair représente les caractéristique de la région du chromosome A, tandis que la ligne pair représente les caractéristiques du chromosome B, nous allons donc séparer les lignes afin d'en faire des colonnes.</p>
+    <div class="code"><code>..</code></div> 
         <h2 id="6">Construction du circos</h2>
-        <h3>piste a</h3>
-        <h3>piste b</h3>
-        <h3>piste c</h3>
+        <h3>pistes a et b</h3>
+        <p>Les pistes <strong>(a)</strong> et <strong>(b)</strong> peuvent être réalisées à partir de la fonction <strong>'BioCircosHeatmapTrack'</strong>, en lui donnant le nom du chromosome de la région, le début de la région, la fin de la région, et la valeur de la région.</p>
+        <h3>piste c et e</h3>
+        <p>Les pistes <strong>(c)</strong> et <strong>(e)</strong> peuvent être réalisées à partir de la fonction <strong>'BioCircosLineTrack'</strong>, en lui donnant les mêmes instructions que pour la heatmap.</p>
         <h3>piste d</h3>
-        <h3>piste e</h3>
+        <p>La piste <strong>(d)</strong> peut être réalisé à partir de la fonction <strong>'BioCircosBarTrack'</strong>.</p>
         <h3>piste f</h3>
+        <p>Pour réaliser la piste <strong>(f)</strong>, on commence par définir un tableau représentant une palette de couleur précise, dont chaque couleur correspondent a un chromosome :</p>
+        <p>On peut ensuite créer une boucle afin d'afficher la couleur de chaque lien, avec la fonction <strong>'BioCircosLinkTrack'</strong>.</p>
         <h3>Ajout des annotations</h3>
+        <p>Il est possible enfin d'ajouter des annotations correspondant à chaque piste.</p>
         <h1 id="7">Résultat</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit fugiat iste doloribus unde delectus officiis ab, natus magnam voluptatum aut illo alias ea, deserunt suscipit? Expedita ratione adipisci corporis quod.</p>
     </div>
