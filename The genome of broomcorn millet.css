@@ -5,6 +5,10 @@
     list-style: none;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -234,6 +238,10 @@ header{
     width: 200px;
     left: 300px;
     margin: 15px 
+}
+
+td{
+   border-color: black ;
 }
 
 @media screen and (max-width:1400px) {
