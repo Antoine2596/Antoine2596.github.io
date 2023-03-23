@@ -118,16 +118,27 @@
 }
 
 @media screen and (max-width : 950px) {
+
+    .bar-superieur .logo{
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        font-size: 1.5em;
+        transform: translate(-50%,0);
+    }
+    .bar-superieur-contenu{
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
     .nav-bar{
         position: absolute;
-        right: 10px;
-        width: 40%;      
         display: flex;
-
-        top: 50%;
-        transform: translate(0,-50%);
+        left: 0;
+        width: 100%;     
+        top: 70%;
+        padding: 10px;
         font-size: 1em;
-
         justify-content: space-between;    
     }
     
@@ -143,12 +154,54 @@
         font-weight: bold;
         border: 2px solid white;
         border-radius: 100px;
-        padding: 50px 10px;
+        padding: 5px 5px;
         background-color: white;
         transition: all 0.3s ease;
     }
 
     .background-image h1{
-        font-size: 2em;
+        font-size: 1.5em;
+    }
+
+
+    .background-texte p{
+        font-size: 0.6em;
+        text-decoration: underline;
+    }
+    
+    .SectionB{
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    .zone-texte{
+        position: absolute;
+        left: 5%;
+        right: 5%;
+        font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: justify;
+        top: 20px;
+    }
+    
+    .zone-texte h2{
+        text-align: center;
+        color: orange;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+    
+    .zone-texte h3{
+        color: #006699;
+        text-decoration: underline;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 1em;
+    }
+    
+    .zone-texte h4{
+        color: #006699;
+        margin-bottom: 10px;
+        font-size: 0.9em;
     }
 }
