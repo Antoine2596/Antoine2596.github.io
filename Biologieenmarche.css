@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+header, body, html{
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    height: 60%;
+}
+
+.fond{
+    position: relative;
+    background-image: url(https://alaingrandjean.fr/wp-content/uploads/2016/03/phages-phagotherapie-bacterie.jpg);
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    transition: all 0.75s ease;
+}
+
+
+
+.filtre-fond{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(3px);
+}
+
+.universite {
+    position: relative;
+    color: white;
+    font-family: 'poppins';
+    padding: 10px 10px;
+}
+
+.universite a{
+    color: white;
+    transition: all 0.75s ease;
+}
+
+a:hover{
+    font-size: 1.1em;
+}
+.zone-texte-centre{
+    position: absolute;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.texte-centre{
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.titre-centre{
+    position: relative;
+    margin-bottom: 25px;
+    font-size: 4em;
+    color: white;
+    font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: 1px 0px 3px black;
+}
+
+.sous-titre-centre{
+    color: white;
+    font-size: 2em;
+    text-shadow: 1px 0px 2px black;
+    
+}
+
+.zone-texte{
+    position: absolute;
+    height: 5000px;
+    left: 200px;
+    right: 200px;
+    margin-top: 10px;
+    background-color: white ;
+}
+
+.texte{
+    padding: 20px 30px;
+    text-align: justify;
+    font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.texte h1{
+    margin-bottom: 10px;
+}
