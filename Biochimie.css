@@ -4,7 +4,7 @@
     text-decoration: none;
     box-sizing: border-box;
 }
-
+/* header */
 .bar-superieur{
     position: relative;
     width: 100dvw;
@@ -93,6 +93,7 @@
     font-size: 2em;
 }
 
+/* fin header */
 
 .SectionB{
     width: 100%;

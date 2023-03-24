@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- Charger les fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preload" href="/static/fonts/HardingText-Regular-Web-cecd90984f.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preconnect" href="https://push-content.springernature.io" crossorigin="">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
     <!-- Charger les fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,63 +32,87 @@
     <link rel="shortcut icon" href="Visu Données Omics/Visual_omic_logo.png">
 </head>
 <body>
-    <!-- Mettre une video en fond -->
-    <div class="video">
-        <video autoplay loop muted plays-inline class="backvideo">
-            <source src="dna-6973.webm" type="video/mp4">
-        </video>
-    </div>
-    <header class="header">
-        <!-- Ajout d'un lien avec la tababulation div -->
-        <div>
-            <div class="lien_menu">
-                <a href="Université.html">Université</a> <br>
-                <p>Version : 0.52</p>
+    <!-- header -->
+    <header>
+        <div class="bar-superieur">
+            <div class="bar-superieur-contenu">
+                <div class="logo">
+                    <img class="logo-fac" src="https://www.univ-amu.fr/system/files/2021-01/DIRCOM-Logo_AMU_Blanc.png" alt="">
+                </div>
+                <div class="nav-bar">
+                    <a href="Université.html">Université</a>
+                    <a href="CV.html">A propos</a>
+                    <a href="https://github.com/Antoine2596/Antoine2596.github.io">Version</a>
+                </div>
             </div>
-            <!-- Ajout de texte au centre -->
-        </div>
-        <div class="header_menu_h1">
-            <h1>Visualisation Données Omics</h1>
-        <div class="header_menu_sous-titre">
+            </div>
+            
+                <div class="background-image">
+                    <div class="filtre">
+                <div class="background-texte">
+                    <h1>Visualisation Données Omics</h1>
+                    <p></p>
+                </div>
+                </div>
+            </div>
     </header>
-    <div class="Sommaire_Circos">
-        <div class="filtre">
-            <!-- Mettre un titre -->
-        <div id="sommaire" class="titre_sommaire">
-            <h2 id="Sommaire">Sommaire des circos</h2>
+    <div class="zone-card">
+        <div class="card card1">
+            <div class="titre-article">
+            <h3>Reference genome assemblies reveal the origin and evolution of allohexaploid oat</h3>
         </div>
-    <div class="Art0">
-            <div class="Art1"> 
-                <div class="contenu_Art">
-                   <h3> Article 1</h3> 
-                   <a href="https://www.nature.com/articles/s41588-022-01127-7" target="_blank">Reference genome assemblies reveal the origin and evolution of allohexaploid oat</a> <p></p>
-                   <img class="imgart" src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41588-022-01127-7/MediaObjects/41588_2022_1127_Fig1_HTML.png?as=webp" alt="Circos1" height=auto>
-                </div>
-                <div class="lien_circos">
-                    <a class="lien_circos1" href="Reference genome assemblies reveal the origin and evolution of allohexaploid oat.html">Circos</a></div>
-            </div>
-            <div class="Art2"> 
-                <div class="contenu_Art">
-                    <h3>Article 2</h3>
-                    <a href="https://www.nature.com/articles/s41467-019-12607-6#" target="_blank">The chromosome-scale reference genome of black pepper provides insight into piperine biosynthesis
-                    </a><p></p>
-                    <img class="imgart" src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41467-019-12607-6/MediaObjects/41467_2019_12607_Fig1_HTML.png?as=webp" alt="Circos2" height=auto>
-                </div>
-                <div class="lien_circos">
-                <a class="lien_circos2" href="The chromosome-scale reference genome of black pepper provides insight into piperine biosynthesis.html">Circos</a></div>
-            </div>
-            <div class="Art3">
-                <div class="contenu_Art">
-                    <h3>Article 3</h3>
-                    <a href="https://www.nature.com/articles/s41467-019-08409-5" target="_blank">The genome of broomcorn millet   </a><p></p>
-                    <img class="imgart" src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-019-08409-5/MediaObjects/41467_2019_8409_Fig1_HTML.png?as=webp" alt="Circos3" height=auto>
-                </div>
-                <div class="lien_circos">
-                    <a class="lien_circos3" href="The genome of broomcorn millet.html">Circos</a></div>
-            </div>
+            <img class="image" src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41588-022-01127-7/MediaObjects/41588_2022_1127_Fig1_HTML.png?as=webp" alt=""> <br>
+            <a class="lien-site" href="Reference genome assemblies reveal the origin and evolution of allohexaploid oat.html">Accès au script</a>
+        </div>
+        <div class="card card2">
+            <div class="titre-article">
+            <h3>Reference genome assemblies reveal the origin and evolution of allohexaploid oat</h3>
+        </div>
+            <img class="image" src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-019-12607-6/MediaObjects/41467_2019_12607_Fig1_HTML.png?as=webp" alt=""> <br>
+        <a class="lien-site" href="The chromosome-scale reference genome of black pepper provides insight into piperine biosynthesis.html">Accès au script</a>
+        </div>
+
+        <div class="card card3">
+            <div class="titre-article">
+            <h3>Reference genome assemblies reveal the origin and evolution of allohexaploid oat</h3>
+        </div>
+            <img class="image" src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-019-08409-5/MediaObjects/41467_2019_8409_Fig1_HTML.png?as=webp" alt=""> <br>
+        <a class="lien-site" href="The genome of broomcorn millet.html">Accès au script</a>
+        </div>
+        
     </div>
-</div>
-</div>  
+
+    <!-- fin header -->
+    <!-- Lorsque je survole un lien de class "lien-site" d'une card, les autres cards sont transparents -->
+    <!-- "mouseenter" pour rendre les autres cartes transparentes -->
+    <!-- `closest('.card')` permet de sélectionner la carte parente de l'élément survolé -->
+    <!-- `siblings()` sélectionne les autres cartes -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.lien-site').on('mouseenter', function() {
+          $(this).closest('.card').siblings().css('opacity', '0.4');
+        });
+    
+        $('.lien-site').on('mouseleave', function() {
+          $(this).closest('.card').siblings().css('opacity', '1');
+        });
+      });
+    </script>
+
+    <!-- Ajouter une classe "fond" après la classe .navbar, afin de mettre de fond de la navbar en bleu -->
+    <script>
+        window.addEventListener("scroll", function() {
+       var navbar = document.querySelector(".bar-superieur");
+       
+       // Ajoute la classe "fond" lorsque la position de défilement est supérieure à 0
+       if(window.scrollY > 0) {
+          navbar.classList.add("fondb");
+       } else {
+          navbar.classList.remove("fondb");
+       }
+    });
+        </script>
 
 
 

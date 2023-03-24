@@ -1,3 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
 body, html, header, h1{
     margin: 0px;
     padding: 0px;
@@ -7,522 +14,388 @@ html{
   scroll-behavior: smooth;
 }
 
-header, body, html{
-    width: 100%;
-    height: 100%;
-}
-@media screen and (max-width: 8000px) {
-  .backvideo{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+body{
+  background-color: #00669915;
 }
 
 
-
-/* Faut mettre position: absolute pour modifier la position du texte */
-.lien_menu{
-    position: absolute; 
-    color: white;
-    text-decoration: none;
-    font-family: Cantarell;
-    top: 3%;
-    left: 3%;
-    font-size: 20px;
+/* header */
+.bar-superieur{
+  position: fixed;
+  width: 100dvw;
+  height: 100px;
+  background-color: #00669900;
+  color: white;
+  font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+  z-index: 1;
 }
 
-.header_menu_h1{
-    position:relative;
-    text-align: center;
-    top: 30%;
-    color: white;
-    text-decoration: none;
-    font-family: Cantarell;
-    font-size: 30px;
+.fondb{
+  background-color: #00558b;
+  transition: background-color 0.4s ease;
+}
+
+.bar-superieur .logo{
+  position: absolute;
+  width: auto;
+  top: 50%;
+  left: 35px;
+  transform: translate(0,-50%);
+}
+
+.logo-fac{
+  height: 75px;
+}
+
+.nav-bar{
+  position: absolute;
+  display: flex;
+  right: 100px;
+  top: 50%;
+  transform: translate(0,-50%);
+  font-size: 1.3em;
+  width: 40%;
+  justify-content: space-between;
 
 }
 
-.header_menu_sous-titre{
-    position:relative;
-    text-align: center;
-    top: 80%;
-    color: white;
-    text-decoration: none;
-    font-family:sans-serif;
-    font-size: 15px;
+.bar-superieur a{
+  color: white;
+  border: 2px solid white;
+  border-radius: 100px;
+  padding: 10px 20px;
 }
 
+.bar-superieur a:hover{
+  color: #006699;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 100px;
+  padding: 10px 20px;
+  background-color: white;
+  transition: all 0.4s ease;
+}
 
-.Sommaire_Circos{
+.background-image{
   position: relative;
-  background: url(https://www.biomerieux-industry.com/sites/default/files/2021-03/Whole%20Genome%20Sequencing%20WGS.jpg) no-repeat center center;
+  height: 60dvh;
+  background-color: #1f20206b;
+  background-image: url(https://www.biomerieux-industry.com/sites/default/files/2021-03/Whole%20Genome%20Sequencing%20WGS.jpg);
   background-size: cover;
-  top: -44px;
-  height: 100%;
-  width: 100%;
+  background-repeat: no-repeat;
 }
 
 .filtre{
-  width: 100%;
   height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(3px);
 }
 
-.titre_sommaire{
-
-  position:relative;
-  text-align: center;
-  color: white;
-  font-family:Cantarell;
-  font-size: 35px;
-}
-
-.Art0{
-  font-size:25px;
-  font-family: Cantarell;
-}
-
-.Art1{
-  position: absolute;
-  left: 5%;
-  top: 20%;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-color: black;
-  height: 600px;
-  width: 25%;
-  text-align: center;
-  box-shadow: 0 0px 0px white;
-  color: black;
-}
-
-.Art2{
-  position: absolute;
-  left: 37.5%;
-  top: 20%;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-color: black;
-  height: 600px;
-  width: 25%;
-  text-align: center;
-  box-shadow: 0 0px 0px white;
-  color: black;
-}
-
-.Art3{
-  position: absolute;
-  right: 5%;
-  top: 20%;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-color: black;
-  height: 600px;
-  width: 25%;
-  text-align: center;
-  box-shadow: 0 0px 0px white;
-  color: black;
-}
-
-.contenu_Art{
-  color: black;
-}
-
-
-.lien_circos1{
-  color: white;
-  text-decoration: none;
-  display: inline-block;
-  color: #fff;
-  font-size: 20px;
-  border: 2px solid #fff;
-
-  padding: 14px 70px;
-  border-radius: 50px;
-
-  font-family: 'Poppins', sans-serif;
+.background-texte{
   position: relative;
-  top: 40px;
-
-  
-}
-
-.lien_circos2{
-
-  text-decoration: none;
-  display: inline-block;
-
-  font-size: 20px;
-  border: 2px solid #fff;
-
-  padding: 14px 70px;
-  border-radius: 50px;
-
-  font-family: 'Poppins', sans-serif;
-  position: relative;
-  top: 40px;
-}
-
-
-.lien_circos3{
+  text-align: center;
+  top: 50%;
+  transform: translate(0,-50%);
   color: white;
-  text-decoration: none;
-  display: inline-block;
-  color: #fff;
-  font-size: 20px;
-  border: 2px solid #fff;
+  text-shadow: 0px 0px 10px black;
+}
 
-  padding: 14px 70px;
-  border-radius: 50px;
-
-  font-family: 'Poppins', sans-serif;
+.background-texte h1{
   position: relative;
-  top: 80px;
+  font-size: 3em;
+  margin-bottom: 50px;
 }
 
-
-  /* Gérer les liens */
-  header a:link {
-    color: white;
-    text-decoration: none;
-  }
-  
-  header a:visited {
-    color: white;
-    text-decoration: none;
-  }
-  
-  header a:hover {
-    color: white;
-    text-decoration: none;
-  }
-  
-header a:active {
-    color: white;
-    text-decoration: none;
-  }
-  
-.imgart{
-  max-width: 75%;
-  max-height: 75%;
-}
-  /* Liens des articles du sommaire */
-.Art0 a:link {
-    color: black;
-    text-decoration: none;
-  }
-  
-.Art0 a:visited {
-    color: black;
-    text-decoration: none;
-  }
-  
-.Art0 a:hover {
-    color: black;
-    text-decoration:underline;
-  }
-  
-.Art0 a:active {
-    color: black;
-    text-decoration: none;
-  }
- 
-  /* autres liens */
-
-.lien_circos a:link {
-    color: white;
-    text-decoration: none;
-  }
-  
-.lien_circos a:visited {
-    color: white;
-    text-decoration: none;
-  }
-.lien_circos a:hover {
-    color: white;
-    text-decoration:underline;
-  }
-  
-.lien_circos a:active {
-    color: white;
-    text-decoration: none;
-  }
-  
-
+.background-texte{
+  font-size: 2em;
 }
 
+/* fin header */
 
-  /* 1366px x 663px */
-/* -----------------------------------RESPONSE XIAOMI REDMI NOTE 5 / PIXEL 5---------------------------------------------------------------------------------------- */
-/* N'oublie pas de mettre l'unité (les px) avec la valeur !!! */
-
-@media screen and (max-width: 1400px) {
-
-  
-  .titre_sommaire{
-    position:relative;
-    text-align: center;
-    color: white;
-    font-family:Cantarell;
-    font-size: 35px;
-    top: 0px;
-  }
-  
-  .Art0{
-    font-size:20px;
-    font-family: Cantarell;
-  }
-  
-  .Art1{
-    position: absolute;
-    left: 5%;
-    top: 15%;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-color: black;
-    height: 450px;
-    width: 25%;
-    text-align: center;
-    box-shadow: 0 0px 0px white;
-    color: black;
-  }
-  
-  .Art2{
-    position: absolute;
-    left: 37.5%;
-    top: 15%;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-color: black;
-    height: 450px;
-    width: 25%;
-    text-align: center;
-    box-shadow: 0 0px 0px white;
-    color: black;
-  }
-  
-  .Art3{
-    position: absolute;
-    right: 5%;
-    top: 15%;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-color: black;
-    height: 450px;
-    width: 25%;
-    text-align: center;
-    box-shadow: 0 0px 0px white;
-    color: black;
-  }
-  
-  .contenu_Art{
-    color: black;
-  }
-  
-  
-  .lien_circos1{
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    border: 2px solid #fff;
-  
-    padding: 10px 35px;
-    border-radius: 50px;
-  
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    top: 65px;
-  
-    
-  }
-  
-  .lien_circos2{
-  
-    text-decoration: none;
-    display: inline-block;
-  
-    font-size: 20px;
-    border: 2px solid #fff;
-  
-    padding: 10px 35px;
-    border-radius: 50px;
-  
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    top: 40px;
-  }
-  
-  
-  .lien_circos3{
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    color: #fff;
-    font-size: 20px;
-    border: 2px solid #fff;
-  
-    padding: 10px 35px;
-    border-radius: 50px;
-  
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-    top: 110px;
-  }
+.zone-card{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%,0);
+  width: 80vw;
+  height: auto;
 }
 
-@media screen and (max-width: 398px) {
-  .backvideo{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}
-/* Faut mettre position: absolute pour modifier la position du texte */
-.lien_menu{
-    position: absolute; 
-    color: white;
-    text-decoration: none;
-    font-family: Cantarell;
-    top: 3%;
-    left: 3%;
-    font-size: 20px;
+.zone-card .card{
+  position: relative;
+  margin-top: 30px;
+  margin: 20px;
+  width: 500px;
+  height: 600px;
+  border: 2px solid #006699;
+  border-radius: 0px;
+  transition:all 0.5s ease;
+  background-color: white;
 }
 
-.header_menu_h1{
-    position:relative;
-    text-align: center;
-    top: 30%;
-    color: white;
-    text-decoration: none;
-    font-family: Cantarell;
-    font-size: 20px;
-
-}
-
-.header_menu_sous-titre{
-    position:relative;
-    text-align: center;
-    top: 100px;
-    color: white;
-    text-decoration: none;
-    font-family:sans-serif;
-    font-size: 10px;
-}
-
-
-.Sommaire_Circos{
-  position: absolute;
-  background: url(Whole-Genome-Sequencing-WGS_2000x1126\ \(1\).jpg) no-repeat center center;
-  background-size: cover;
-
-  height: 100%;
+.zone-card .card .titre-article{
+  height: 150px;
   width: 100%;
+  background-color: #006699;
+  top: 50%;
+
 }
 
-.titre_sommaire{
-  position:relative;
-  text-align: center;
-  top: 0%;
+.zone-card .card .titre-article h3{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
   color: white;
-  text-decoration: none;
-  font-family:Cantarell;
-  font-size: 15px;
+  font-size: 1.5em;
 }
 
-.Art0{
-  font-size:10px;
-  font-family: Cantarell;
+.zone-card .card .image{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  height: 300px;
+  width: auto;
 }
 
-.Art1{
-  position: absolute;
-  left: 5%;
-  top: 20%;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-color: black;
-  height: 200px;
-  width: 25%;
-  text-align: center;
-  box-shadow: 0 0px 0px white;
-  color: black;
-}
-
-.Art2{
-  position: absolute;
-  left: 37.5%;
-  top: 20%;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-color: black;
-  height: 220px;
-  width: 25%;
-  text-align: center;
-  box-shadow: 0 0px 0px white;
-  color: black;
-}
-
-.Art3{
-  position: absolute;
-  right: 5%;
-  top: 20%;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-color: black;
-  height: 200px;
-  width: 25%;
-  text-align: center;
-  box-shadow: 0 0px 0px white;
-  color: black;
-}
-
-.lien_circos1{
-  color: white;
-  text-decoration: none;
-  display: inline-block;
-  color: #fff;
-  font-size: 10px;
-  border: 2px solid #fff;
-
-  padding: 7px 35px;
-  border-radius: 50px;
-
-  font-family: 'Poppins', sans-serif;
+.zone-card .card a{
   position: relative;
   top: 40px;
-
-  
+  color: #006699;
+  font-size: 1.2em;
+  border: 2px solid #006699;
+  font-weight: bold;
+  font-family: 'Poppins';
+  border-radius: 100px;
+  padding: 5px;
+  transition: all 0.8s ease;
 }
 
-.lien_circos2{
-
-  text-decoration: none;
-  display: inline-block;
-
-  font-size: 10px;
-  border: 2px solid #fff;
-
-  padding: 7px 35px;
-  border-radius: 50px;
-
-  font-family: 'Poppins', sans-serif;
+.zone-card .card a:hover{
   position: relative;
   top: 40px;
-}
-
-
-.lien_circos3{
   color: white;
-  text-decoration: none;
-  display: inline-block;
-  color: #fff;
-  font-size: 10px;
-  border: 2px solid #fff;
+  font-size: 1.2em;
+  border: 2px solid #006699;
+  background-color: #006699;
+  font-weight: bold;
+  font-family: 'Poppins';
+  border-radius: 100px;
+  padding: 5px;
+}
 
-  padding: 7px 35px;
-  border-radius: 50px;
+@media screen and (max-width:1100px) {
 
-  font-family: 'Poppins', sans-serif;
+ 
+.zone-card{
+  display: flex;
   position: relative;
-  top: 75px;
+  justify-content: space-between;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%,0);
+  width: 95vw;
+  height: auto;
 }
 
+.zone-card .card{
+  position: relative;
+  margin-top: 30px;
+  margin: 20px;
+  width: 250px;
+  height: 600px;
+  border: 2px solid #006699;
+  border-radius: 0px;
+  transition:all 0.5s ease;
+  background-color: white;
 }
-  
+
+.zone-card .card .titre-article{
+  height: 150px;
+  width: 100%;
+  background-color: #006699;
+  top: 50%;
+
+}
+
+.zone-card .card .titre-article h3{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  font-size: 1.5em;
+}
+
+.zone-card .card .image{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  height: 200px;
+  width: auto;
+}
+
+.zone-card .card a{
+  position: relative;
+  top: 40px;
+  color: #006699;
+  font-size: 1.2em;
+  border: 2px solid #006699;
+  font-weight: bold;
+  font-family: 'Poppins';
+  border-radius: 100px;
+  padding: 5px;
+  transition: all 0.8s ease;
+}
+
+.zone-card .card a:hover{
+  position: relative;
+  top: 40px;
+  color: white;
+  font-size: 1.2em;
+  border: 2px solid #006699;
+  background-color: #006699;
+  font-weight: bold;
+  font-family: 'Poppins';
+  border-radius: 100px;
+  padding: 5px;
+}
 
 
+}
+
+@media screen and (max-width:900px) {
+
+  .bar-superieur .logo{
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    font-size: 1.5em;
+    transform: translate(-50%,0);
+    height: 100px;
+}
+
+.logo-fac{
+    height: 42px;
+}
+.bar-superieur-contenu{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.nav-bar{
+    position: absolute;
+    display: flex;
+    left: 0;
+    width: 100%;     
+    top: 70%;
+    padding: 10px;
+    font-size: 1em;
+    justify-content: space-between;    
+}
+
+.bar-superieur a{
+    color: white;
+    border: 2px solid white;
+    border-radius: 100px;
+    padding: 5px 10px;
+}
+
+.bar-superieur a:hover{
+    color: #006699;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 100px;
+    padding: 5px 5px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.background-image h1{
+    font-size: 1.5em;
+}
 
 
+.background-texte p{
+    font-size: 0.6em;
+    text-decoration: underline;
+}
+
+/* zone card */
+.zone-card{
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%,0);
+  width: 100vw;
+  height: auto;
+}
+
+.zone-card .card{
+  position: relative;
+  margin-top: 10px;
+  width: 200px;
+  height: 270px;
+  border: 2px solid #006699;
+  border-radius: 0px;
+  transition:all 0.5s ease;
+  background-color: white;
+}
+
+.zone-card .card .titre-article{
+  height: 150px;
+  width: 100%;
+  background-color: #006699;
+  top: 50%;
+
+}
+
+.zone-card .card .titre-article h3{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  font-size: 0.8em;
+}
+
+.zone-card .card .image{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  height: 80px;
+  width: auto;
+}
+
+.zone-card .card a{
+  position: relative;
+  top: 40px;
+  color: #006699;
+  font-size: 0.6em;
+  border: 2px solid #006699;
+  font-weight: bold;
+  font-family: 'Poppins';
+  border-radius: 100px;
+  padding: 0px;
+  transition: all 0.8s ease;
+}
+
+.zone-card .card a:hover{
+  position: relative;
+  top: 40px;
+  color: white;
+  font-size: 0.6em;
+  border: 2px solid #006699;
+  background-color: #006699;
+  font-weight: bold;
+  font-family: 'Poppins';
+  border-radius: 100px;
+  padding: 5px;
+}
+}
