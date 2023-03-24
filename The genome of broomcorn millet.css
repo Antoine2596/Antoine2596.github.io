@@ -7,6 +7,7 @@
 
 html{
     scroll-behavior: smooth;
+    width: auto;
 }
 
 body {
@@ -103,23 +104,21 @@ header{
     
 }
 
-.zone-script .texte_script {
-    display: flex;
-    position: absolute;
-    border: 1px;
-    border-color: black;
-    text-align: justify;
-    width: 60%;
-    left: 100px;
-}
 
+
+.zone-script .texte-script{
+    position: absolute;
+    width: 60%;
+    height: auto;
+
+}
 
 .zone-script .zone_sommaire{
     display: block;
     position: absolute;
     right: 100px;
     width: 20%;
-    height: 2864px;
+    height: 7803px;
 }
 
 .zone-script .zone_sommaire .sommaire{
@@ -189,12 +188,7 @@ header{
 }
 
 
-.zone-script .texte-script{
-    position: absolute;
-    width: 60%;
-    height: auto;
 
-}
 
 .texte-script h1{
     margin-bottom: 5px;
@@ -240,8 +234,23 @@ header{
     margin: 15px 
 }
 
-td{
-   border-color: black ;
+select{
+    position: relative;
+    left: 50%;
+    margin-top: 30px;
+    width: 100px;
+    height: 25px;
+    font-weight: bold;
+    transform: translate(-50%,0);
+    font-size: 1em;
+}
+
+.iframe{
+    position: relative;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-top: 15px;
 }
 
 @media screen and (max-width:1400px) {
@@ -265,5 +274,257 @@ td{
         font-size: 3em;
         bottom: 50%;
         left: 5%;
+    }
+}
+
+@media screen and (max-width:900px) {
+    header{
+        height: 150px;
+        width: 100%;
+        background-color: #006699;
+    }
+    
+    .navbar{
+        position: absolute;
+        padding : 20px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+        align-items: center;
+    }
+    
+    .navbar a{
+        color: white;
+    }
+    
+    .navbar .logo{
+        position: absolute;
+        top: 10px;
+        width: 270px;
+        left: 50%;
+        transform: translate(-50%,0);
+        font-size: 2em;
+        font-weight: 500;
+  
+    }
+    
+    
+    
+    .navbar .nav-links ul{
+        display: flex;
+        position: absolute;
+        width: 300px;
+    }
+    
+    .navbar .nav-links ul li{
+        position: relative;
+        top: 50px;
+        width: 100px;
+        margin: 0 0px ;
+        font-size: 1em;
+        font-weight: 500;
+    }
+    
+    .background{
+        position: relative;
+        height: 80dvh;
+        width: 100%;
+    }
+    
+    .background .background_image{
+        position: relative;
+        left: 0;
+        height: 50dvh;
+    }
+    
+    .background .background_text{
+        display: block;
+        position: absolute;
+        font-size: 3em;
+        bottom: 25%;
+        left: 10%;
+    }
+    
+    .bar_inferieur{
+        position: relative;
+        bottom: 60px;
+        height: 100px;
+        width: 100dwh;
+        background-color: #006699;
+    }
+    
+    .contenu-bar_inferieur{
+        position: absolute;
+        left: 15px;
+        top: 20px;
+        height: 100%;
+        justify-content: space-between; 
+        display: flex;
+    }
+    
+    .bar_inferieur a{
+        position: relative;
+        color: white;
+        font-size: 2em;   
+    
+    }
+    
+    .zone-script{
+        position: relative;
+        height: auto;
+        width: auto;
+        padding: 15px;
+        
+    }
+    
+    .zone-script .texte-script{
+        position: absolute;
+        width: 80%;
+        height: auto;
+    
+    }
+    
+ 
+    
+
+    .zone-script .zone_sommaire{
+        display: none;
+        position: absolute;
+        right: 100px;
+        width: 20%;
+        height: 7803px;
+    }
+    
+    .zone-script .zone_sommaire .sommaire{
+        display: none;
+        position: sticky;
+        height: 450px;
+        width: 300px;
+        top: 100px;
+        border: 3px solid;
+        border-color: #006699;
+        
+    }
+    
+    .zone-script .zone_sommaire .sommaire a:hover{
+        font-size: larger;
+        color: #006699;
+    }
+    
+    
+    .zone-script .zone_sommaire .sommaire .plan-sommaire{
+        position: relative;
+        height: 100%;
+        width: 100%;
+    
+    }
+    
+    .zone-h3{
+        position: relative;
+        height: 40px;
+        font-size: 1.3em;
+        margin: 3px;
+        background-color: #70badf;
+    }
+    
+    .zone-script .zone_sommaire .sommaire .plan-sommaire .zone-h3 h3{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+    }
+    
+    .zone-script .zone_sommaire .sommaire .plan-sommaire .zone-texte{
+        position: relative;
+        text-align: left;
+        left: 3px;
+        list-style: none;
+    }
+    
+    .zone-script .zone_sommaire .sommaire a{
+        display: block;
+        color: black;
+    
+    }
+    
+    .zone-script .zone_sommaire .sommaire li{
+        margin: 15px 0;
+    }
+    
+    .zone-script .zone_sommaire .sommaire ul{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 20px;
+        left: 50px;
+        justify-content: center;
+    }
+    
+    
+    
+    .texte-script h1{
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+    
+    .texte-script h2{
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+    
+    .texte-script h3{
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+    .texte-script li{
+        position: relative;
+        margin: 5px;
+        left: 5%;
+        list-style:circle;
+    }
+    
+    .texte-script .script{
+        width: 100%;
+        padding: 10px;
+        background-color: rgba(211, 211, 211, 0.4);
+    }
+    
+    .img-script{
+        position: relative;
+        height: auto;
+        width: 300px;
+        left: 0px;
+        margin: 15px
+    }
+    
+    .petit-img-script{
+        position: relative;
+        height: auto;
+        margin-top: 20px;
+        width: 200px;
+        left: 50%;
+        transform: translate(-50%,0);
+        margin: 15px 
+    }
+    
+    select{
+        position: relative;
+        left: 50%;
+        margin-top: 30px;
+        width: 100px;
+        height: 25px;
+        font-weight: bold;
+        transform: translate(-50%,0);
+        font-size: 1em;
+    }
+    
+    .iframe{
+        position: relative;
+        width: 115%;
+        left: 50%;
+        transform: translate(-50%,0);
+        margin-top: 15px;
     }
 }

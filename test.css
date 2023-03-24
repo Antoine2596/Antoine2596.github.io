@@ -4,38 +4,33 @@
 }
 
 body{
-    height: 100vh;
+    height: auto;
     background-image: linear-gradient(90deg, rgb(255, 85, 85), blue);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.menu {
-    /* remplir l'espace */
-    display: flex;
-    /* mettre en colonne */
-    flex-direction: column;
-    /* séparer de 8px */
-    gap: 8px;
-    cursor: pointer;
+table {
+  border-collapse: collapse;
+  width: 20%;
 }
 
-.menu .line {
-    width: 28px;
-    height: 2px;
-    background-color: white;
-    transform-origin: left;
-    transition:transform 0.5s ease, opacity 0.2s ease;
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  border: 1px solid black;
 }
 
-.menu.open .middle_line{
-    opacity: 0;
-}
-.menu.open .top_line{
-    transform: rotate(45deg);
+tr {
+  background-color: #f2f2f2;
+  color: #000;
+ 
 }
 
-.menu.open .bottom_line{
-    transform: rotate(-45deg);
+.header-tableau{
+    background-color: orange;
+    color: white;
+    font-family: 'Abhaya';
 }
