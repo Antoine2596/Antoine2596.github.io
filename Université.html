@@ -29,7 +29,11 @@
                 </ul>
             </div>
 
-            <img class="menu-bouton" src="image/menu-btn.png" alt="">
+            <div class="menu">
+                <span class="line top_line"></span>
+                <span class="line middle_line"></span>
+                <span class="line bottom_line"></span>
+            </div>
 
         <nav class="navlist">
             <div class="navlistlink">
@@ -230,12 +234,19 @@
 
 <!-- Afficher le menu sur tel -->
 <script>
-    const menuHamburger = document.querySelector(".menu-bouton")
+    const menuHamburger = document.querySelector(".menu")
     const navLinks = document.querySelector(".navlist")
 
     menuHamburger.addEventListener('click',()=>{
     navLinks.classList.toggle('mobile-menu')
     })
+</script>
+<script>
+          const menuBtn = document.querySelector('.menu')
+
+menuBtn.addEventListener('click', () => {
+  menuBtn.classList.toggle('open')
+})
 </script>
 
 </div>
