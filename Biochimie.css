@@ -23,6 +23,10 @@
     transform: translate(0,-50%);
 }
 
+.logo-fac{
+    height: 75px;
+}
+
 .nav-bar{
     position: absolute;
     display: flex;
@@ -49,7 +53,7 @@
     border-radius: 100px;
     padding: 10px 20px;
     background-color: white;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 
@@ -106,29 +110,32 @@
 }
 
 .zone-texte h2{
-    text-align: center;
+    text-align: left;
     color: orange;
     margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 1.7em;
 }
 
 .zone-texte h3{
     color: #006699;
     text-decoration: underline;
     margin-bottom: 10px;
-    text-align: center;
+    text-align: left;
 }
 
 .zone-texte h4{
     color: #006699;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 
 .zone-texte p{
     position: relative;
-    padding-top: 10px;
+    padding-top: 0px;
     padding-bottom: 10px;
 }
+
 .zone-texte ol li{
 margin-bottom: 2px;
 position: relative;
@@ -146,10 +153,15 @@ left: 30px;
 
     .bar-superieur .logo{
         position: absolute;
-        top: 10%;
+        top: 5px;
         left: 50%;
         font-size: 1.5em;
         transform: translate(-50%,0);
+        height: 100px;
+    }
+
+    .logo-fac{
+        height: 42px;
     }
     .bar-superieur-contenu{
         position: relative;

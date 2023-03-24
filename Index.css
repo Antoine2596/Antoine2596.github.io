@@ -32,6 +32,10 @@ header{
     color: white;
 }
 
+.navbar a:hover{
+    text-shadow: 0 0 5px white;
+}
+
 .navbar .logo{
     font-size: 2em;
     font-weight: bold;

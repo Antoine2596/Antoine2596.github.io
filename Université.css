@@ -54,6 +54,10 @@ html{
     font-family: 'Poppins';
 }
 
+.navbar a:hover{
+    text-decoration: underline;
+}
+
 .navlinksG{
     position: absolute;
     display: grid;
