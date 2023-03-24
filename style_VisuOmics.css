@@ -266,7 +266,6 @@ body{
 
 .zone-card .card a:hover{
   position: relative;
-  top: 40px;
   color: white;
   font-size: 1.2em;
   border: 2px solid #006699;
@@ -387,7 +386,7 @@ body{
 
 .zone-card .card a{
   position: relative;
-  top: 40px;
+  top: 20px;
   color: #006699;
   font-size: 0.6em;
   border: 2px solid #006699;
@@ -400,7 +399,6 @@ body{
 
 .zone-card .card a:hover{
   position: relative;
-  top: 40px;
   color: white;
   font-size: 0.6em;
   border: 2px solid #006699;
