@@ -23,7 +23,11 @@
                 <li><a href="#">Contacts</a></li>
             </ul>
         </div>
-        <img src="image/menu-btn.png" alt="" class="menu">
+        <div class="menu">
+            <span class="line top_line"></span>
+            <span class="line middle_line"></span>
+            <span class="line bottom_line"></span>
+          </div>
     </nav>
 </header>
 </body>
@@ -34,5 +38,12 @@
     menuHamburger.addEventListener('click',()=>{
     navLinks.classList.toggle('mobile-menu')
     })
+</script>
+<script>
+      const menuBtn = document.querySelector('.menu')
+
+menuBtn.addEventListener('click', () => {
+  menuBtn.classList.toggle('open')
+})
 </script>
 </html>

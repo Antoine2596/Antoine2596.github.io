@@ -33,7 +33,7 @@ header{
 }
 
 .navbar a:hover{
-    text-shadow: 0 0 5px white;
+    text-shadow: 0 0 5px;
 }
 
 .navbar .logo{
@@ -58,6 +58,7 @@ header{
     right: 50px;
     width: 35px;
 }
+
 
 
 
@@ -100,5 +101,34 @@ header{
     .navbar .nav-links ul li{
         margin: 30px 0;
         font-size: 1.3em;
+    }
+
+    .navbar .menu {
+        /* remplir l'espace */
+        display: flex;
+        /* mettre en colonne */
+        flex-direction: column;
+        /* séparer de 8px */
+        gap: 12px;
+        cursor: pointer;
+    }
+    
+    .navbar .menu .line {
+        width: 40px;
+        height: 2px;
+        background-color: white;
+        transform-origin: left;
+        transition:transform 0.5s ease, opacity 0.2s ease;
+    }
+    
+    .navbar .menu.open .middle_line{
+        opacity: 0;
+    }
+    .navbar .menu.open .top_line{
+        transform: rotate(45deg);
+    }
+    
+    .navbar .menu.open .bottom_line{
+        transform: rotate(-45deg);
     }
 }

@@ -8,9 +8,18 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="zonerouge">
-  <div class="rouge"></div>
+<div class="menu">
+  <span class="line top_line"></span>
+  <span class="line middle_line"></span>
+  <span class="line bottom_line"></span>
 </div>
-<div class="bleu"></div>
+
+<script>
+  const menuBtn = document.querySelector('.menu')
+
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open')
+  })
+</script>
 </body>
 </html>
