@@ -442,10 +442,12 @@ a .card{
     .card{
         left: -25px;
     }
+    .card4 h5{
+        display: none;
+    }
     .card h5{
         font-size: 1em;
     }
-
 
     .card h6{
         display: flex;

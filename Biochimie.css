@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.bar-superieur{
+    position: relative;
+    width: 100dvw;
+    height: 100px;
+    background-color: #006699;
+    color: white;
+    font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.bar-superieur .logo{
+    position: absolute;
+    width: auto;
+    top: 50%;
+    left: 35px;
+    transform: translate(0,-50%);
+}
+
+.nav-bar{
+    position: absolute;
+    display: flex;
+    right: 100px;
+    top: 50%;
+    transform: translate(0,-50%);
+    font-size: 1.3em;
+    width: 40%;
+    justify-content: space-between;
+
+}
+
+.bar-superieur a{
+    color: white;
+    border: 2px solid white;
+    border-radius: 100px;
+    padding: 10px 20px;
+}
+
+.bar-superieur a:hover{
+    color: #006699;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 100px;
+    padding: 10px 20px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+
+
+.background-image{
+    position: relative;
+    height: 60dvh;
+    background-color: #1f20206b;
+    background-image: url(https://centre-biologie-languedoc.com/wp-content/uploads/2018/07/iStock-484278596.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.filtre{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.background-texte{
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translate(0,-50%);
+    color: white;
+    text-shadow: 0px 0px 10px black;
+}
+
+.background-texte h1{
+    position: relative;
+    font-size: 3em;
+    margin-bottom: 50px;
+}
+
+.background-texte{
+    font-size: 2em;
+}
+
+
+.SectionB{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.zone-texte{
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: justify;
+    top: 20px;
+}
+
+.zone-texte h2{
+    text-align: center;
+    color: orange;
+    margin-bottom: 10px;
+}
+
+.zone-texte h3{
+    color: #006699;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.zone-texte h4{
+    color: #006699;
+    margin-bottom: 10px;
+}
+
+
+.zone-texte p{
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.zone-texte ol li{
+margin-bottom: 2px;
+position: relative;
+left: 30px;
+}
+
+.SectionB .zone-texte img{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    height: 700px;
+}
+
+@media screen and (max-width : 950px) {
+
+    .bar-superieur .logo{
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        font-size: 1.5em;
+        transform: translate(-50%,0);
+    }
+    .bar-superieur-contenu{
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    .nav-bar{
+        position: absolute;
+        display: flex;
+        left: 0;
+        width: 100%;     
+        top: 70%;
+        padding: 10px;
+        font-size: 1em;
+        justify-content: space-between;    
+    }
+    
+    .bar-superieur a{
+        color: white;
+        border: 2px solid white;
+        border-radius: 100px;
+        padding: 5px 10px;
+    }
+    
+    .bar-superieur a:hover{
+        color: #006699;
+        font-weight: bold;
+        border: 2px solid white;
+        border-radius: 100px;
+        padding: 5px 5px;
+        background-color: white;
+        transition: all 0.3s ease;
+    }
+
+    .background-image h1{
+        font-size: 1.5em;
+    }
+
+
+    .background-texte p{
+        font-size: 0.6em;
+        text-decoration: underline;
+    }
+    
+    .SectionB{
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    .zone-texte{
+        position: absolute;
+        left: 5%;
+        right: 5%;
+        font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+        top: 20px;
+    }
+    
+    .zone-texte h2{
+        text-align: center;
+        color: orange;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+    
+    .zone-texte h3{
+        color: #006699;
+        text-decoration: underline;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 1em;
+    }
+    
+    .zone-texte h4{
+        color: #006699;
+        margin-bottom: 10px;
+        font-size: 0.9em;
+    }
+
+    .zone-texte p{
+        position: relative;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .zone-texte ol li{
+    margin-bottom: 2px;
+    position: relative;
+    left: 10px;
+    }
+    
+    .SectionB .zone-texte img{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%,0);
+        height: 200px;
+    }
+    
+
+}
