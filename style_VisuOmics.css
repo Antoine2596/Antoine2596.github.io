@@ -67,6 +67,16 @@ body{
 }
 
 .bar-superieur a:hover{
+  color: black;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 100px;
+  padding: 10px 20px;
+  background-color: white;
+  transition: all 0.6s ease;
+}
+
+.bar-superieur.fondb a:hover{
   color: #006699;
   font-weight: bold;
   border: 2px solid white;
@@ -187,6 +197,8 @@ body{
   border-radius: 100px;
   padding: 5px;
 }
+
+
 
 @media screen and (max-width:1100px) {
 
