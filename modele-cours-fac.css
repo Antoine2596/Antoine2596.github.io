@@ -341,7 +341,7 @@ span.rectangle{
       margin-left: -10000px;
       padding-left: 10000px;
       position: relative;
-      font-size: calc(1.36719vw + 31.5px);
+      font-size: calc(1.36719vw + 25.5px);
       margin-top: 0px;
         outline: none;
         overflow-wrap: break-word;
@@ -353,7 +353,7 @@ span.rectangle{
         line-height: 1.989;
         margin-bottom: 0px;
     
-      left: -100%;
+      left: -120%;
       }
     
 

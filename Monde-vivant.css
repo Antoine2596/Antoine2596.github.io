@@ -1,5 +1,8 @@
  
   .background-image{
+    position: relative;
+    height: 60dvh;
+    background-color: #1f20206b;
     background-image: url(https://coolwallpapers.me/picsup/6000696-haze-summer-evening-forest-sunbeams-morning-road-nature-beauty-path-trees.jpg);
     background-size: cover;
     background-repeat: no-repeat;
