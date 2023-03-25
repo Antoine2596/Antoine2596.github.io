@@ -127,30 +127,47 @@
 }
 
 .zone-texte h1{
-  font-size: 3em;
+  display: flex;
+
+  font-size: 3.5em;
   margin-bottom: 20px;
+  justify-content: center;
+  box-shadow: black 0 0 5px;
 }
 
+
 .zone-texte h2{
+  text-align: left;
+  color: #00558b;
+  padding-bottom: calc(0.26042vw + 6px);
+  padding-top: calc(0.26042vw + 6px);
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-size: 1.8em;
+}
+.zone-texte h3{
     text-align: left;
     color: orange;
     padding-bottom: calc(0.26042vw + 6px);
     padding-top: calc(0.26042vw + 6px);
     margin-bottom: 10px;
-    margin-top: 20px;
-    font-size: 1.7em;
-}
-
-.zone-texte h3{
-    color: #006699;
-    text-decoration: underline;
-    margin-bottom: 10px;
-    text-align: left;
+    margin-top: 10px;
+    font-size: 1.6em;
 }
 
 .zone-texte h4{
     color: #006699;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 1.3em;
+}
+.zone-texte h5{
+    color: #006699;
     margin-bottom: 0px;
+    font-size: 1.1em;
+    text-decoration: underline;
 }
 
 
@@ -180,33 +197,59 @@ u{
 }
 
 /* LES SPANS */
-span.rectangle.span-visible{
+span.rectangle1.span-visible{
   left: 10px;
   transform-origin: left;
   transition: left 0.7s cubic-bezier(0.1,0.9,0.2,1), opacity 0.2s ease;
 }
 
-span.rectangle{
+span.rectangle2.span-visible{
+  left: 10px;
+  transform-origin: left;
+  transition: left 0.7s cubic-bezier(0.1,0.9,0.2,1), opacity 0.2s ease;
+}
+
+span.rectangle1{
   background-color: #006699;
   box-shadow:  #006699 36px 0px 0px, rgba(0, 0, 0, 0.25) 37px 1px 0px;
   direction: left;
   margin-left: -10000px;
   padding-left: 10000px;
   position: relative;
-  font-size: calc(1.36719vw + 31.5px);
+  font-size: calc(1.36719vw + 1.5em);
   margin-top: 0px;
     outline: none;
     overflow-wrap: break-word;
     color: rgb(255, 255, 255);
-    font-family: Univers, Helvetica, sans-serif;
     font-stretch: condensed;
     font-style: normal;
     font-weight: 400;
     line-height: 1.989;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 
   left: -100%;
   }
+
+  span.rectangle2{
+    background-color: orange;
+    box-shadow:  orange 36px 0px 0px, rgba(0, 0, 0, 0.25) 37px 1px 0px;
+    direction: left;
+    margin-left: -10000px;
+    padding-left: 10000px;
+    position: relative;
+    font-size: calc(1.36719vw + 0.9em);
+    margin-top: 0px;
+      outline: none;
+      overflow-wrap: break-word;
+      color: rgb(255, 255, 255);
+      font-stretch: condensed;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.989;
+      margin-bottom: 0px;
+  
+    left: -100%;
+    }
 
 @media screen and (max-width : 900px) {
 
@@ -291,32 +334,82 @@ span.rectangle{
         top: 20px;
     }
     
-    .zone-texte h2{
-        text-align: center;
-        color: orange;
-        margin-bottom: 10px;
-        font-size: 1.1em;
+    .background-texte h1{
+      position: relative;
+      font-size: 3em;
+      margin-bottom: 50px;
     }
     
-    .zone-texte h3{
-        color: #006699;
-        text-decoration: underline;
-        margin-bottom: 10px;
-        text-align: center;
-        font-size: 1em;
+    .background-texte{
+      font-size: 2em;
     }
     
-    .zone-texte h4{
-        color: #006699;
-        margin-bottom: 10px;
-        font-size: 0.9em;
-    }
-
-    .zone-texte p{
-        position: relative;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
+    /* fin header */
+  
+    .SectionB{
+      width: 100%;
+      height: auto;
+      position: relative;
+  }
+  
+  .zone-texte{
+      position: absolute;
+      left: 15%;
+      right: 15%;
+      font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+      text-align: justify;
+      top: 20px;
+  }
+  
+  .zone-texte h1{
+    display: flex;
+  
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  
+  
+  .zone-texte h2{
+    text-align: left;
+    color: #00558b;
+    padding-bottom: calc(0.26042vw + 6px);
+    padding-top: calc(0.26042vw + 6px);
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 1.8em;
+  }
+  .zone-texte h3{
+      text-align: left;
+      color: orange;
+      padding-bottom: calc(0.26042vw + 6px);
+      padding-top: calc(0.26042vw + 6px);
+      margin-bottom: 10px;
+      margin-top: 10px;
+      font-size: 1.6em;
+  }
+  
+  .zone-texte h4{
+      color: #006699;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      text-align: left;
+      font-size: 1.3em;
+  }
+  .zone-texte h5{
+      color: #006699;
+      margin-bottom: 0px;
+      font-size: 1.1em;
+      text-decoration: underline;
+  }
+  
+  
+  .zone-texte p{
+      position: relative;
+      padding-top: 0px;
+      padding-bottom: 10px;
+  }
 
     .SectionB .zone-texte li{
       margin-bottom: 2px;

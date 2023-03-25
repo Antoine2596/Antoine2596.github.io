@@ -49,14 +49,14 @@
                 <h1>La biosphère</h1>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Biomes_of_the_world.svg/1920px-Biomes_of_the_world.svg.png" alt="">
                 <br>
-                <span class="rectangle">Définition</span>
+                <span class="rectangle1">Définition</span>
                 <p>La biosphère est l'ensemble des organismes vivants et leurs milieux de vie, donc la totalité des écosystèmes présents que ce soit dans la lithosphère, l'hydrosphère et l'atmosphère.</p>
                 <p>La masse de biosphère est minime (comparée à celle des autres compartiments) :</p>
                 <ul>
                     <li>1/300ème de la masse de l'atmosphère</li>
                     <li>1/70 000ème de la masse de l'hydrosphère</li>
                 </ul>
-                <span class="rectangle">Evolution de la biosphère</span>
+                <span class="rectangle1">Evolution de la biosphère</span>
                 <p>Avant il n'y avait pas d'atmosphère, maintenant elle est présente mais non majoritaire.
                     On respire surtout du 78% de diazote et 21% de dioxygène.
                     </p>
@@ -69,7 +69,7 @@
         <li>0,4 Mrd : Apparition couche d’ozone (O3)</li>
         <p>La quantité se stabilise à peu près de 0.2 milliards.</p>
     </ul>
-    <span class="rectangle">Le cycle de la matière</span>
+    <span class="rectangle1">Le cycle de la matière</span>
     <p><u>Production de matière organique</u></p>
     <ul><li>Les producteurs autotrophes (=producteur primaire) sont capables de produire de la matière organique sans dévorer les autres êtres vivants (à partir d’éléments minéraux).</li>
         <li>Consommateurs hétérotrophes sont capable de produire de la matière organique en dévorant les autres êtres vivants.</li>
@@ -77,27 +77,27 @@
     <p><u>Recyclage de la matière organique</u></p>
     <ul><li>Les décomposeurs hétérotrophes se nourrissent des déchets des autres (essentiellement bactéries et champignon.</li></ul>
     
-    <span class="rectangle">La production primaire</span>
+    <span class="rectangle1">La production primaire</span>
     <p><em><u>Productivité primaire :</u>  vitesse à laquelle se forme une quantité de matière organique à partir de matière minérale et d’un apport d’énergie, exprimé en masse de carbone assimilé par unité de temps.</em></p>
 <p>La notion de production primaire aide à catégorisé les grands biomes.</p>
-<h2>Ecosystèmes marins</h2>
+<span class="rectangle2">Ecosystèmes marins</span>
 <p>Malgré le fait qu'il y a peu de nutriments il peut y avoir une forte production primaire comme le récif coralliens.
     Beaucoup de nutriments + forte production = écosystème pélagique upwelling.
     </p>
     <p><u>Ecosystème pélagique d’upwelling :</u> Phénomène océanique créant un appel d’eau qui remonte à la surface avec les nutriments venu du fond de la mer.</p>
-    <h2>Ecosystème terrestres</h2>
+    <span class="rectangle2">Ecosystèmes terrestres</span>
     <p>Les <strong>rhizobiums</strong> sont des bactéries qui font symbiose avec des plantes, les bactéries transforment l’azote atmosphérique afin d’en produire un dérivé pour la plante, cette dernière fournit en retour des éléments nutritifs (à base de carbone issu de la photosynthèse). </p>
 <p>Les <strong> mycorhizes</strong> sont des champignons qui permettent aux plantes de mieux absorber l'eau et les minéraux du sol, et de résister aux champignons pathogènes.</p>
-<span class="rectangle">Méteorologie</span>
-<h2>Grandes "bandes" climatiques</h2>
+<span class="rectangle1">Méteorologie</span> <br>
+<span class="rectangle2">Les grandes bandes climatiques</span>
 <p>Il existe plusieurs couches de température, la zone de l'équateur étant la plus chaud.</p>
-<h2>Circulation atmosphérique</h2>
+<span class="rectangle2">Circulation atmosphérique</span>
 <p>La circulation atmosphérique se caractérise par le mouvement à l'échelle planétaire des différents masses d'air entourant la Terre ce qui redistribue l'énergie solaire en conjonction avec la circulation océanique.
 </p>
 <p>Cette répartition en bande climatique est dû en plusieurs facteur comme les vents équatorial.
     L'air chaud va monter en altitude, puis refroidir à la limite de la stratosphère et redescendre. 
     </p>
-    <h2>Gyres océanique</h2>
+    <span class="rectangle2">Les gyres océaniques</span>
     <p>Un gyre océanique (gyre : du grec « rotation ») est un gigantesque tourbillon d'eau océanique formé d'un ensemble de courants marins. Les gyres océaniques sont le moteur de la répartition des écorégions dans le biome marin.</p>
 
 
@@ -151,12 +151,12 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-  const rectangles = document.querySelectorAll(".rectangle");
+  const rectangles = document.querySelectorAll(".rectangle1");
 
   const checkVisibility = (element) => {
     const rect = element.getBoundingClientRect();
     const ecranHauteur = window.innerHeight;
-    const centreVertical = (ecranHauteur / 1.5) - (rect.height / 1.5);
+    const centreVertical = (ecranHauteur / 1.2) - (rect.height / 1.2);
 
     if (rect.top <= centreVertical && rect.bottom >= centreVertical) {
       element.classList.add("span-visible");
@@ -171,6 +171,33 @@
 
   window.addEventListener("scroll", handleScroll);
 });
+</script>
+
+<!-- Ajouter une classe "span-visible" au objet de classe "rectangle2" quand ces dernier sont au centre verticalement de l'écran -->
+<script>
+  
+    document.addEventListener("DOMContentLoaded", function () {
+  const rectangles = document.querySelectorAll(".rectangle2");
+
+  const checkVisibility = (element) => {
+    const rect = element.getBoundingClientRect();
+    const ecranHauteur = window.innerHeight;
+    const centreVertical = (ecranHauteur / 1.2) - (rect.height / 1.2);
+
+    if (rect.top <= centreVertical && rect.bottom >= centreVertical) {
+      element.classList.add("span-visible");
+    }
+  };
+
+  const handleScroll = () => {
+    rectangles.forEach((rectangle) => {
+      checkVisibility(rectangle);
+    });
+  };
+
+  window.addEventListener("scroll", handleScroll);
+});
+
 </script>
 </body>
 </html>

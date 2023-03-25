@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="modele-cours-fac.css">
     <link rel="stylesheet" href="[cours].css">
-    <title>Biochimie</title>
+    <title>Modèle</title>
     <!-- Charger les fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,21 +45,25 @@
     <div class="SectionB">
     <div class="zone-texte">
         <div class="texte">
-                <h1>h1</h1>
-                <h2>h2</h2>
-                <h3>h3</h3>
-                <h4>h4</h4>
-                <p>texte</p>
+                <h1>Titre</h1>
+                <span class="rectangle1 span-visible">Chapitre</span> <br>
+                <span class="rectangle2 span-visible">Sous-Chapitre</span>
+                <h2>Titre h2</h2>
+                <h3>Cela est un titre h3</h3>
+                <h4>Ceci est un titre h4</h4>
+                <h5>Titre h5</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt fuga assumenda dolore magnam sed minima delectus voluptas cumque animi officia exercitationem rem ex unde, cupiditate harum, inventore ut eveniet impedit.</p>
         </div>
     </div>
 </div>
 
     <!-- fin header -->
-    <!-- Lorsque je survole un lien de class "lien-site" d'une card, les autres cards sont transparents -->
+      <!-- Lorsque je survole un lien de class "lien-site" d'une card, les autres cards sont transparents -->
     <!-- "mouseenter" pour rendre les autres cartes transparentes -->
     <!-- `closest('.card')` permet de sélectionner la carte parente de l'élément survolé -->
     <!-- `siblings()` sélectionne les autres cartes -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <script>
       $(document).ready(function() {
         $('.lien-site').on('mouseenter', function() {
@@ -85,6 +89,32 @@
        }
     });
         </script>
+
+<!-- Ajouter une classe lorsque le l'objet en question est au centre verticalement de l'écran -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const rectangles = document.querySelectorAll(".rectangle");
+
+  const checkVisibility = (element) => {
+    const rect = element.getBoundingClientRect();
+    const ecranHauteur = window.innerHeight;
+    const centreVertical = (ecranHauteur / 1.5) - (rect.height / 1.5);
+
+    if (rect.top <= centreVertical && rect.bottom >= centreVertical) {
+      element.classList.add("span-visible");
+    }
+  };
+
+  const handleScroll = () => {
+    rectangles.forEach((rectangle) => {
+      checkVisibility(rectangle);
+    });
+  };
+
+  window.addEventListener("scroll", handleScroll);
+});
+</script>
 
 </body>
 </html>
