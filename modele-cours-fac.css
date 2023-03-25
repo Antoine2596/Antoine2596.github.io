@@ -364,7 +364,7 @@ span.rectangle1{
   .zone-texte h1{
     display: flex;
   
-    font-size: 3.5em;
+    font-size: 2.5em;
     margin-bottom: 20px;
     justify-content: center;
   }
@@ -427,27 +427,60 @@ span.rectangle1{
 
 
     
-    span.rectangle{
-      background-color: #006699;
-      box-shadow:  #006699 18px 0px 0px, #006699 1px 0px 0px,rgba(0, 0, 0, 0.25) 19px 1px 0px;
-      direction: left;
-      margin-left: -10000px;
-      padding-left: 10000px;
-      position: relative;
-      font-size: calc(1.36719vw + 20px);
-      margin-top: 0px;
-        outline: none;
-        overflow-wrap: break-word;
-        color: rgb(255, 255, 255);
-        font-family: Univers, Helvetica, sans-serif;
-        font-stretch: condensed;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.989;
-        margin-bottom: 0px;
-    
-      left: -150%;
-      }
+    /* LES SPANS */
+span.rectangle1.span-visible{
+  left: 10px;
+  transform-origin: left;
+  transition: left 0.7s cubic-bezier(0.1,0.9,0.2,1), opacity 0.2s ease;
+}
+
+span.rectangle2.span-visible{
+  left: 10px;
+  transform-origin: left;
+  transition: left 0.7s cubic-bezier(0.1,0.9,0.2,1), opacity 0.2s ease;
+}
+
+span.rectangle1{
+  background-color: #006699;
+  box-shadow:  #006699 36px 0px 0px, rgba(0, 0, 0, 0.25) 37px 1px 0px;
+  direction: left;
+  margin-left: -10000px;
+  padding-left: 10000px;
+  position: relative;
+  font-size: calc(1.36719vw + 1em);
+  margin-top: 0px;
+    outline: none;
+    overflow-wrap: break-word;
+    color: rgb(255, 255, 255);
+    font-stretch: condensed;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.989;
+    margin-bottom: 10px;
+
+  left: -150%;
+  }
+
+  span.rectangle2{
+    background-color: orange;
+    box-shadow:  orange 36px 0px 0px, rgba(0, 0, 0, 0.25) 37px 1px 0px;
+    direction: left;
+    margin-left: -10000px;
+    padding-left: 10000px;
+    position: relative;
+    font-size: calc(1.36719vw + 0.8em);
+    margin-top: 0px;
+      outline: none;
+      overflow-wrap: break-word;
+      color: rgb(255, 255, 255);
+      font-stretch: condensed;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.989;
+      margin-bottom: 0px;
+  
+    left: -150%;
+    }
     
 
 }
