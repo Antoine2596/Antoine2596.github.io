@@ -181,7 +181,7 @@ u{
 
 /* LES SPANS */
 span.rectangle.span-visible{
-  left: 0px;
+  left: 10px;
   transform-origin: left;
   transition: left 0.7s cubic-bezier(0.1,0.9,0.2,1), opacity 0.2s ease;
 }
@@ -189,9 +189,9 @@ span.rectangle.span-visible{
 span.rectangle{
   background-color: #006699;
   box-shadow:  #006699 36px 0px 0px, rgba(0, 0, 0, 0.25) 37px 1px 0px;
-  direction: ltr;
+  direction: left;
   margin-left: -10000px;
-  padding-left: 1000w0px;
+  padding-left: 10000px;
   position: relative;
   font-size: calc(1.36719vw + 31.5px);
   margin-top: 0px;
@@ -208,7 +208,7 @@ span.rectangle{
   left: -100%;
   }
 
-@media screen and (max-width : 950px) {
+@media screen and (max-width : 900px) {
 
      .bar-superieur .logo{
         position: absolute;
