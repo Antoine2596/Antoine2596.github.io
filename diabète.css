@@ -1,15 +1,14 @@
-
-.background-image{
+ 
+  .background-image{
     position: relative;
     height: 60dvh;
     background-color: #1f20206b;
-    background-image: url(https://centre-biologie-languedoc.com/wp-content/uploads/2018/07/iStock-484278596.jpg);
+    background-image: url(https://nhsbtdbe.blob.core.windows.net/umbraco-assets-corp/25124/blood-g4e28dcb97_1920.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-}
+  }
 
-.filtre{
+  .filtre{
     height: 100%;
     width: 100%;
     position: relative;

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="modele-cours-fac.css">
     <link rel="stylesheet" href="Biochimie.css">
     <title>Biochimie</title>
     <!-- Charger les fonts -->
@@ -87,5 +88,37 @@
         
         </div>
     </div>
+
+        <!-- fin header -->
+    <!-- Lorsque je survole un lien de class "lien-site" d'une card, les autres cards sont transparents -->
+    <!-- "mouseenter" pour rendre les autres cartes transparentes -->
+    <!-- `closest('.card')` permet de sélectionner la carte parente de l'élément survolé -->
+    <!-- `siblings()` sélectionne les autres cartes -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.lien-site').on('mouseenter', function() {
+          $(this).closest('.card').siblings().css('opacity', '0.4');
+        });
+    
+        $('.lien-site').on('mouseleave', function() {
+          $(this).closest('.card').siblings().css('opacity', '1');
+        });
+      });
+    </script>
+
+    <!-- Ajouter une classe "fond" après la classe .navbar, afin de mettre de fond de la navbar en bleu -->
+    <script>
+        window.addEventListener("scroll", function() {
+       var navbar = document.querySelector(".bar-superieur");
+       
+       // Ajoute la classe "fond" lorsque la position de défilement est supérieure à 0
+       if(window.scrollY > 0) {
+          navbar.classList.add("fondb");
+       } else {
+          navbar.classList.remove("fondb");
+       }
+    });
+        </script>
 </body>
 </html>

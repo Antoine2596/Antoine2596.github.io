@@ -437,18 +437,27 @@ a .card{
     
     }
 
-    .cola{
+    .cola .col1{
+        margin-top: 50px;
+        display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 350px;
-        padding: 20px 0px;
-        position: relative;
-        margin: 0;
-        left: 0;
+        width: 100%;
+        padding: 0px 0px;
     }
+
+    .col1{
+        position: relative;
+        width: 100%;
+        padding: 0px 0px;
+        margin: 0px 0px;
+    }
+
+
+    
     .card{
-        width: 200px;
-        height: 300px;
+        width: 500px;
+        height: 200px;
         display: inline-block;
         border-radius: 10px;
         padding: 5px 5px;
@@ -458,36 +467,56 @@ a .card{
         background-position: center;
         background-size: cover;
         transition: all 0.5s ease;
+
     }
     
-    .col1{
-        width: auto;
+    .card p{
+        display: none;
     }
 
     .body{
-        width: 900px;
+        width: 100%;
     }
 
-    .card{
-        left: -25px;
-    }
+   
     .card4 h5{
         display: none;
     }
+
+    .h-responsive h5{
+        display: none;
+    }
+
+    .h-responsive h6{
+        position: absolute;
+        display: flex;
+        left: 0px;
+        top: 50%;
+    }
+
+
+
     .card h5{
+        position: absolute;
         font-size: 1em;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
     }
 
     .card h6{
         display: flex;
         color: white;
-        font-size: 0.9em;
+        font-size: 0.8em;
         font-family: 'Poppins', sans-serif;
         font-weight: bold;
         text-align: left;
         margin-bottom: 0px;
         text-shadow: 0 0px 5px #999;
     }
+    
+
+
 
     
 }

@@ -45,10 +45,19 @@ header{
     display: flex;
 }
 
-.navbar .nav-links ul li{
+.navbar .nav-links ul li a{
     margin: 0 50px ;
     font-size: 1.5em;
     font-weight: 500;
+    border: 2px solid white;
+    border-radius: 50px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-links ul li a:hover{
+    background-color: white;
+    color:#006699;
 }
 
 .background{
@@ -314,16 +323,19 @@ select{
     .navbar .nav-links ul{
         display: flex;
         position: absolute;
-        width: 300px;
+        width: 80%;
+        justify-content: space-between;
+        left: 30px;
     }
     
-    .navbar .nav-links ul li{
+    .navbar .nav-links ul li a{
         position: relative;
         top: 50px;
         width: 100px;
         margin: 0 0px ;
-        font-size: 1em;
+        font-size: 0.8em;
         font-weight: 500;
+        padding: 4px;
     }
     
     .background{
@@ -356,17 +368,21 @@ select{
     
     .contenu-bar_inferieur{
         position: absolute;
-        left: 15px;
-        top: 20px;
-        height: 100%;
-        justify-content: space-between; 
         display: flex;
+        flex-direction: column;
+        width: 150px;
+        left: 50%;
+        transform: translate(-50%,0);
+        top: 10px;
+        height: 90%;
+        justify-content: space-between; 
+        
     }
     
     .bar_inferieur a{
         position: relative;
         color: white;
-        font-size: 2em;   
+        font-size: 1em;   
     
     }
     

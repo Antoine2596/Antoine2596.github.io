@@ -1,9 +1,6 @@
  
   .background-image{
-    position: relative;
-    height: 60dvh;
-    background-color: #1f20206b;
-    background-image: url(https://alaingrandjean.fr/wp-content/uploads/2016/03/phages-phagotherapie-bacterie.jpg);
+    background-image: url(https://coolwallpapers.me/picsup/6000696-haze-summer-evening-forest-sunbeams-morning-road-nature-beauty-path-trees.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -14,5 +11,5 @@
     width: 100%;
     position: relative;
     background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(1px);
   }
