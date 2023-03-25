@@ -191,7 +191,7 @@ span.rectangle{
   box-shadow:  #006699 36px 0px 0px, rgba(0, 0, 0, 0.25) 37px 1px 0px;
   direction: ltr;
   margin-left: -10000px;
-  padding-left: 10000px;
+  padding-left: 1000w0px;
   position: relative;
   font-size: calc(1.36719vw + 31.5px);
   margin-top: 0px;
@@ -336,12 +336,12 @@ span.rectangle{
     
     span.rectangle{
       background-color: #006699;
-      box-shadow:  #006699 18px 0px 0px, #006699 -18px 0px 0px,rgba(0, 0, 0, 0.25) 19px 1px 0px;
-      direction: ltr;
+      box-shadow:  #006699 18px 0px 0px, #006699 1px 0px 0px,rgba(0, 0, 0, 0.25) 19px 1px 0px;
+      direction: left;
       margin-left: -10000px;
       padding-left: 10000px;
       position: relative;
-      font-size: calc(1.36719vw + 25.5px);
+      font-size: calc(1.36719vw + 20px);
       margin-top: 0px;
         outline: none;
         overflow-wrap: break-word;
