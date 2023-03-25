@@ -183,7 +183,7 @@ u{
 span.rectangle.span-visible{
   left: 0px;
   transform-origin: left;
-  transition: left 0.5s cubic-bezier(0.1,0.9,0.2,1), opacity 0.2s ease;
+  transition: left 0.7s cubic-bezier(0.1,0.9,0.2,1), opacity 0.2s ease;
 }
 
 span.rectangle{
@@ -353,7 +353,7 @@ span.rectangle{
         line-height: 1.989;
         margin-bottom: 0px;
     
-      left: -120%;
+      left: -150%;
       }
     
 
