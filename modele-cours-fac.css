@@ -184,13 +184,49 @@ left: 30px;
 width: 95%;
 }
 
-.SectionB .zone-texte img{
-    position: relative;
-    left: 50%;
-    transform: translate(-50%,0);
+
+.SectionB .zone-texte .image-cache img {
+ visibility: hidden;
+ 
+
+ 
+}
+.SectionB .zone-texte .image-cache.image-visible{
+  width: auto;
+  height: auto;
+}
+.SectionB .zone-texte .image-cache.image-visible img {
+  visibility: initial;
+  display: flex;
+
+  height: auto;
+  width: auto;
+ 
+  animation: grossir 1s ;
+  
+}
+
+
+
+/* keyframes grossir */
+@keyframes grossir {
+  0% {
+    transform: scale(0); /* taille initiale */
+  }
+  100% {
+    transform: scale(1); /* taille agrandie */
+  }
+}
+/* Center l'image avec de bonne proportion */
+.SectionB .zone-texte img{ 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
     max-height: 500px;
     max-width: 100%;
 }
+
+
 
 u{
   text-decoration: underline;
@@ -251,6 +287,7 @@ span.rectangle1{
     left: -100%;
     }
 
+  
 @media screen and (max-width : 900px) {
 
      .bar-superieur .logo{
@@ -336,12 +373,12 @@ span.rectangle1{
     
     .background-texte h1{
       position: relative;
-      font-size: 3em;
+      font-size: 1.5em;
       margin-bottom: 50px;
     }
     
-    .background-texte{
-      font-size: 2em;
+    .background-texte p{
+      font-size: 1em;
     }
     
     /* fin header */
@@ -422,7 +459,8 @@ span.rectangle1{
         position: relative;
         left: 50%;
         transform: translate(-50%,0);
-        height: 380px;
+        width: 100%;
+        height: auto;
     }
 
 

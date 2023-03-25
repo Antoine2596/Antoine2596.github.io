@@ -56,7 +56,9 @@
                     <li>1/300ème de la masse de l'atmosphère</li>
                     <li>1/70 000ème de la masse de l'hydrosphère</li>
                 </ul>
+                <div>
                 <span class="rectangle1">Evolution de la biosphère</span>
+              </div>
                 <p>Avant il n'y avait pas d'atmosphère, maintenant elle est présente mais non majoritaire.
                     On respire surtout du 78% de diazote et 21% de dioxygène.
                     </p>
@@ -75,7 +77,7 @@
         <li>Consommateurs hétérotrophes sont capable de produire de la matière organique en dévorant les autres êtres vivants.</li>
     </ul>
     <p><u>Recyclage de la matière organique</u></p>
-    <ul><li>Les décomposeurs hétérotrophes se nourrissent des déchets des autres (essentiellement bactéries et champignon.</li></ul>
+    <ul><li>Les décomposeurs hétérotrophes se nourrissent des déchets des autres (essentiellement bactéries et champignon).</li></ul>
     
     <span class="rectangle1">La production primaire</span>
     <p><em><u>Productivité primaire :</u>  vitesse à laquelle se forme une quantité de matière organique à partir de matière minérale et d’un apport d’énergie, exprimé en masse de carbone assimilé par unité de temps.</em></p>
@@ -89,7 +91,11 @@
     <p>Les <strong>rhizobiums</strong> sont des bactéries qui font symbiose avec des plantes, les bactéries transforment l’azote atmosphérique afin d’en produire un dérivé pour la plante, cette dernière fournit en retour des éléments nutritifs (à base de carbone issu de la photosynthèse). </p>
 <p>Les <strong> mycorhizes</strong> sont des champignons qui permettent aux plantes de mieux absorber l'eau et les minéraux du sol, et de résister aux champignons pathogènes.</p>
 <span class="rectangle1">Méteorologie</span> <br>
+<div>
 <span class="rectangle2">Les grandes bandes climatiques</span>
+</div>
+<div class="image-cache"><img src="https://media.cap-concours.fr/cens/images/6sce05i08.png" alt=""></div>
+
 <p>Il existe plusieurs couches de température, la zone de l'équateur étant la plus chaud.</p>
 <span class="rectangle2">Circulation atmosphérique</span>
 <p>La circulation atmosphérique se caractérise par le mouvement à l'échelle planétaire des différents masses d'air entourant la Terre ce qui redistribue l'énergie solaire en conjonction avec la circulation océanique.
@@ -198,6 +204,33 @@
   window.addEventListener("scroll", handleScroll);
 });
 
+</script>
+
+<!-- pareil mais pour les div ayant la classe "image-cache" -->
+
+  <script>
+  
+  document.addEventListener("DOMContentLoaded", function () {
+const rectangles = document.querySelectorAll(".image-cache");
+
+const checkVisibility = (element) => {
+  const rect = element.getBoundingClientRect();
+  const ecranHauteur = window.innerHeight;
+  const centreVertical = (ecranHauteur / 1.2) - (rect.height / 1.2);
+
+  if (rect.top <= centreVertical && rect.bottom >= centreVertical) {
+    element.classList.add("image-visible");
+  }
+};
+
+const handleScroll = () => {
+  rectangles.forEach((rectangle) => {
+    checkVisibility(rectangle);
+  });
+};
+
+window.addEventListener("scroll", handleScroll);
+});
 </script>
 </body>
 </html>

@@ -164,6 +164,16 @@ body{
   font-size: 1.5em;
 }
 
+.zone-card .card .titre-article p{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: yellow;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
 .zone-card .card .image{
   margin-top: 20px;
   margin-bottom: 10px;
@@ -242,6 +252,7 @@ body{
   color: white;
   font-size: 1.5em;
 }
+
 
 .zone-card .card .image{
   margin-top: 20px;
