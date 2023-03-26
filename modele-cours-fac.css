@@ -111,6 +111,8 @@
   
   /* fin header */
 
+
+
   .SectionB{
     width: 100%;
     height: auto;
@@ -119,11 +121,100 @@
 
 .zone-texte{
     position: absolute;
-    left: 15%;
-    right: 15%;
+    left: 5%;
+    right: 5%;
     font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: justify;
     top: 20px;
+}
+
+/* Sommaire */
+.zone-texte .zone_sommaire{
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 20%;
+}
+
+.zone-texte .zone_sommaire .sommaire{
+  display: block;
+  position: sticky;
+  height: 450px;
+  width: 100%;
+  top: 200px;
+  box-shadow: black 0 0 5px;
+  
+}
+
+.zone-texte .zone_sommaire .sommaire a:hover{
+  font-size: larger;
+  color: #006699;
+}
+
+
+.zone-texte .zone_sommaire .sommaire .plan-sommaire{
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+}
+
+.zone-h3{
+  position: relative;
+  top: 0.5%;
+  left: 0.5%;
+  width: 99%;
+  height: 40px;
+  font-size: 1.3em;
+  background-color: #006699;
+}
+
+.zone-texte .zone_sommaire .sommaire .plan-sommaire .zone-h3 h3{
+  position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  padding: 0;
+  text-shadow: black 0 0 1px;
+
+
+}
+
+.zone-texte .zone_sommaire .sommaire .plan-sommaire .zone-liste ul{
+  position: relative;
+  text-align: left;
+  left: 3px;
+  list-style: none;
+  
+}
+
+.zone-texte .zone_sommaire .sommaire a{
+  display: block;
+  color: black;
+
+}
+
+.ancres {scroll-margin-top: 200px;}
+
+.zone-texte .zone_sommaire .sommaire li{
+  margin: 15px 0;
+}
+
+.zone-texte .zone_sommaire .sommaire ul{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 20px;
+  left: 50px;
+  justify-content: center;
+}
+/* Fin sommaire */
+
+.texte{
+  position: absolute;
+  left: 5%;
+  right: 25%;
 }
 
 .zone-texte h1{
@@ -150,9 +241,10 @@
     color: orange;
     padding-bottom: calc(0.26042vw + 6px);
     padding-top: calc(0.26042vw + 6px);
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-top: 5px;
     font-size: 1.6em;
+    padding-bottom: 4px;
 }
 
 .zone-texte h4{
@@ -164,17 +256,17 @@
     font-size: 1.3em;
 }
 .zone-texte h5{
-    color: #006699;
+    color: black;
     margin-bottom: 0px;
     font-size: 1.1em;
     text-decoration: underline;
 }
 
-
 .zone-texte p{
     position: relative;
     padding-top: 0px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 1.1em;
 }
 
 .SectionB .zone-texte li{
@@ -182,6 +274,7 @@ margin-bottom: 2px;
 position: relative;
 left: 30px;
 width: 95%;
+font-size: 1.1em;
 }
 
 
@@ -290,6 +383,21 @@ span.rectangle1{
   
 @media screen and (max-width : 900px) {
 
+
+
+  .texte{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+  }
+
+  .zone-texte .zone_sommaire{
+    display: none;
+    position: absolute;
+    right: 0px;
+    width: 20%;
+  }
+
      .bar-superieur .logo{
         position: absolute;
         top: 5px;
@@ -363,13 +471,6 @@ span.rectangle1{
         position: relative;
     }
     
-    .zone-texte{
-        position: absolute;
-        left: 5%;
-        right: 5%;
-        font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
-        top: 20px;
-    }
     
     .background-texte h1{
       position: relative;
@@ -377,9 +478,7 @@ span.rectangle1{
       margin-bottom: 50px;
     }
     
-    .background-texte p{
-      font-size: 1em;
-    }
+
     
     /* fin header */
   
@@ -446,6 +545,7 @@ span.rectangle1{
       position: relative;
       padding-top: 0px;
       padding-bottom: 10px;
+      font-size: 0.9em;
   }
 
     .SectionB .zone-texte li{
@@ -453,6 +553,8 @@ span.rectangle1{
       position: relative;
       left: 10px;
       width: 95%;
+      font-size: 0.9em;
+      text-align: left;
       }
     
     .SectionB .zone-texte img{

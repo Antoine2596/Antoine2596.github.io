@@ -45,11 +45,28 @@
     </header>
     <div class="SectionB">
     <div class="zone-texte">
+      <div class="zone_sommaire">
+        <div class="sommaire">
+            <div class="plan-sommaire">
+                <div class="zone-h3"><h3>Plan</h3></div>
+                <div class="zone-liste">
+                    <ul>
+                        <li><a href="#1">titre1</a></li>
+                        <li><a href="#2">titre2</a></li>
+                        <li><a href="#3">titre3</a></li>
+                        <li><a href="#4">titre4</a></li>
+                        <li><a href="#5">titre5</a></li>
+                    </ul>
+                </div>
+        
+            </div>
+        </div>
+        </div>
         <div class="texte">
                 <h1>La biosphère</h1>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Biomes_of_the_world.svg/1920px-Biomes_of_the_world.svg.png" alt="">
                 <br>
-                <span class="rectangle1">Définition</span>
+                <span id="1" class="rectangle1 ancres">Définition</span>
                 <p>La biosphère est l'ensemble des organismes vivants et leurs milieux de vie, donc la totalité des écosystèmes présents que ce soit dans la lithosphère, l'hydrosphère et l'atmosphère.</p>
                 <p>La masse de biosphère est minime (comparée à celle des autres compartiments) :</p>
                 <ul>
@@ -57,7 +74,7 @@
                     <li>1/70 000ème de la masse de l'hydrosphère</li>
                 </ul>
                 <div>
-                <span class="rectangle1">Evolution de la biosphère</span>
+                <span id="2" class="rectangle1 ancres">Evolution de la biosphère</span>
               </div>
                 <p>Avant il n'y avait pas d'atmosphère, maintenant elle est présente mais non majoritaire.
                     On respire surtout du 78% de diazote et 21% de dioxygène.
@@ -71,7 +88,7 @@
         <li>0,4 Mrd : Apparition couche d’ozone (O3)</li>
         <p>La quantité se stabilise à peu près de 0.2 milliards.</p>
     </ul>
-    <span class="rectangle1">Le cycle de la matière</span>
+    <span id="3" class="rectangle1 ancres">Le cycle de la matière</span>
     <p><u>Production de matière organique</u></p>
     <ul><li>Les producteurs autotrophes (=producteur primaire) sont capables de produire de la matière organique sans dévorer les autres êtres vivants (à partir d’éléments minéraux).</li>
         <li>Consommateurs hétérotrophes sont capable de produire de la matière organique en dévorant les autres êtres vivants.</li>
@@ -79,7 +96,7 @@
     <p><u>Recyclage de la matière organique</u></p>
     <ul><li>Les décomposeurs hétérotrophes se nourrissent des déchets des autres (essentiellement bactéries et champignon).</li></ul>
     
-    <span class="rectangle1">La production primaire</span>
+    <span id="4" class="rectangle1 ancres">La production primaire</span>
     <p><em><u>Productivité primaire :</u>  vitesse à laquelle se forme une quantité de matière organique à partir de matière minérale et d’un apport d’énergie, exprimé en masse de carbone assimilé par unité de temps.</em></p>
 <p>La notion de production primaire aide à catégorisé les grands biomes.</p>
 <span class="rectangle2">Ecosystèmes marins</span>
@@ -90,7 +107,7 @@
     <span class="rectangle2">Ecosystèmes terrestres</span>
     <p>Les <strong>rhizobiums</strong> sont des bactéries qui font symbiose avec des plantes, les bactéries transforment l’azote atmosphérique afin d’en produire un dérivé pour la plante, cette dernière fournit en retour des éléments nutritifs (à base de carbone issu de la photosynthèse). </p>
 <p>Les <strong> mycorhizes</strong> sont des champignons qui permettent aux plantes de mieux absorber l'eau et les minéraux du sol, et de résister aux champignons pathogènes.</p>
-<span class="rectangle1">Méteorologie</span> <br>
+<span id="5" class="rectangle1 ancres">Méteorologie</span> <br>
 <div>
 <span class="rectangle2">Les grandes bandes climatiques</span>
 </div>
@@ -105,7 +122,6 @@
     </p>
     <span class="rectangle2">Les gyres océaniques</span>
     <p>Un gyre océanique (gyre : du grec « rotation ») est un gigantesque tourbillon d'eau océanique formé d'un ensemble de courants marins. Les gyres océaniques sont le moteur de la répartition des écorégions dans le biome marin.</p>
-
 
 
 
@@ -232,5 +248,7 @@ const handleScroll = () => {
 window.addEventListener("scroll", handleScroll);
 });
 </script>
+
+
 </body>
 </html>
