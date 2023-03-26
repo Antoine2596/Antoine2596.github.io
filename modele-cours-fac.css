@@ -219,11 +219,11 @@
 
 .zone-texte h1{
   display: flex;
-
   font-size: 3.5em;
   margin-bottom: 20px;
   justify-content: center;
   box-shadow: black 0 0 5px;
+  margin-top: 25px;
 }
 
 
@@ -291,7 +291,6 @@ font-size: 1.1em;
 .SectionB .zone-texte .image-cache.image-visible img {
   visibility: initial;
   display: flex;
-
   height: auto;
   width: auto;
  
