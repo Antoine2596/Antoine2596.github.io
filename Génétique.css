@@ -3,7 +3,7 @@
     position: relative;
     height: 60dvh;
     background-color: #1f20206b;
-    background-image: url(https://www.rts.ch/2022/01/12/09/53/12781929.image?w=640&h=360);
+    background-image: url(https://images.ctfassets.net/yixw23k2v6vo/7sPuYOEBdhVckp5GEnizG7/2d554fffc084495d87063e63b89e2f2d/Stroke_Genetics_GettyImages-1319439243.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -14,5 +14,5 @@
     width: 100%;
     position: relative;
     background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(3 px);
+    backdrop-filter: blur(2px);
   }

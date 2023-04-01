@@ -277,6 +277,30 @@ width: 95%;
 font-size: 1.1em;
 }
 
+.SectionB .image img{
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  background-color: grey;
+}
+
+.SectionB .image {  
+  height: auto;
+  padding: 5px;
+  background-color: grey;
+}
+
+.SectionB .image p{  
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0);
+  padding: 5px;
+  width: 500px;
+  background-color: grey;
+  font-size: 1.1em;
+  font-family: 'Abhaya Libre', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 .SectionB .zone-texte .image-cache img {
  visibility: hidden;

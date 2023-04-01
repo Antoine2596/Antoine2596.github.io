@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="modele-cours-fac.css">
     <link rel="stylesheet" href="diabète.css">
-    <title>Biochimie</title>
+    <title>Modèle</title>
     <!-- Charger les fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +27,8 @@
                 </div>
                 <div class="nav-bar">
                     <a href="Université.html">Université</a>
-                    <a href="CV.html">A propos</a>
-                    <a href="https://github.com/Antoine2596/Antoine2596.github.io">Version</a>
+                    <a href="https://lnc.univ-amu.fr/fr/profile/liberge-martine" target="_blank">Mme. Liberge</a>
+                    <a href="https://www.linkedin.com/in/jacques-fantini-a88626170/" target="_blank">M. Fantini</a>
                 </div>
             </div>
             </div>
@@ -36,55 +36,162 @@
                 <div class="background-image">
                     <div class="filtre">
                 <div class="background-texte">
-                    <h1>Biologie en Marche</h1>
-                    <p>Jacques Fantini</p>
+                    <h1>Diabète</h1>
+                    <p>Martine Liberge & Jacques Fantini</p>
                 </div>
                 </div>
             </div>
     </header>
     <div class="SectionB">
     <div class="zone-texte">
-        <div class="texte">
-                <h1>h1</h1>
-                <h2>h2</h2>
-                <h3>h3</h3>
-                <h4>h4</h4>
-                <p>texte</p>
+      <div class="zone_sommaire">
+        <div class="sommaire">
+            <div class="plan-sommaire">
+                <div class="zone-h3"><h3>Plan</h3></div>
+                <div class="zone-liste">
+                    <ul>
+                        <li><a href="#1">titre1</a></li>
+                        <li><a href="#2">titre2</a></li>
+                        <li><a href="#3">titre3</a></li>
+                        <li><a href="#4">titre4</a></li>
+                        <li><a href="#5">titre5</a></li>
+                    </ul>
+                </div>
+        
+            </div>
         </div>
-    </div>
+        </div>
+        <div class="texte">
+                <h1>Partie Physiologie</h1>
+                <div>
+                <span id="1" class="rectangle1 ancres span-visible">Chapitre</span>
+              </div>
+                <span id="2" class="rectangle2 ancres span-visible">Sous-Chapitre</span>
+                <h2>Titre h2</h2>
+                <h3>Cela est un titre h3</h3>
+                <h4>Ceci est un titre h4</h4>
+                <h5>Titre h5</h5>
+                <div class="image-cache">
+                  <img src="image/landscape.jpg" alt="">
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt fuga assumenda dolore magnam sed minima delectus voluptas cumque animi officia exercitationem rem ex unde, cupiditate harum, inventore ut eveniet impedit.</p>
+<!-- fin texte -->
+</div>
+</div>
 </div>
 
-    <!-- fin header -->
-    <!-- Lorsque je survole un lien de class "lien-site" d'une card, les autres cards sont transparents -->
-    <!-- "mouseenter" pour rendre les autres cartes transparentes -->
-    <!-- `closest('.card')` permet de sélectionner la carte parente de l'élément survolé -->
-    <!-- `siblings()` sélectionne les autres cartes -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(document).ready(function() {
-        $('.lien-site').on('mouseenter', function() {
-          $(this).closest('.card').siblings().css('opacity', '0.4');
-        });
-    
-        $('.lien-site').on('mouseleave', function() {
-          $(this).closest('.card').siblings().css('opacity', '1');
-        });
-      });
+<!-- fin header -->
+<!-- Lorsque je survole un lien de class "lien-site" d'une card, les autres cards sont transparents -->
+<!-- "mouseenter" pour rendre les autres cartes transparentes -->
+<!-- `closest('.card')` permet de sélectionner la carte parente de l'élément survolé -->
+<!-- `siblings()` sélectionne les autres cartes -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('.lien-site').on('mouseenter', function() {
+      $(this).closest('.card').siblings().css('opacity', '0.4');
+    });
+
+    $('.lien-site').on('mouseleave', function() {
+      $(this).closest('.card').siblings().css('opacity', '1');
+    });
+  });
+</script>
+
+<!-- Ajouter une classe "fond" après la classe .navbar, afin de mettre de fond de la navbar en bleu -->
+<script>
+    window.addEventListener("scroll", function() {
+   var navbar = document.querySelector(".bar-superieur");
+   
+   // Ajoute la classe "fond" lorsque la position de défilement est supérieure à 0
+   if(window.scrollY > 0) {
+      navbar.classList.add("fondb");
+   } else {
+      navbar.classList.remove("fondb");
+   }
+});
     </script>
 
-    <!-- Ajouter une classe "fond" après la classe .navbar, afin de mettre de fond de la navbar en bleu -->
-    <script>
-        window.addEventListener("scroll", function() {
-       var navbar = document.querySelector(".bar-superieur");
-       
-       // Ajoute la classe "fond" lorsque la position de défilement est supérieure à 0
-       if(window.scrollY > 0) {
-          navbar.classList.add("fondb");
-       } else {
-          navbar.classList.remove("fondb");
-       }
-    });
-        </script>
+<!-- Ajouter une classe lorsque le l'objet en question est au centre verticalement de l'écran -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+const rectangles = document.querySelectorAll(".rectangle1");
+
+const checkVisibility = (element) => {
+const rect = element.getBoundingClientRect();
+const ecranHauteur = window.innerHeight;
+const centreVertical = (ecranHauteur / 1.2) - (rect.height / 1.2);
+
+if (rect.top <= centreVertical && rect.bottom >= centreVertical) {
+  element.classList.add("span-visible");
+}
+};
+
+const handleScroll = () => {
+rectangles.forEach((rectangle) => {
+  checkVisibility(rectangle);
+});
+};
+
+window.addEventListener("scroll", handleScroll);
+});
+</script>
+
+<!-- Ajouter une classe "span-visible" au objet de classe "rectangle2" quand ces dernier sont au centre verticalement de l'écran -->
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+const rectangles = document.querySelectorAll(".rectangle2");
+
+const checkVisibility = (element) => {
+const rect = element.getBoundingClientRect();
+const ecranHauteur = window.innerHeight;
+const centreVertical = (ecranHauteur / 1.2) - (rect.height / 1.2);
+
+if (rect.top <= centreVertical && rect.bottom >= centreVertical) {
+  element.classList.add("span-visible");
+}
+};
+
+const handleScroll = () => {
+rectangles.forEach((rectangle) => {
+  checkVisibility(rectangle);
+});
+};
+
+window.addEventListener("scroll", handleScroll);
+});
+
+</script>
+
+<!-- pareil mais pour les div ayant la classe "image-cache" -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+const rectangles = document.querySelectorAll(".image-cache");
+
+const checkVisibility = (element) => {
+const rect = element.getBoundingClientRect();
+const ecranHauteur = window.innerHeight;
+const centreVertical = (ecranHauteur / 1.2) - (rect.height / 1.2);
+
+if (rect.top <= centreVertical && rect.bottom >= centreVertical) {
+element.classList.add("image-visible");
+}
+};
+
+const handleScroll = () => {
+rectangles.forEach((rectangle) => {
+checkVisibility(rectangle);
+});
+};
+
+window.addEventListener("scroll", handleScroll);
+});
+</script>
 
 </body>
 </html>
