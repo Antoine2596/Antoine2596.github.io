@@ -31,7 +31,7 @@ span.background-titre{
 
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:400px) {
 
     .background{
         height: 25dvh;
