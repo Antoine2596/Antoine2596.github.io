@@ -19,6 +19,9 @@
 <body>
     <div class="background">
         <div class="background-image">
+          <div class="index" href="index.html">
+            <div class="circle"><a href="index.html">Retourner dans l'index</a></div>
+          </div>
         <div class="background-titre">Maching Learning</div>
 
         </div>
@@ -38,12 +41,28 @@
                 <p>B. Les modèles et leur entraînement</p>
                 <p>C. Les mesures de performance des modèles</p>
              <h2>III. Les algorithmes de machine learning</h2>
-                <p>A. Les algorithmes de régression</p>
+                <h3 class="cible" >A. Les algorithmes de régression</h3>
+                <div class="zone-h4 titre-h4">
+                    <h4 class="titre-h4">A.1 Introduction aux algorithmes de régression</h4>
+                    <div class="zone-h5 titre-h5">
+                      <h5 class="titre-h5">Définition et contexte</h5>
+                      <h5 class="titre-h5">Les types de régression</h5>
+                      <h5 class="titre-h5">Les applications courantes de la régression</h5></div>
+                    <h4 class="titre-h4">A.2 Les modèles de régression linéaire</h4>
+                    <h4 class="titre-h4">A.3 Les modèles de régression non-linéaire</h4>
+                    <h4 class="titre-h4">A.4 Les techniques avancées de régression</h4>
+                    <h4 class="titre-h4">A.5 La mise en œuvre des algorithmes de régression</h4>
+                  </div>
                 <p>B. Les algorithmes de classification</p>
                 <p>C. Les algorithmes d'apprentissage non supervisé</p>
                 <p>D. Les algorithmes d'apprentissage par renforcement</p>
              <h2>IV. Les techniques avancées de machine learning</h2>
-                <p>A. Le deep learning</p>
+                <h3 class="cible">A. Le deep learning</h3>
+                <div class="zone-h4 titre-h4">
+                <h4 class="titre-h4">Les réseaux de neurones</h4>
+                <h4 class="titre-h4">Les techniques d'entraînement des réseaux de neurones</h4>
+                <h4 class="titre-h4">Les modèles de deep learning</h4>
+                <h4 class="titre-h4">La mise en œuvre du deep learning</h4></div>
                 <p>B. Les réseaux de neurones</p>
                 <p>C. Les architectures de réseaux de neurones</p>
              <h2>V. La mise en œuvre du machine learning</h2>
@@ -62,6 +81,62 @@
             </div>
         </div>
     </div>
+    <div class="commentaire">
+        <h2>Idées</h2>
+        <ul>
+            <li class="idée-commentaire">Lorsque je passe mon curseur sur une sous-partie, cela affiche les sous-sous parties qui étaient cachées (QUI SONT CONTENU DANS L'OBJECT CIBLE)</li>
+            <li class="idée-commentaire">Mettre un bouton pour activer/désactiver l'affichage des sous-sous parties</li>
+        </ul>
+    </div>
+    <!-- Lorsque je ponte sur un objet de classe "cible", cela donne à tous les objets de classe "titre-h4" la classe "titre-h4-affiché" -->
+    <script>
+var cibles = document.querySelectorAll('.cible');
+
+cibles.forEach(function(cible) {
+  cible.addEventListener('mouseover', function(event) {
+    var parent = event.target.closest('.cible');
+    var zoneH4 = parent.nextElementSibling;
+    if (zoneH4 && zoneH4.classList.contains('zone-h4')) {
+      var titres = zoneH4.querySelectorAll('.titre-h4');
+      zoneH4.classList.add('afficher');
+      for (var i = 0; i < titres.length; i++) {
+        titres[i].classList.add('afficher');
+      }
+      zoneH4.addEventListener('mouseleave', function() {
+        zoneH4.classList.remove('afficher');
+        for (var i = 0; i < titres.length; i++) {
+          titres[i].classList.remove('afficher');
+        }
+      });
+    }
+  });
+});
+      </script>
+
+<script>
+  var cibles = document.querySelectorAll('.titre-h4');
+  
+  cibles.forEach(function(cible) {
+    cible.addEventListener('mouseover', function(event) {
+      var parent = event.target.closest('.titre-h4');
+      var zoneH4 = parent.nextElementSibling;
+      if (zoneH4 && zoneH4.classList.contains('zone-h5')) {
+        var titres = zoneH4.querySelectorAll('.titre-h5');
+        zoneH4.classList.add('afficher');
+        for (var i = 0; i < titres.length; i++) {
+          titres[i].classList.add('afficher');
+        }
+        zoneH4.addEventListener('mouseleave', function() {
+          zoneH4.classList.remove('afficher');
+          for (var i = 0; i < titres.length; i++) {
+            titres[i].classList.remove('afficher');
+          }
+        });
+      }
+    });
+  });
+        </script>
+
 
 </body>
 </html>
