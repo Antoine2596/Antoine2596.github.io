@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="AMU.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>AMU</title>
+</head>
+<body>
+    <header>
+        <div class="background">
+            <div class="navbar">
+                <div class="navlist">
+                        <a href="">Index</a>
+                        <a href="">Adresse</a>
+                        <img class="logo" src="https://www.univ-amu.fr/system/files/2021-01/DIRCOM-Logo_AMU_Blanc.png" alt="">
+                        <a href="">A propos</a>
+                        <a href="">Contacts</a>
+                </div>
+                <div class="menu">
+                    <span class="line top_line"></span>
+                    <span class="line middle_line"></span>
+                    <span class="line bottom_line"></span>
+                </div>
+                <nav class="navlisttel">
+                    <div class="navlistlink">
+            
+                    <ul>
+                        <div class="fond-index-menu">
+                    <li><a href="index.html">Retourner dans l'index</a></li>
+                        </div>
+                    <li><a href="https://annuaire-entreprises.data.gouv.fr/entreprise/130015332">Adresse</a></li> 
+                    <li><a href="CV.html">A propos</a></li>
+                    <li><a href="#">Contacts</a></li>
+            
+                 </ul>
+                </div>
+                </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Sur tel -->
+
+
+    </nav>
+
+    <!-- Fond sur Tel -->
+<div class="image-fac">
+    <div class="filtre-noir-fac"></div>
+</div>
+
+<!-- Cours -->
+
+<div class="zone-cours">
+
+    <a class="lien-cours" href="VisuOmics.html">
+    <div class="cours cours1">
+        <div class="filtre">
+        <h2>Visu Omic</h2>
+    </div>
+    </div>
+    </a>
+
+    <a class="lien-cours" href="diabète.html">
+    <div class="cours cours2">
+        <div class="filtre">
+        <h2>Diabète</h2>
+    </div>
+    </div>
+    </a>
+
+    <a class="lien-cours" href="Biologieenmarche.html">
+    <div class="cours cours3">
+        <div class="filtre">
+        <h2>Biologie en Marche</h2>
+    </div>
+    </div>
+    </a>
+
+    <a class="lien-cours" href="Ethogenomique.html">
+    <div class="cours cours4">
+        <div class="filtre">
+        <h2>Ethogénomique</h2>
+    </div>
+    </div>
+    </a>
+
+    <a class="lien-cours" href="">
+    <div class="cours cours5">
+        <div class="filtre">
+        <h2>Bio-informatique</h2>
+    </div>
+    </div>
+    </a>
+
+    <a class="lien-cours" href="">
+    <div class="cours cours6">
+        <div class="filtre">
+        <h2>Bio-technologie</h2>
+    </div>
+    </div>
+    </a>
+
+    <a class="lien-cours" href="Physiologie.html">
+    <div class="cours cours7">
+        <div class="filtre">
+        <h2>Physiologie</h2>
+    </div>
+    </div>
+    </a>
+
+    <a class="lien-cours" href="">
+    <div class="cours cours8">
+        <div class="filtre">
+        <h2>Biostatistique</h2>
+    </div>
+    </div>
+</a>
+
+    <a class="lien-cours" href="">
+    <div class="cours cours9">
+        <div class="filtre">
+        <h2>Stage</h2>
+    </div>
+    </div>
+    </a>
+    <a class="lien-cours" href="Biochimie.html">
+    <div class="cours cours10">
+        <div class="filtre">
+        <h2>Biochimie</h2>
+    </div>
+    </div>
+    </a>
+
+    <a class="lien-cours" href="Biologieenmarche.html">
+    <div class="cours cours11">
+        <div class="filtre">
+        <h2>Biologie du développement</h2>
+    </div>
+    </div>
+    </a>
+
+    <a class="lien-cours" href="">
+    <div class="cours cours12">
+        <div class="filtre">
+        <h2>Biomembrane</h2>
+    </div>
+    </div>
+    </a>
+
+    <a class="lien-cours" href="">
+    <div class="cours cours13">
+        <div class="filtre">
+        <h2>Génétique</h2>
+    </div>
+    </div>
+    </a>
+
+    <a class="lien-cours" href="Monde-vivant.html">
+    <div class="cours cours14">
+        <div class="filtre">
+        <h2>Monde Vivant</h2>
+    </div>
+    </div></a>
+
+    <a class="lien-cours" href="">
+    <div class="cours cours15">
+        <div class="filtre">
+        <h2>Biologie cellulaire</h2>
+    </div>
+    </div>
+    </a>
+
+    <a class="lien-cours" href="">
+    <div class="cours cours16">
+        <div class="filtre">
+        <h2>Spectroscopie Microscopie Imagerie</h2>
+    </div>
+    </div>
+    </a>
+
+</div>
+</body>
+    <!-- Ajouter une classe "fond" après la classe .navbar, afin de mettre de fond de la navbar en bleu -->
+    <script>
+        window.addEventListener("scroll", function() {
+       var navbar = document.querySelector(".navbar");
+       
+       // Ajoute la classe "fond" lorsque la position de défilement est supérieure à 0
+       if(window.scrollY > 0) {
+          navbar.classList.add("navbar-bleu");
+       } else {
+          navbar.classList.remove("navbar-bleu");
+       }
+    });
+        </script>
+
+<!-- Afficher le menu sur tel -->
+<script>
+    const menuHamburger = document.querySelector(".menu")
+    const navLinks = document.querySelector(".navlisttel")
+
+    menuHamburger.addEventListener('click',()=>{
+    navLinks.classList.toggle('mobile-menu')
+    })
+</script>
+<script>
+          const menuBtn = document.querySelector('.menu')
+
+menuBtn.addEventListener('click', () => {
+  menuBtn.classList.toggle('open')
+})
+</script>
+
+    <!-- Lorsque je survole un objet de class "cours" d'une card, les autres cards sont transparents -->
+    <!-- "mouseenter" pour rendre les autres cartes transparentes -->
+    <!-- `closest('.card')` permet de sélectionner la carte parente de l'élément survolé -->
+    <!-- `siblings()` sélectionne les autres cartes -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.filtre').on('mouseenter', function() {
+          $(this).closest('.lien-cours').siblings().css({
+            'opacity': '0.6',
+            'transition': 'opacity 1s'
+          });
+        });
+    
+        $('.filtre').on('mouseleave', function() {
+          $(this).closest('.lien-cours').siblings().css({
+            'opacity': '1',
+            'transition': 'opacity 1s'
+          });
+        });
+      });
+    </script>
+    
+</html>

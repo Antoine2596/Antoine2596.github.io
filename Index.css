@@ -12,7 +12,7 @@ body{
 header{
     height: 100vh;
     width: 100vw;
-    background-image: url(image/landscape.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.0)), url(https://image.jimcdn.com/app/cms/image/transf/dimension=1920x1080:format=jpg/path/sd65a69ec263b6fc1/image/i8525cd70bd4b24e1/version/1587576109/image.jpg);
     background-size: cover;
 
 }
@@ -29,7 +29,8 @@ header{
 }
 
 .navbar a{
-    color: white;
+    color: #fff;
+    text-shadow: black 0 0 1px;
 }
 
 .navbar a:hover{
@@ -77,7 +78,7 @@ header{
         top: 0;
         left: 0;
         position: absolute;
-        background-color: rgba(211, 211, 211, 0.178);
+        background-color: rgba(211, 211, 211, 0.1);
         backdrop-filter: blur(3px);
         width : 100%;
         height: 100vh;
@@ -86,6 +87,7 @@ header{
         align-items: center;
         margin-left: -100%;
         transition: all 0.5s ease;
+        text-shadow: black 0 0 5px;
     }
 
     .mobile-menu{

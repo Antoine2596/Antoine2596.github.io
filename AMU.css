@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins';
+}
+
+
+header{
+    width: 99dvw;
+    height: 100vh;
+}
+
+.background{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0)), url(https://gomet.net/wp-content/uploads/2021/02/facdedroit-scaled.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+.navbar{
+    width: 100%;
+    height: 150px;
+    background-color: transparent;
+    position: fixed;
+    transition: background-color 1s ease;
+    z-index: 2;
+
+    
+}
+
+.navbar.navbar-bleu{
+    background-color: #00558b;
+    transition: background-color 0.6s ease;
+    box-shadow: black 0 0 3px;
+}
+
+.navlist{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-left: calc(22vw - 150px);
+    padding-right: calc(22vw - 150px);
+}
+
+.navlist a{
+    color: #fff;
+    font-family: 'Poppins';
+    font-size: calc(0.5vw + 0.7em);
+}
+
+.navlist a:hover{
+    text-decoration: underline;
+}
+.navlisttel{
+    display: none;
+}
+
+.logo{
+    width: 25%;
+}
+
+/* Cours */
+
+.zone-cours{
+    margin-top: 15px;
+    position: relative;
+    height: 1000px;
+    width: 78%;
+    z-index: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    align-items: center;
+    padding-left: 20px;
+    
+    
+}
+
+
+.cours{
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+    margin: 10px;
+    text-align: center;
+    float: left;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 15px;
+    transition: 0.5 ease;
+}
+
+.cours:hover{
+    scale: 1.1;
+    transition: 0.6s ease;
+}
+.filtre{
+    backdrop-filter: blur(2px);
+    height: 100%;
+    width: auto ;
+}
+
+h2{
+    padding-top: 50px;
+    text-shadow: black 0 0 5px;
+}
+
+.cours1{
+    background-image: url(https://www.biomerieux-industry.com/sites/default/files/2021-03/Whole%20Genome%20Sequencing%20WGS.jpg);
+}
+
+.cours2{
+    background-image: url(https://trustmyscience.com/wp-content/uploads/2017/05/pancreas-artificiel-diabete-soigner-insuline-cellules-ilots.jpg);
+}
+
+.cours3{
+    background-image: url(https://alaingrandjean.fr/wp-content/uploads/2016/03/phages-phagotherapie-bacterie.jpg);
+}
+.cours4{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f0/FreeBSD_10_vi_RC_Firewall.png);
+}
+
+/* Bioinfo */
+.cours5{ 
+    background-image: url(https://sunbren.com/wp-content/uploads/2018/10/bioinformatique_px.jpg);
+}
+
+/* biotech */
+.cours6{
+    background-image: url(https://www.lodj.ma/photo/art/grande/53807535-40638185.jpg?v=1612967885);
+}
+/* Physio */
+.cours7{
+    background-image: url(https://cdn.shopify.com/s/files/1/0045/8437/4385/products/hpe320_900x.jpg?v=1566335940);
+}
+/* Biostat */
+.cours8{
+    background-image: url(https://media.istockphoto.com/id/1219382595/fr/vectoriel/%C3%A9quations-math%C3%A9matiques-%C3%A9crites-sur-un-tableau-noir.jpg?s=612x612&w=0&k=20&c=5QA9_ehQD_RODTdtfmrFWUPnJWnJohIJ-iydeC2iZzc=);
+}
+/* Phylogénie */
+.cours9{
+    background-image: url(https://d20ohkaloyme4g.cloudfront.net/img/document_thumbnails/18b37bbd3b1d9a38cb7723a1f6249cff/thumb_1200_1552.png);
+}
+/* Biochimie */
+.cours10{
+    background-image: url(https://img.freepik.com/vecteurs-premium/icones-contour-concept-biochimie_104589-780.jpg?w=2000);
+}
+/* Biodev */
+.cours11{
+    background-image: url(image/embryon.png);
+}
+/* Biomembrane */
+.cours12{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJloe7SxPv12i-9ukmiGhm6mjOorNl89-MrBqvFZwpLM07wlyr6Sqkur6Eim5lS33zqSg&usqp=CAU);
+}
+/* Génétique */
+.cours13{
+    background-image: url(https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/201904/dna-pixabay_0.png?itok=qnZWQ4AF);
+}
+/* Monde vivant */
+.cours14{
+    background-image: url(https://t3.ftcdn.net/jpg/04/39/50/28/360_F_439502802_xbssYKPqv3f2eKnf6DgErfya5RtTuDph.jpg);
+}
+/* Biocell */
+.cours15{
+    background-image: url(https://www.sciencesetavenir.fr/assets/img/2020/05/06/cover-r4x3w1000-61c9e8835036d-049-f0292578.jpg);
+}
+/* SMI */
+.cours16{
+    background-image: url(https://www.flir.fr/globalassets/industrial/discover/machine-vision/zaber-microscope-1200x628.jpg);
+}
+
+@media screen and (max-width:840px) {
+    header{
+        width: 94dvw;
+    }
+
+    .background{
+        width: 101%;
+    }
+
+    .navbar{
+        height: 60px;
+    }
+    .navlist a{
+        display: none;
+    }
+
+    .navlist{
+        padding-top: 10px;
+    }
+    .logo{
+        position: relative;
+        left: 10px;
+        width: 125px;
+    }
+
+    .filtre-noir-fac{
+        position: absolute;
+        width: 100%;
+        height: 500px;
+        transition: background-color 1s ease;
+    }
+
+    .menu{
+        display: none;
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        width: 35px;
+    }
+    
+    .menu {
+        display: block;
+        position: absolute;
+        right: 10%;
+        top: 50%;
+        transform:translate(-50%,-50%);
+        /* remplir l'espace */
+        display: flex;
+        /* mettre en colonne */
+        flex-direction: column;
+        /* séparer de 8px */
+        gap: 12px;
+        cursor: pointer;
+    }
+    
+    .navbar .menu .line {
+        width: 40px;
+        height: 2px;
+        background-color: white;
+        transform-origin: left;
+        transition:transform 0.5s ease, opacity 0.2s ease;
+    }
+    
+    .navbar .menu.open .middle_line{
+        opacity: 0;
+    }
+    .navbar .menu.open .top_line{
+        transform: rotate(45deg);
+    }
+    
+    .navbar .menu.open .bottom_line{
+        transform: rotate(-45deg);
+    }
+
+    .navlisttel{
+        top: 13px;
+        left: 0;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.397);
+        backdrop-filter: blur(2px);
+        width : 100%;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.8s ease;
+        z-index: 1;
+        
+    }
+
+    .navlistlink ul a{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        font-size: 1.2em;
+    }
+
+    .mobile-menu{
+        margin-left: 0;
+    }
+
+    
+
+    /* Cours */
+
+.zone-cours{
+
+    position: relative;
+    height: 1000px;
+    width: 100%;
+    z-index: 0;
+    left: 0;
+    transform: translate(0,0);
+    align-items: center;
+    padding-left: 0;
+    
+    
+}
+
+
+.cours{
+    width: 145px;
+    height: 125px;
+    cursor: pointer;
+    margin: 5px;
+    text-align: center;
+    float: left;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 15px;
+    transition: 0.5 ease;
+}
+
+h2{
+    position: relative;
+    padding-top: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+    font-size: 1.1em;
+}
+}

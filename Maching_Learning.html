@@ -84,7 +84,7 @@
     <div class="commentaire">
         <h2>Idées</h2>
         <ul>
-            <li class="idée-commentaire">Lorsque je passe mon curseur sur une sous-partie, cela affiche les sous-sous parties qui étaient cachées (QUI SONT CONTENU DANS L'OBJECT CIBLE)</li>
+            <li class="idée-commentaire">Lorsque je clique sur une partie, cela affiche les sous-sous parties qui étaient cachées (QUI SONT CONTENU DANS L'OBJECT CIBLE)</li>
             <li class="idée-commentaire">Mettre un bouton pour activer/désactiver l'affichage des sous-sous parties</li>
         </ul>
     </div>
@@ -93,22 +93,21 @@
 var cibles = document.querySelectorAll('.cible');
 
 cibles.forEach(function(cible) {
-  cible.addEventListener('mouseover', function(event) {
+  cible.addEventListener('click', function(event) {
     var parent = event.target.closest('.cible');
     var zoneH4 = parent.nextElementSibling;
-    if (zoneH4 && zoneH4.classList.contains('zone-h4')) {
       var titres = zoneH4.querySelectorAll('.titre-h4');
       zoneH4.classList.add('afficher');
       for (var i = 0; i < titres.length; i++) {
         titres[i].classList.add('afficher');
       }
-      zoneH4.addEventListener('mouseleave', function() {
+      zoneH4.addEventListener('click', function() {
         zoneH4.classList.remove('afficher');
         for (var i = 0; i < titres.length; i++) {
           titres[i].classList.remove('afficher');
         }
       });
-    }
+    
   });
 });
       </script>
@@ -117,7 +116,7 @@ cibles.forEach(function(cible) {
   var cibles = document.querySelectorAll('.titre-h4');
   
   cibles.forEach(function(cible) {
-    cible.addEventListener('mouseover', function(event) {
+    cible.addEventListener('click', function(event) {
       var parent = event.target.closest('.titre-h4');
       var zoneH4 = parent.nextElementSibling;
       if (zoneH4 && zoneH4.classList.contains('zone-h5')) {
@@ -126,7 +125,7 @@ cibles.forEach(function(cible) {
         for (var i = 0; i < titres.length; i++) {
           titres[i].classList.add('afficher');
         }
-        zoneH4.addEventListener('mouseleave', function() {
+        zoneH4.addEventListener('click', function() {
           zoneH4.classList.remove('afficher');
           for (var i = 0; i < titres.length; i++) {
             titres[i].classList.remove('afficher');
