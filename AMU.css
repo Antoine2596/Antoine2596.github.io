@@ -175,7 +175,7 @@ h2{
 
 @media screen and (max-width:840px) {
     header{
-        width: 94dvw;
+        width: 99dvw;
     }
 
     .background{
@@ -248,7 +248,7 @@ h2{
     }
 
     .navlisttel{
-        top: 13px;
+        top: 7px;
         left: 0;
         position: relative;
         background-color: rgba(0, 0, 0, 0.397);
