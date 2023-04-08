@@ -1,0 +1,399 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+header{
+    background-image: url(https://www.teslarati.com/wp-content/uploads/2019/01/tesla-solar-roof-powerwall-energy-a-e1548231944230.jpg);
+    height: 405px;
+    width: 100vw;
+    background-size: cover;
+    background-position: 0 60%;
+}
+
+.header-content{
+    position: relative;
+    display: flex;
+    padding: 10px;
+    top: 10px;
+    justify-content: space-between;
+    
+}
+
+.icon{
+    position: relative;
+    color: white;
+    height: 13.5px;
+    padding-left: 50px;
+}
+
+.onglet-central{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+.onglet-central li a{
+    color: white;
+    text-decoration: none;
+    font-family: "Gotham Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.onglet-central li a span{
+    padding: 10px;
+    transition: 1s ease;
+    
+    
+}
+
+.onglet-central li a span:hover{
+    transition: 1s ease;
+    background-color: #00000083;
+    backdrop-filter: blur(4px);
+
+}
+
+.onglet-droite{
+    display: flex;
+    right: 30px;
+    justify-content: space-between;
+    width: 350px;
+    padding-right: 30px;
+}
+
+.onglet-droite li a{
+    color: white;
+    text-decoration: none;
+    font-family: "Gotham Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.onglet-droite li a span{
+    padding: 10px;
+    transition: 1s ease;
+}
+
+.onglet-droite li a span:hover{
+    transition: 0.5s ease;
+    background-color: #00000083;
+    backdrop-filter: blur(4px);
+}
+
+.barre-recherche{
+    position: relative;
+    top: 30%;
+    text-align: center;
+}
+
+.barre-recherche span input{
+    cursor: pointer;
+    width: 400px;
+    color: grey;
+    font-family: "Gotham Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px grey ;
+    
+}
+
+.accesvraisite{
+    position: relative;
+    top: 60%;
+    text-align: center;
+}
+
+.accesvraisite a{
+    padding: 20px;
+    color: white;
+    font-family: "Gotham Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition:  1s ease;
+    border-radius: 30px;
+    border: 2px solid transparent;
+}
+
+.accesvraisite a:hover{
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.432);
+    transition:  1s ease;
+}
+
+/* Body */
+.body-content{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 1150px;
+    padding-top: 120px;
+    font-family: "Gotham Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    
+}
+
+/* Rubriques */
+.rubriques{
+    margin-bottom: 100px;
+}
+
+.rubriques-titre h2{
+    padding-bottom: 20px;
+    font-size: 2.1em;
+    font-weight: 500;
+}
+
+.rubriques-liste ul{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rubriques-liste ul li a{
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.rubriques-liste ul li a:hover{
+    text-decoration: underline;
+}
+
+/* 3 colonnes */
+.support-articles{
+    position: relative;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%,0);
+    justify-content: space-between;
+    width: 1000px;
+    margin-bottom: 50px;
+}
+
+.support-articles h3{
+    font-size: 1.5em;
+    color: rgb(51, 51, 51);
+    padding-bottom: 50px;
+    font-weight: 500;
+}
+
+.support-articles ul li{
+    margin-bottom: 20px;
+}
+
+.support-articles ul li a{
+    color: grey;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+/* Content 1 */
+.content-1{
+    position: relative;
+    display: flex;
+}
+
+.content-gauche{
+    margin-right: 50px;
+    text-align: right;
+    width: 50%;
+    margin-top: 30px;
+}
+
+.content-droite{
+    margin-left: 50px;
+    text-align: left;
+    width: 50%;
+    margin-top: 30px;
+}
+
+.content-1-droite{
+    width: 50%;
+    margin-bottom: 100px;
+}
+
+.content h3{
+    position: relative;
+
+    font-size: 1.6em;
+    color: rgb(51, 51, 51);
+    padding-bottom: 30px;
+    font-weight: 500;
+}
+
+.content p{
+    color: grey;
+    font-size: 1.1em;
+    padding-bottom: 20px;
+}
+
+.content ul li{
+    padding-bottom: 20px;
+}
+
+.content a{
+    color: black;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: 0.6s ease;
+}
+
+.body-content a:hover{
+    color: #3e6ae1;
+}
+
+.content img{
+    width: 100%;
+}
+
+.content-2{
+    position: relative;
+    display: flex;
+}
+
+.content-2-gauche{
+    width: 50%;
+}
+
+/* Bande de contact */
+.bande-gris{
+    position: relative;
+    background-color: #f4f4f4;
+    text-align: center;
+    font-family: "Gotham Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    height: 200px;
+}
+
+.bande-gris h3{
+    font-size: 2em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 400;
+}
+
+.bande-gris p{
+    color: grey;
+    font-size: 1.1em;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.bande-gris a{
+    color: black;
+    text-decoration: none;
+    padding: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    border: 3px black solid;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+/* Bande noir */
+.bande-noir{
+    background-color: #393c41;
+}
+
+.zone-content{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 1200px;
+    padding-top: 50px;
+    font-family: "Gotham Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+
+.zone-haut{
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid grey;
+}
+
+.zone-carte{
+    position: relative;
+    display: flex;
+    padding: 20px;
+    border-right: 1px solid grey;
+}
+
+.zone-carte a{
+    margin: 5px;
+}
+
+.zone-carte a p{
+    padding-bottom: 10px;
+}
+
+.zone-carte img{
+    height: 140px;
+}
+
+.zone-haut a{
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+
+.zone-droite{
+    padding: 20px;
+}
+
+.zone-droite ul li{
+    margin-bottom: 5px;
+}
+
+.zone-droite-haut{
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.liste-gauche{
+    margin-right: 80px;
+}
+
+.liste-droite-haut{
+    margin-bottom:40px ;
+}
+
+.zone-bas{
+    color: white;
+}
+
+.zone-bas a{
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1100px) {
+    .onglet-central{
+        position: absolute;
+        top: 300px;
+        left: 50%;
+        width: 600px;
+        transform: translate(-50%,0);
+    }
+    
+}
