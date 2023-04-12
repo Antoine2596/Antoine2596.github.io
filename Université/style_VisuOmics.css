@@ -167,7 +167,7 @@ body{
 .zone-card .card .titre-article p{
   position: relative;
   left: 50%;
-  top: 45%;
+  top: 55%;
   background-color: #006699;
   transform: translate(-50%,-50%);
   color: yellow;
