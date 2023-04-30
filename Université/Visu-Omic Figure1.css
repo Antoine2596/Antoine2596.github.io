@@ -315,9 +315,15 @@ header{
 }
 
 .nav-bar ul{
-  display: flex;
+  display: block;
   width: 110%;
   justify-content: space-between;
+  
+
+}
+
+.nav-bar ul li{
+  margin-bottom: 20px;
 }
 
 .nav-bar ul li a{
@@ -329,6 +335,8 @@ header{
   padding: 5px 10px;
   transition: 0.5s;
 }
+
+
 
 .nav-bar ul li a:hover{
   color: #006699;
