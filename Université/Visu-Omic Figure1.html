@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Visu-Omic Figure1.css">
+    <!-- Police d'écriture -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preload" href="/static/fonts/HardingText-Regular-Web-cecd90984f.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preconnect" href="https://push-content.springernature.io" crossorigin="">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
+    <link rel="preload" href="/static/fonts/HardingText-Regular-Web-cecd90984f.woff2" as="font" type="font/woff2" crossorigin="">
+    <title>Reference genome assemblies reveal the origin and evolution of allohexaploid oat</title>
+    <!-- Icône de l'onglet -->
+    <link rel="shortcut icon" href="Visu Données Omics/logo_AntoineGenomic.png">
+</head>
+<body>
+    <header class="header-cours">
+        <div class="logo">
+            <p>AntoineGenomic &#9816;</p>
+        </div>
+        <div class="nav-bar">
+            <ul>
+                <li><a href="AMU.html">Université</a></li>
+                <li><a href="VisuOmics.html">Visu-Omic</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="background">
+    <div class="background-texte">
+        <div class="titre">
+        <p>Circos display of the genomic features of the assembled diploid A. longiglumis, tetraploid A. insularis and hexaploid A. sativa ssp. nuda genomes</p>
+        </div>
+    <div class="lien">
+        <ul>
+            <li><a href="https://www.nature.com/articles/s41588-022-01127-7" target="_blank">Article</a></li>
+            <li><a href="#Présentation_circos">Présentation Circos</a></li>
+            <li><a href="#Script">Script</a></li>
+        </ul>
+    </div>
+</div>
+    <div class="background-image">
+        <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41588-022-01127-7/MediaObjects/41588_2022_1127_Fig1_HTML.png?as=webp" alt="">
+    </div>
+    </div>
+
+    <!-- Maintenant je met une zone pour présenter mon code -->
+    <div class="contenu">
+    <section class="zone_script">
+    
+        <div class="texte_script">
+              <p class="h1_script">
+                  <strong id="Présentation_circos"> Présentation de la figure et des données</strong> </p>
+              <h2 >Présentation du circos</h2>
+              
+              <div>
+              
+          <p>Il s'agit d'un circos constitué de 7 pistes heatmap, et d'un centre constitué de lien entre différents chromosomes. Il présente 42 chromosomes réparties sur 3 espèces : <em>A. longiglumis</em>, <em> A. insularis</em> et <em>A. sativa ssp. nuda</em>.</p>
+          <img class ="image" src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41588-022-01127-7/MediaObjects/41588_2022_1127_Fig1_HTML.png?as=webp" alt="Circos1" title="Circos1" >
+      
+          <h3>Les pistes heatmaps</h3>
+          <p>Chacunes des pistes de cette circos représente une heatmap :</p>
+          <ul>
+              <li>La piste <strong>(a)</strong> représente les positions inférées des centromères des chromosomes des génomes A et D.</li>
+              <li>La piste <strong>(b)</strong> représente la distribution de la répétition spécifique du génome C Am1 le long de chaque chromosome. </li>
+              <li>La piste <strong>(c)</strong> représente la distribution de la répétition spécifique du génome A As120a le long de chaque chromosome.</li>
+              <li>La piste <strong>(d)</strong> représente les fréquences k-mer (fréquence d'apparition de séquences de longueur k dans un génome ou une séquence d'ADN).</li>
+              <li>La piste <strong>(e)</strong> représente la densité de répétition en tandem (TR).</li>
+              <li>La piste <strong>(f)</strong> représente la densité de rétrotransposons LTR.</li>
+              <li>La piste <strong>(g)</strong> représente la densité génétique. </li>
+              <li>La piste <strong>(h)</strong> présente les noms et tailles des chromosomes.
+          </ul>
+    <img class="image"src="Visu Données Omics/Heatmap_circos1.png" alt="">
+
+    <h3>Les liens</h3>
+    <p>Les liens en couleurs représentent la présence sur le même chromosome de un ou plusieurs locus. Les liens en gris quant à eux montre des réarrangements chromosomiques pendant l'hexaploïdisation. </p>
+        
+        <img class="image" src="Visu Données Omics/Links_circos1.png" alt="" width="700">
+</div>
+        <h2 id="Présentation_données">Présentation des données</h2>
+        <p>Un seul fichier excel contenant les données est fournit pour la réalisation de la figure. Il est composé de 10 onglets, dont chaques onglets correspond à une piste ou à des liens.</p>
+
+        <h3>Présentations des données de la heatmap</h3>    
+        <p>Les onglets "ring_<em>x</em>" permettent de réaliser des pistes heatmaps de (a) à (g), elles ont toutes la même structure : d'un titre, puis de 4 colonnes : </p>
+            <ul>
+                <li><strong>Chr</strong> : Le nom du chromosome.</li>
+                <li><strong>Start</strong> : La position de départ du chromosome.</li>
+                <li><strong>End</strong> : La position de fin du chromosome.</li>   
+                <li><strong>Density/CopyNumber</strong> : la densité ou le nombre de copie d'un génome. C'est cette valeur qui va permettre de définir le niveau de couleur de la heatmap.</li>              
+            </ul>
+            <img class="image" src="Visu Données Omics/data_ring_circos1.png" alt="">
+            <h3>Présentation des données pour le track</h3>
+            <p>L'onglet <em>ring_h</em> nous présente la liste des chromosomes, leur positions de début et de fin respectives, on peut utiliser cette onglet dans la réalisation du track.</p>
+            <img class="image" src="Visu Données Omics/data_track_circos1.png" alt="">
+            <h3>Présentation des données pour les liens</h3>
+            <p>Il existe 2 onglets afin de réaliser les liens, les onglets <em>"Fig1 innermost_links_1"</em> et <em>"Fig1 innermost_links_2"</em>, ils ont tous les deux la même structure : un titre dans la première cellule, puis 7 colonnes:</p>
+            <ul>
+                <li><strong>chromosome</strong> : Le nom du chromosome d'où commence le lien.</li>
+                <li><strong>Start</strong> : La position de départ du lien sur le premier chromosome.</li>
+                <li><strong>End</strong> : La position de fin du lien sur le premier chromosome.</li>
+                <li><strong>chromosome</strong> : Le nom du chromosome d'où se termine le lien</li>
+                <li><strong>Start</strong> : La position de départ du lien sur le second chromosome.</li>
+                <li><strong>End</strong> : La position de fin du lien sur le second chromosome.</li>
+                <li><strong>Color</strong> : La couleur du lien.</li>
+            </ul>
+            <div class="espace_data_link_circos1"></div>
+            <img class="image" src="Visu Données Omics/espace_data_link_circos1.png" alt="">
+            <p class="h1_script">
+            <strong id="Script"> Présentation du script</strong> </p>
+        <h2 id="librairies">Libraires</h2>
+        <p>En premier temps, il est nécessaire de charger toutes les librairies nécessaires, certains packages doivent d'abord être installés une fois.</p>
+        <p>L'installation des packages s'effectue avec la fonction <strong>'install.packages'</strong>, la lecture du package s'effectue avec la fonction <strong>'library'</strong>.</p>
+        <div class="code">
+        <code># Installation des packages nécéssaires (ne dois être fais qu'une seule fois)<br>
+            install.packages("BioCircos")<br>
+            install.packages("htmlwidgets")<br>
+            install.packages("pagedown")<br>
+            <br>
+            #Chargements des librairies<br>
+            library(readxl) # Permet de lire les fichiers .xls<br>
+            library(BioCircos) #Permet d'afficher des valeurs sous forme de circos<br>
+            library(RColorBrewer) #Librairie pour ajouter des palettes de couleurs<br>
+            library(htmlwidgets) #Convertir le résultat en fichier .html<br>
+            library(pagedown) #Convertir le fichier .html en .pdf<br>
+            
+        </code>
+    </div>
+    <h2 id="Lecture_données">Lecture des données</h2>
+
+    <p>A présent, on peut lire l'ensemble des données nécessaires à la réalisation de la figure.</p>
+    <p>Les données étant concentrés dans un seule fichier excel, nous allons associé la lecture de chacun des onglets du ficher à un objet qui permettra la réalisation d'une piste.</p>
+    <p>On utilise la fonction 'read_excel' afin de lire notre fichier excel, le paramètre <strong>'sheet'</strong> permet de choisi l'onglet qui sera lu, le paramètre <strong>'skip'</strong> permet de sauter la première ligne qui contient des informations inutiles.</p>
+    <div class="code">
+        <code>
+            #Lecture des tableaux du ficher 41588_2022_1127_MOESM5_ESM.xlsx
+
+# ring_a<br>
+ring_a <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 3, skip = 1) <br>       
+# ring_b<br>
+ring_b <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 4, skip = 1)<br>
+# ring_c<br>
+ring_c <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 5, skip = 1)<br>
+# ring_d<br>
+ring_d <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 6, skip = 1)<br>
+# ring_e<br>
+ring_e <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 7, skip = 1)<br>
+# ring_f<br>
+ring_f <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 8, skip = 1)<br>
+# ring_g<br>
+ring_g <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 9, skip = 1)<br>
+# ring_h<br>
+ring_h <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 10, skip = 1)<br>
+<br>
+#innermost_links_1<br>
+innermost_links_1 <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 2, skip = 1)<br>
+#innermost_links_2<br>
+innermost_links_2 <- read_excel("41588_2022_1127_MOESM5_ESM.xlsx", sheet = 1, skip = 1)<br>
+        </code>
+    </div>
+    <p>On va modifier le nom des colonnes du tableau obtenu avec la fonction <strong>'names'</strong> afin de les rendres plus lisibles :</p>
+    <div class="code">
+        <code># innermost_links_1<br>
+            names(innermost_links_1)[names(innermost_links_1) == "Chromosome...1"] <- "chrA"<br>
+            names(innermost_links_1)[names(innermost_links_1) == "Start...2"] <- "startA"<br>
+            names(innermost_links_1)[names(innermost_links_1) == "End...3"] <- "endA"<br>
+            names(innermost_links_1)[names(innermost_links_1) == "Chromosome...4"] <- "chrB"<br>
+            names(innermost_links_1)[names(innermost_links_1) == "Start...5"] <- "startB"<br>
+            names(innermost_links_1)[names(innermost_links_1) == "End...6"] <- "endB"<br>
+            <br>
+            # innermost_links_2<br>
+            names(innermost_links_2)[names(innermost_links_2) == "Chromosome...1"] <- "chrA"<br>
+            names(innermost_links_2)[names(innermost_links_2) == "Start...2"] <- "startA"<br>
+            names(innermost_links_2)[names(innermost_links_2) == "End...3"] <- "endA"<br> </code>
+            
+    </div>
+    <h2 id="Construction">Construction des pistes</h2>
+    <h3>Construction du track</h3>
+    <p>Lorsqu'on veut réaliser des pistes sur Biocircos, dont doit d'abord définir la longueur des tracks, 
+        c'est-à-dire la longueur des chromosomes. Biocircos ne pouvant définir la track qu'à partir d'une liste, 
+        nous allons alors définir la liste via le tableau <em>"ring_h"</em>.</p>
+        <div class="code">
+            <code># On enlève tous les préfixes "chr -"<br>
+                ring_h$Chr <- sub("^chr - ", "", ring_h$Chr)<br>
+                <br>
+                # On elève la 2ème, 3ème et 5ème colonnes afin de laisser uniquement "Chr" et "End"<br>
+                ring_h <- ring_h[,-c(2,3,5)]<br>
+                <br>
+                # Récupérer les noms des chromosomes commençant par "al"<br>
+                chr_names <- unique(ring_h$Chr[grep("^al", ring_h$Chr)])<br>
+                <br>
+                # Inverser l'ordre des lignes des chromosomes commençant par "al"<br>
+                ring_h[ring_h$Chr %in% chr_names,] <- ring_h[ring_h$Chr %in% chr_names,][nrow(ring_h[ring_h$Chr %in% chr_names,]):1,]<br>
+                <br>
+                # Récupérer les noms des chromosomes commençant par "ai"<br>
+                chr_names <- unique(ring_h$Chr[grep("^ai", ring_h$Chr)])<br>
+                <br>
+                # Inverser l'ordre des lignes des chromosomes commençant par "ai"<br>
+                ring_h[ring_h$Chr %in% chr_names,] <- ring_h[ring_h$Chr %in% chr_names,][nrow(ring_h[ring_h$Chr %in% chr_names,]):1,]<br>
+                <br>
+                #On met les lignes des chromosomes commençant par "an" en premier<br>
+                ring_h <- ring_h[c(grep("^an", ring_h$Chr), setdiff(1:nrow(ring_h), grep("^an", ring_h$Chr))),]<br>
+                <br>
+                # On créer une liste à partir du tableau<br>
+                ring_h <- setNames(as.list(ring_h$End),<br>
+                as.list(ring_h$Chr))</code>
+        </div>
+        <h3>Affichage du titre</h3>
+       <p> Biocircos est un package qui à utilise des fonctions différentes selon le type de données qu'on souhaite afficher (heatmap, link, line,...), un circos a donc besoin d'une addition de chaque fonctions afin de contenir toutes les données.</p>
+       <p>Pour commencer, nous allons définir un objet nommé <em><strong> 'Track'</strong></em> qui en premier temps contenir la fonction <em><strong>'BioCircosTextTrack'</strong></em>, afin d'afficher un texte. Ici, nous allons afficher le titre de la figure.</p>
+       <div class="code">
+        <code>Track <- BioCircosTextTrack("MyTextTrack", #Nom sans importance qu'on donne pour nommé le rôle de cette fonction<br>
+            &nbsp; &nbsp; &nbsp; &nbsp; #ci-dessous, le texte à afficher<br>
+            &nbsp; &nbsp; &nbsp; &nbsp;"Fig. 1: Circos display of the genomic features of the assembled diploid A. longiglumis, tetraploid A. insularis and hexaploid A. sativa ssp. nuda genomes.",<br>
+            &nbsp; &nbsp; &nbsp; &nbsp;x = -3, # Position en abscisse du texte<br>
+            &nbsp; &nbsp; &nbsp; &nbsp;y=-2.3, # Position en ordonnée du texte<br>
+            &nbsp; &nbsp; &nbsp; &nbsp;size = "1.5em" #taille du texte<br>
+            &nbsp; &nbsp; &nbsp; &nbsp;)</code>
+       </div>
+       <h3>Affichage des pistes heatmaps</h3>
+       <h4>Anneau A</h4>
+       <div class="code">
+        <code>
+            #ringA<br>
+Track <- Track + BioCircosHeatmapTrack("Ring_A", labels = FALSE, #Labels = FALSE signifie qu'on ne veut pas afficher les noms des chromosomes pour cette piste<br> 
+&nbsp; &nbsp; &nbsp; &nbsp; chromosomes = ring_a$Chr, #Sélectionner la colonne des noms des chromosomes<br>
+&nbsp; &nbsp; &nbsp; &nbsp; starts = ring_a$Start,    #Sélectionner la colonne des débuts de positions<br>
+&nbsp; &nbsp; &nbsp; &nbsp;  ends = ring_a$End,        #Sélectionner la colonne des fins des positions<br>
+&nbsp; &nbsp; &nbsp; &nbsp;  values = ring_a$Density,  #Sélectionner la colonne des densité<br>
+&nbsp; &nbsp; &nbsp; &nbsp; maxRadius = 1.9,          #Définir le rayon maximal de la piste<br>
+&nbsp; &nbsp; &nbsp; &nbsp;  minRadius = 1.85,         #Définir le rayon minimale de la piste<br> 
+&nbsp; &nbsp; &nbsp; &nbsp; color =c("#f2f2b5","#145059")) #Définir les couleurs en fonction des valeurs de densité minimale et maximale<br>
+        </code>
+       </div>
+       <p>On peut ensuite réaliser la même opérations pour chaques onglets possédants les valeurs nécessaires à la réalisations d'une heatmap en rempaçant les noms des colonnes.</p>
+       <h4>Anneau B</h4>
+       <div class="code">
+        <code>
+            #ringb<br>
+            Track <- Track + BioCircosHeatmapTrack("Ring_B", labels = FALSE,<br>
+                                                   chromosomes = ring_b$Chr,<br>
+                                                   starts = ring_b$Start,<br>
+                                                   ends = ring_b$End,<br>
+                                                   values = ring_b$Copy_number,<br>
+                                                   maxRadius = 1.8,<br>
+                                                   minRadius = 1.75,<br>
+                                                   color =c("#f2f2b5","#145059"))
+        </code>
+       </div>
+       <h4>Anneau C</h4>
+       <div class="code">
+        <code>
+            #ringC<br>
+Track <- Track + BioCircosHeatmapTrack("Ring_C", labels = FALSE,<br>
+                                       chromosomes = ring_c$Chr,<br>
+                                       starts = ring_c$Start,<br>
+                                       ends = ring_c$End,<br>
+                                       values = ring_c$Copy_number,<br>
+                                       maxRadius = 1.7,<br>
+                                       minRadius = 1.65,<br>
+                                       color =c("#f2f2b5","#145059"))
+        </code>
+       </div>
+       <h4>Anneau D</h4>
+       <div class="code">
+        <code>
+            #ringD<br>
+Track <- Track + BioCircosHeatmapTrack("Ring_D", labels = FALSE,<br>
+                                       chromosomes = ring_d$Chr,<br>
+                                       starts = ring_d$Start,<br>
+                                       ends = ring_d$End,<br>
+                                       values = ring_d$Number,<br>
+                                       maxRadius = 1.6,<br>
+                                       minRadius = 1.55,<br>
+                                       color =c("#f2f2b5","#145059"))<br>
+        </code>
+       </div>
+       <h4>Anneau E</h4>
+       <div class="code">
+        <code>
+            #ringE<br>
+Track <- Track + BioCircosHeatmapTrack("Ring_E", labels = FALSE,<br>
+                                       chromosomes = ring_e$Chr,<br>
+                                       starts = ring_e$Start,<br>
+                                       ends = ring_e$End,<br>
+                                       values = ring_e$Density,<br>
+                                       maxRadius = 1.5,<br>
+                                       minRadius = 1.45,<br>
+                                       color =c("#f2f2b5","#145059"))
+        </code>
+       </div>
+       <h4>Anneau F</h4>
+       <div class="code">
+        <code>
+            #ringF<br>
+Track <- Track + BioCircosHeatmapTrack("Ring_F", labels = FALSE,<br>
+                                       chromosomes = ring_f$Chr,<br>
+                                       starts = ring_f$Start,<br>
+                                       ends = ring_f$End,<br>
+                                       values = ring_f$Density,<br>
+                                       maxRadius = 1.4,<br>
+                                       minRadius = 1.35,<br>
+                                       color =c("#f2f2b5","#145059"))
+        </code>
+       </div>
+       <h4>Anneau G</h4>
+       <div class="code">
+        <code>
+            #ringG<br>
+Track <- Track + BioCircosHeatmapTrack("Ring_G", labels = FALSE,<br>
+                                       chromosomes = ring_g$Chr,<br>
+                                       starts = ring_g$Start,<br>
+                                       ends = ring_g$End,<br>
+                                       values = ring_g$Density,<br>
+                                       maxRadius = 1.3,<br>
+                                       minRadius = 1.25,<br>
+                                       color =c("#f2f2b5","#145059"))
+        </code>
+       </div>
+       <p>Nous obtenons ainsi ce résultat :</p>
+       <img class="image" src="Visu Données Omics/piste_g_circos1.png" alt="">
+    <h3>Affichage des liens</h3>
+    <p>Comme vu dans la présentation des données, les liens proviennent de deux onglets, <em>Fig1 innermost_links_1"</em> et <em>innermost_links_2</em>, 
+        et nous avons observés qu'il y avait une colonne suplémentaire pour les couleurs correspondant à chaque chromosomes. 
+        Nous allons en premier temps remplacer les valeurs des couleurs par des couleurs hexadécimal que le script pourra interpréter: </p>
+        <div class="code"><code>
+innermost_links_1$Color <- gsub("color=set2-7-qual-1","#66c2a5",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-7-qual-2","#fd8b62",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-7-qual-3","#8ea0cc",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-7-qual-4","#e78ac3",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-7-qual-5","#a7da55",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-7-qual-6","#ffd930",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-7-qual-7","#e3c496",innermost_links_1$Color)<br>
+innermost_links_1$Color <- gsub("color=set2-8-qual-8","#bbbcb9",innermost_links_1$Color)<br>
+<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-1","#66c2a5",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-2","#fd8b62",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-3","#8ea0cc",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-4","#e78ac3",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-5","#a7da55",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-6","#ffd930",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-7-qual-7","#e3c496",innermost_links_2$Color)<br>
+innermost_links_2$Color <- gsub("color=set2-8-qual-8","#bbbcb9",innermost_links_2$Color)<br>
+        </code></div>
+        <p>Nous observons sur la figure que les liens en couleurs sont au premier temps, tandis que les couleurs grises sont en arrière plan.</p>
+        <img  class="image" src="Visu Données Omics/Links_circos1.png" alt="">
+        <p>Cependant toutes les couleurs ce situent dans les deux onglets.</p>
+        <p>L'objectif ici est donc de d'abord charger les liens de couleurs grises des deux onglets, puis ensuite charger les liens d'autres couleurs qui vont se positionner en premier-plan.
+            Pour cela j'ai réaliser un tableaux contenant les liens de couleurs grises pour chaque onglet, et la même choses pour les liens d'autres couleurs, on aura donc 4 tableaux.</p>
+            <div class="code"><code># Faire un tableau contenant les liens de couleurs grises de l'onglet innermost_links_1<br>
+                innermost_links_1_gris<- subset(innermost_links_1, Color=="#bbbcb9")<br>
+                innermost_links_1_sans_gris <- subset(innermost_links_1, Color != "#bbbcb9")<br>
+                <br>
+                # Faire un tableau contenant les liens de couleurs grises de l'onglet innermost_links_2<br>
+                innermost_links_2_gris<- subset(innermost_links_2, Color=="#bbbcb9")<br>
+                innermost_links_2_sans_gris <- subset(innermost_links_2, Color != "#bbbcb9")</code></div>
+                <p>On a donc :</p>
+                <ul>
+                    <li><strong>innermost_links_1_gris</strong> : Liens gris provenant de l'onglet <em>innermost_links_1</em>.</li>
+                    <li><strong>innermost_links_1_sans_gris</strong> : Liens d'autres couleurs provenant de l'onglet <em>innermost_links_1</em>.</li>
+                    <li><strong>innermost_links_2_gris</strong> : Liens gris provenant de l'onglet <em>innermost_links_2</em>.</li>
+                    <li><strong>innermost_links_2_sans_gris</strong> : Liens d'autres couleurs  provenant de l'onglet <em>innermost_links_2</em>.</li>
+                </ul>
+                <h4>Liens gris de l'onglet 1</h4>
+               <p> A présent pour charger chacun des liens avec leur couleur respectif, on peut éxécuter la fonction <strong>'BioCircosLinkTrack'</strong> dans une boucle.</p>
+               <p>Dans le script ci-dessous, j'ai utiliser une boucle <strong>'for'</strong> où la variable i sera répété 515 fois (qui est le nombre de ligne du tableau obtenu en faisant <code>dim(innermost_links_1_gris)</code>.</p>
+                <div class="code"><code>
+                    for (i in 1:515) {<br>
+                        Track <-Track + BioCircosLinkTrack("innermost_links_1_gris",<br>
+                                                           gene1Chromosomes = innermost_links_1_gris$chrA[i],<br>
+                                                           innermost_links_1_gris$startA[i],<br>
+                                                           innermost_links_1_gris$endA[i],<br>
+                                                           gene2Chromosomes = innermost_links_1_gris$chrB[i],<br>
+                                                           innermost_links_1_gris$startB[i],<br>
+                                                           innermost_links_1_gris$endB[i], <br>
+                                                           color = innermost_links_1_gris$Color[i],<br>
+                                                           maxRadius = 1, displayLabel = FALSE,width = 1, axisPadding = "white")<br>
+                      
+                      }
+                </code></div>
+            <p>Nous obtenons ainsi ce résultat :</p>
+            <img class="image" src="Visu Données Omics/link1_gris_circos1.png" alt="">
+            <h4>Liens gris de l'onglet 2</h4>
+            <div class="code">
+                <code>for (i in 1:387) {<br>
+                    Track <-Track + BioCircosLinkTrack("innermost_links_2_gris",<br>
+                                                       gene1Chromosomes = innermost_links_2_gris$chrA[i],<br>
+                                                       innermost_links_2_gris$startA[i],<br>
+                                                       innermost_links_2_gris$endA[i],<br>
+                                                       gene2Chromosomes = innermost_links_2_gris$chrB[i],<br>
+                                                       innermost_links_2_gris$startB[i],<br>
+                                                       innermost_links_2_gris$endB[i], <br>
+                                                       color = innermost_links_2_gris$Color[i],<br>
+                                                       maxRadius = 1, displayLabel = FALSE,width = 1, axisPadding = "white")<br>
+                    
+                  }</code>
+            </div>
+            <h4>Liens de couleurs de l'onglet 1</h4>
+            <div class="code"><code>for (i in 1:174) {<br>
+                Track <-Track + BioCircosLinkTrack("innermost_links_1_sans_gris",<br>
+                                                   gene1Chromosomes = innermost_links_1_sans_gris$chrA[i],<br>
+                                                   innermost_links_1_sans_gris$startA[i],<br>
+                                                   innermost_links_1_sans_gris$endA[i],<br>
+                                                   gene2Chromosomes = innermost_links_1_sans_gris$chrB[i],<br>
+                                                   innermost_links_1_sans_gris$startB[i],<br>
+                                                   innermost_links_1_sans_gris$endB[i], <br>
+                                                   color = innermost_links_1_sans_gris$Color[i],<br>
+                                                   maxRadius = 1, displayLabel = FALSE,width = 2, axisPadding = "white")
+                
+              }</code></div>
+              <h4>Liens de couleurs de l'onglet 2</h4>
+              <div class="code"><code>for (i in 1:329) {<br>
+                Track <-Track + BioCircosLinkTrack("innermost_links_2_sans_gris",<br>
+                                                   gene1Chromosomes = innermost_links_2_sans_gris$chrA[i],<br>
+                                                   innermost_links_2_sans_gris$startA[i],<br>
+                                                   innermost_links_2_sans_gris$endA[i],<br>
+                                                   gene2Chromosomes = innermost_links_2_sans_gris$chrB[i],<br>
+                                                   innermost_links_2_sans_gris$startB[i],<br>
+                                                   innermost_links_2_sans_gris$endB[i], <br>
+                                                   color = innermost_links_2_sans_gris$Color[i],<br>
+                                                   maxRadius = 1, displayLabel = FALSE,width = 2, axisPadding = "white")<br>
+              }
+            </code></div>
+            <p> Après avoir charger tous les heatmaps et liens, nous obtenons ce résultat :</p>
+            <img class="image" src="Visu Données Omics/Tout_piste_circos1.png" alt="">
+            <h2>Réalisation des annotations</h2>
+            <p>Une fois toutes les pistes chargées, il ne reste plus qu'à ajouter les annotations, le nom des espèces ainsi que la légende.</p>
+            <h3>Annotation des pistes</h3>
+          <p>  Dans la figure d'origine, nous allons annoter chacunes des pistes pour la légende, la fonction <strong>'BioCircosTextTrack'</strong> 
+            sera donc utiliser dans le script ci-dessous:</p>
+            <div class="code"><code>#Annotation des pistes<br>
+                Track <- Track + BioCircosTextTrack("numérotation","a",
+                                            x = -0.05,y=-1.86, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","b",
+                                            x = -0.05,y=-1.76, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","c",
+                                            x = -0.05,y=-1.66, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","d",
+                                            x = -0.05,y=-1.56, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","e",
+                                            x = -0.05,y=-1.46, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","f",
+                                            x = -0.05,y=-1.36, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","g",
+                                            x = -0.05,y=-1.25, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","h",
+                                            x = -0.04,y=-1.05, size = "1em")<br>
+                                            <br>
+                Track <- Track + BioCircosTextTrack("numérotation","i",
+                                                    x = -0.035,y=-0.9, size = "1.2em",weight = "bold")</code></div>
+                <p>L'annotation "i" est écrit un peu plus grosse afin d'être visible parmit les liens.</p>
+                <p>Voici le résultat obtenu : </p>
+                <img class="image" src="Visu Données Omics/annotation_piste_circos1.png" alt="">
+                 <h3>Annotation de la légende</h3>
+                 <p>Nous allons à présent la écrire signification de chacune des pistes annotées, que nous positionnerons à droite de la figure:</p>
+                 <div class="code"><code># Légende<br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(a) Les positions inférées des centromères des chromosomes des génomes A et D.",<br>
+                                                        x = 2.2,y=-0.5, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(b) La distribution de la répétition spécifique du génome C Am1 le long de chaque chromosome.",<br>
+                                                        x = 2.2,y=-0.4, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(c) La distribution de la répétition spécifique du génome A As120a le long de chaque chromosome.",<br>
+                                                        x = 2.2,y=-0.3, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(d) fréquences k-mères.",<br>
+                                                        x = 2.2,y=-0.2, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(e) Densité de répétition en tandem (TR) (MaxPeriod ≤ 500 bp).",<br>
+                                                        x = 2.2,y=-0.1, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(f) densité de rétrotransposons LTR.",<br>
+                                                        x = 2.2,y=0, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(g) Densité génétique.",<br>
+                                                        x = 2.2,y=0.1, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(h) Noms et tailles des chromosomes",<br>
+                                                        x = 2.2,y=0.2, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","(i)  Synténie de l'hexaploïde et de son espèce ancêtre, avec des liens de couche supérieure colorés représentant des blocs synténiques de chaque",<br>
+                                                        x = 2.2,y=0.3, size = "1em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("numérotation","chromosome hexaploïde et de son chromosome ancêtre, et la couche inférieure grise montre des réarrangements chromosomiques pendant l'hexaploïdisation.",<br>
+                                                        x = 2.28,y=0.4, size = "1em")</code></div>
+                 <p>Voici le résultat obtenu : </p>
+                 <img class="image" src="Visu Données Omics/légende_circos1.png" alt="">
+                 <h3>Annotation heatmap</h3>
+                 <p>Nous allons maintenant réaliser ce type de légende provenant de la figure de l'article :</p>
+                 <img class="image" src="Visu Données Omics/légende_heatmap_article.png" alt="">
+                 <p>Pour ce faire, allons toujours utiliser la fonction <strong>'BioCircosTextTrack'</strong>, et nous allons utiliser le caractère ■ (trouvable n'importe où sur internet).
+                Nous allons afficher ce carré plusieurs fois de différentes couleurs afin de recréer la légende:</p>
+                <div class="code"><code>
+                    #Légende heatmap<br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 2.4,y=1.6, size = "5em", color = "#f2f2b5")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 2.55,y=1.6, size = "5em", color = "#d9e2aa")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 2.7,y=1.6, size = "5em", color = "#c2cda0")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 2.85,y=1.6, size = "5em", color = "#a7bb95")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 3,y=1.6, size = "5em", color = "#8eaa8c")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 3.15,y=1.6, size = "5em", color = "#749880")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 3.3,y=1.6, size = "5em", color = "#5c8577")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 3.45,y=1.6, size = "5em", color = "#43736e")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 3.6,y=1.6, size = "5em", color = "#286162")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","■",<br>
+                                                        x = 3.75,y=1.6, size = "5em", color = "#145059")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","Min",<br>
+                                                        x = 2.35,y=1.7, size = "1.2em")<br>
+                                                        <br>
+                    Track <- Track + BioCircosTextTrack("heatmap","Max",<br>
+                                                        x = 3.85,y=1.7, size = "1.2em")
+                </code></div>
+                <p>Voici le résultat obtenu :</p>
+                <img class="image" src="Visu Données Omics/heatmap_légende_circos1.png" alt="">
+                <h3>Annotation des espèces</h3>
+                <p>Enfin, la dernière chose à faire est d'annoter le nom de l'espèce des chromosomes.</p>
+                <div class="code"><code>
+                    #Annotation des espèces<br>
+Track <- Track + BioCircosTextTrack("Annotation espèce","A. longiglumis",<br>
+                                    x = -1.65,y=-1.6, size = "1.2em")<br>
+                                    <br>
+Track <- Track + BioCircosTextTrack("Annotation espèce","A. sativa ssp. nuda cv. Sanfensan",<br>
+                                    x = 1.4,y=-1.4, size = "1.2em")<br>
+                                    <br>
+Track <- Track + BioCircosTextTrack("Annotation espèce","A. insularis",<br>
+                                    x = -1.7,y=1.55, size = "1.2em")<br>
+                </code></div>
+                <h2>Affichage du circos</h2>
+            <p>On peut a présent afficher le circos à partir de toutes les pistes et liens contenues dans l'objet <em>Track</em> avec la fonction <strong>'BioCircos()'</strong> :</p>
+            <div class="code"><code>
+                # Afficher le Circos<br>
+BioCircos(Track, # Track contenant toutes les pistes et liens<br>
+          genome = ring_h, #Liste contenant la taille et les noms des chromosomes<br>
+                 genomeFillColor = c(<br>
+                    "#66c2a5","#fd8b62","#8ea0cc","#e78ac3",<br>
+                    "#a7da55","#ffd930","#e3c496","#66c2a5",<br>
+                                              "#fd8b62","#8ea0cc","#e78ac3","#a7da55",<br>
+                                              "#ffd930","#e3c496","#66c2a5",<br>
+                                              "#fd8b62","#8ea0cc","#e78ac3","#a7da55",<br>
+                                              "#ffd930","#e3c496","#e3c496",<br>
+                                              "#ffd930","#a7da55","#e78ac3","#8ea0cc",<br>
+                                              "#fd8b62","#66c2a5","#e3c496",<br>
+                                              "#ffd930","#a7da55","#e78ac3","#8ea0cc",<br>
+                                              "#fd8b62","#66c2a5","#e3c496",<br>
+                                              "#ffd930","#a7da55","#e78ac3","#8ea0cc",<br>
+                                              "#fd8b62","#66c2a5"), #Couleur de chaques chromosomes<br>
+                   genomeTicksDisplay = TRUE, # Afficher la graduation<br>
+                  genomeLabelDisplay = TRUE, #Afficher le nom des chromosomes<br>
+                   displayGenomeBorder = FALSE, # Ne pas afficher les bordures<br>
+                   genomeTicksLen = 4, #Longueur de la graduation<br>
+                   genomeTicksScale = 140000000, #Nombre de paires de bases entre chaques graduations<br>
+                   genomeTicksTextSize = "0.6em", #Taille des chiffres de la graduation<br>
+                   genomeLabelTextSize = "10", #Taille des noms des chromosomes<br>
+                   genomeLabelDy = -25, #Position du nom des chromosome par rapport à la piste de référence<br>
+          )
+            </code></div>
+            <p class="h1_script">
+        <strong id="Présentation_circos"> Résultat</strong> </p>
+    </div>
+
+    <img class="gros_image" src="Visu Données Omics/Circos1.png" alt="">
+
+ </section>
+ <div class="zone_sommaire">
+    <div class="sommaire">
+        <div class="plan-sommaire">
+            <div class="zone-h3"><h3>Plan</h3></div>
+            <div class="zone-texte">
+                <ul>
+                    <li><a href="#Présentation_circos">Présentation Circos</a></li>
+                    <li><a href="#Présentation_données">Présentation des données</a></li>
+                    <li><a href="#Script">Présentation du script</a></li>
+                    <li><a href="#librairies">Les librairies</a></li>
+                    <li><a href="#Lecture_données">Lecture des données</a></li>
+                    <li><a href="#Construction">Construction du circos</a></li>
+                    <li><a href="#Présentation_circos">Résultat</a></li>
+    
+    
+    
+                </ul>
+            </div>
+    
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+
+<script>
+    let lastScrollPosition = 0;
+    const header = document.querySelector('.header-cours');
+    
+    window.addEventListener('scroll', () => {
+      const currentScrollPosition = window.pageYOffset;
+    
+      if (currentScrollPosition > lastScrollPosition && header.classList.contains('hide')) {
+        header.classList.remove('hide');
+      } else if (currentScrollPosition < lastScrollPosition - 10 && !header.classList.contains('hide')) {
+        header.classList.add('hide');
+      }
+    
+      lastScrollPosition = currentScrollPosition;
+    });
+    
+    
+    </script>
+</html>

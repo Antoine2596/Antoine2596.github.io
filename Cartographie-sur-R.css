@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    width: 100%;
+    height: 50vh;
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bc0a4715-c860-464f-88e4-3045f9106b4c/d8kgg6n-59fc17d1-aad2-47f0-b036-2a7c522dd403.png/v1/fill/w_1303,h_613,q_70,strp/visualization_of_global_air_traffic_by_raykaze_d8kgg6n-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTY0IiwicGF0aCI6IlwvZlwvYmMwYTQ3MTUtYzg2MC00NjRmLTg4ZTQtMzA0NWY5MTA2YjRjXC9kOGtnZzZuLTU5ZmMxN2QxLWFhZDItNDdmMC1iMDM2LTJhN2M1MjJkZDQwMy5wbmciLCJ3aWR0aCI6Ijw9MjA0OCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19._j4f0tAfPKkuBiC44zv3ODHt2KEwFd46ilJ0X6x2rfk);
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    text-shadow: 0 0 5px black;
+
+}
+
+.filtre-background{
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 50vh;
+    padding: 10px;
+}
+
+.nav-bar{
+    position: relative;
+    width: 100%;
+    min-width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-bar a{
+    color: white;
+    font-size: 1.3em;
+    font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.title{
+    position: relative;
+    text-align: center;
+    top: 40%;
+    transform: translate(0,-50%);
+    color: white;
+    font-size: 2em;
+}
+
+.zone-texte{
+    position: relative;
+    width: 70%;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-top: 20px;
+    padding: 20px;
+    border: 3px black solid;
+    border-radius: 5px;
+}
+
+.zone-texte h2{
+    color: #00558b;
+    font-size: 2em;
+}
+
+.zone-texte h3{
+    color: orange;
+    font-size: 1.5em;
+    margin: 10px 0px;
+}
+
+.zone-texte p{
+    font-size: 1.1em;
+    font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.zone-texte p a{
+    font-weight: bold;
+}
+
+
+
+.zone-texte ul{
+    font-size: 1.1em;
+    font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px 30px;
+}
+
+
+.script{
+    margin: 10px 1%;
+    max-width: 1300px;
+    padding: 10px 20px;
+    background-color: #0f111a;
+    color: #8f93a2;
+    font-family: Consolas, Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    border-radius: 5px;
+    box-shadow: 0 0 2px black;
+}

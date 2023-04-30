@@ -1,0 +1,402 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #006699;
+    padding-left: 50px;
+    padding-right: 50px;
+    z-index: 2;
+}
+
+.header-cours{
+  transition: 1s;
+  top: 0;
+}
+
+.header-cours.hide{
+  top: -15%;
+
+}
+
+.logo{
+    color: white;
+    font-size: 2.5em;
+}
+
+.nav-bar{
+    position: relative;
+    right: 10%;
+}
+
+.nav-bar ul{
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+}
+
+.nav-bar ul li a{
+    font-family: 'Poppins';
+    color: white;
+    font-size: 1.1em;
+    border: white 2px solid;
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: 0.5s;
+}
+
+.nav-bar ul li a:hover{
+    color: #006699;
+    font-size: 1.1em;
+    background-color: white;
+    border: #fff 2px solid;
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: 0.5s;
+}
+
+.background{
+    position: relative;
+    top: 100px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: #006699 75px solid;
+    margin-bottom: 100px;
+    padding-bottom: 50px;
+}
+
+.background-texte{
+    position: relative;
+    width: 100%;
+}
+
+.background-texte .titre{
+    position: relative;
+    color: black;
+    height: 400px;
+    font-family: 'Harding','Palatino',serif;
+    font-size: 2em;
+    text-align: center;
+}
+
+.background-texte .titre p{
+    position: relative;
+    top: 50%;
+}
+
+.background-texte .lien ul{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.background-texte .lien ul li a{
+    color: #006699;
+    background-color: #fff;
+    border: 3px solid #006699;
+    padding: 10px 20px;
+    font-family: "Gotham Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    transition: 1s;
+}
+
+.background-texte .lien ul li a:hover{
+    color: #fff;
+    background-color: #006699;
+}
+
+.background-image{
+    position: relative;
+    height: 90%;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+}
+
+.background-image img{
+    position: relative;
+    height: 90%;
+    width: 80%;
+    z-index: 1;
+}
+
+/* Contenu */
+
+
+.contenu{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 10%;
+}
+.zone_script{
+    position: relative;
+    color: black;
+    font-family: 'Abhaya Libre', serif, impact;
+
+}
+
+.zone_script .texte_script{
+position: relative;
+    width: 75%;
+}
+
+.code{
+    background-color: rgba(211, 211, 211, 0.4);
+}
+
+.h1_script{
+    position: relative;
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+.image{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0);
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.gros_image{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0);
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* Gérer les liens */
+  header a:link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  header a:visited {
+    color: white;
+    text-decoration: none;
+  }
+  
+  header a:hover {
+    color: white;
+    text-decoration: none;
+  }
+  
+header a:active {
+    color: white;
+    text-decoration: none;
+  }
+  
+.imgart{
+  max-width: 75%;
+  max-height: 75%;
+}
+
+
+  /* Liens des articles du sommaire */
+ .lien_menu a:link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .lien_menu a:visited {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .lien_menu a:hover {
+    color: white;
+    text-decoration:none;
+  }
+  
+  .lien_menu a:active {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Liens pour accès à l'article ou au script */
+  .texte_bar_inférieur a:link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .texte_bar_inférieur a:visited {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .texte_bar_inférieur a:hover {
+    color: white;
+    text-decoration:underline;
+  }
+  
+  .texte_bar_inférieur a:active {
+    color: white;
+    text-decoration: none;
+  }
+
+  .zone-script .zone_sommaire{
+    display: block;
+    position: absolute;
+    right: 100px;
+    width: 20%;
+    height: 7803px;
+}
+
+.zone_sommaire{
+    width: 600px;
+}
+
+.zone_sommaire .sommaire{
+    border: #006699 solid 2px;
+    padding: 5px;
+    position: sticky;
+    top: 25%;
+}
+
+.zone-h3{
+    position: relative;
+    font-size: calc(1vw + 0.5em);
+    padding: 5px;
+    margin: 5px;
+    background-color: #70badf;
+    text-align: center;
+}
+
+.zone-texte{
+    margin-left: 3%;
+    margin-top: 20px;
+}
+
+.zone-texte ul li{
+    margin-bottom: 20px;
+}
+
+.zone-texte ul li a{
+    color: black;
+    font-family: 'Abhaya Libre', serif, impact;
+    font-size: calc(0.8vw + 0.25em);
+}
+
+@media screen and (max-width:920px) {
+  .zone_sommaire{
+    display: none
+}
+
+header{
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+
+.logo{
+  color: white;
+  font-size: calc(4vw + 0.8em);
+}
+
+.nav-bar{
+  position: relative;
+  right: 2%;
+}
+
+.nav-bar ul{
+  display: flex;
+  width: 110%;
+  justify-content: space-between;
+}
+
+.nav-bar ul li a{
+  font-family: 'Poppins';
+  color: white;
+  font-size: calc(1vw + 0.5em);
+  border: white 2px solid;
+  border-radius: 25px;
+  padding: 5px 10px;
+  transition: 0.5s;
+}
+
+.nav-bar ul li a:hover{
+  color: #006699;
+  font-size: calc(1vw + 0.5em);
+  background-color: white;
+  border: #fff 2px solid;
+  border-radius: 25px;
+  padding: 5px 10;
+  transition: 0.5s;
+}
+
+.background-texte .titre{
+  height: auto;
+  font-size: calc(0.25em + 4vw);
+
+}
+
+.background-texte .titre p{
+  position: relative;
+  top: 10%;
+  margin-bottom: 10px;
+}
+
+.background-texte .lien ul{
+  display:block;
+  margin-bottom: 20px;
+  height: auto;
+  text-align: center;
+}
+
+.background-texte .lien ul li{
+  margin: 20px;
+}
+
+.background-texte .lien ul li a{
+  color: #006699;
+  background-color: #fff;
+  border: 3px solid #006699;
+  padding: 5px 10px;
+
+  font-family: "Gotham Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-weight: 500;
+  font-size: calc(0.25em + 2vw);
+
+}
+
+
+
+.contenu{
+  width: 80%;
+  position: relative;
+  justify-content: center;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+
+.zone_script{
+  position: relative;
+  left:50%;
+  transform: translate(-50%,0);
+  
+}
+
+.gros_image{
+  position: relative;
+  left: -15%;
+  transform: translate(0,0);
+  max-height: 100%;
+  max-width: 100%;
+}
+}

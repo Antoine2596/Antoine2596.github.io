@@ -64,7 +64,7 @@ header{
 
 
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:1230px) {
     .navbar .menu{
         display: block;
     }

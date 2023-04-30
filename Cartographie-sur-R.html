@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Cartographie-sur-R.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preload" href="/static/fonts/HardingText-Regular-Web-cecd90984f.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preconnect" href="https://push-content.springernature.io" crossorigin="">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
+    <!-- Code R -->
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <title>Cartographie sur R</title>
+</head>
+<body>
+    <header>
+        <div class="filtre-background">
+       <div class="nav-bar">
+        <a href="index.html">Retourner dans l'Index</a>
+        <a href="Université/VisuOmics.html">Voir d'autres projet sur R</a>
+       </div> 
+       <div class="title">
+        <h1>Cartographie sur R</h1>
+       </div>
+       </div>
+    </header>
+
+    <div class="zone-texte">
+        <p>L'objectif de ce tutoriel est de réaliser une cartographie d'un pays (par exemple la France), en se basant sur des données. Pour ce faire, je me base sur <a href="https://milospopovic.net/6-ways-to-map-population-with-r.r/" target="_blank">l'article de Milos Popović</a> que je suis également sur Twitter, le but de cette page web en premier temps est de réepliquer le script plus précisément afin de comprendre ce que l'on fait sans recopier bêtement un script R.</p>
+        <h2>Chargement des packages</h2>
+    <h3>Présentation des libraries</h3>
+    <p>
+        <ul>
+            <li><strong>"tidyverse"</strong>: C'est un ensemble de packages R pour la manipulation, le traitement et la visualisation de données. Il comprend notamment les packages dplyr pour la manipulation de données, ggplot2 pour la création de graphiques, tidyr pour la gestion des données manquantes et purrr pour la programmation fonctionnelle.</li>
+            <li><strong>"sf"</strong>: C'est un package R pour la manipulation de données géospatiales. Il fournit une structure de données simple pour stocker des données spatiales et des fonctions pour effectuer des opérations spatiales telles que le traitement des géométries, le calcul des intersections et des tampons.</li>
+            <li><strong>"classInt"</strong>: C'est un package R pour la classification des données en classes. Il fournit des fonctions pour la classification de données numériques en classes discrètes et pour la visualisation de ces classes.</li>
+            <li><strong>"cartogram"</strong>: C'est un package R pour la création de cartogrammes, qui sont des cartes dans lesquelles les régions sont représentées proportionnellement à une variable donnée, plutôt que proportionnellement à leur superficie.</li>
+            <li><strong>"rayshader"</strong>: C'est un package R pour la création de graphiques 3D photoréalistes à partir de données spatiales. Il permet de créer des modèles de relief et de les illuminer avec des sources de lumière simulées pour créer des effets d'ombre et de texture.</li>
+            <li><strong>"giscoR"</strong>: C'est un package R pour accéder aux données géospatiales fournies par l'Office statistique de l'Union européenne (Eurostat) via l'API GISCO. Il permet de télécharger des données géographiques et de les visualiser dans R.</li>
+            <li><strong>"eurostat"</strong>: C'est un package R pour accéder aux données statistiques fournies par Eurostat, l'office statistique de l'Union européenne. Il fournit des fonctions pour télécharger et traiter des données de différents domaines, tels que la démographie, l'économie et l'environnement.</p></li>
+        </ul> 
+<h3>Installation et chargement des librairies</h3>
+        <p>Une façon rapide de lancer les packages et de les installer si nécéssaire, est d'utiliser une condition <strong>'if'</strong>.</p>
+        <div class="script">
+            # ---- Chargement des packages ----<br>
+            <br>
+# Les librairies nécéssaires<br>
+libs <- c(<br>
+  "tidyverse", "sf", "classInt", <br>
+  "cartogram", "rayshader",<br>
+  "giscoR", "eurostat"<br>
+)<br>
+<br>
+# Installer les librairies pas encore installés<br>
+installed_libs <- libs %in% rownames(installed.packages())<br>
+if (any(installed_libs == F)) {<br>
+  install.packages(libs[!installed_libs])<br>
+}<br>
+<br>
+# Chargement des libraries<br>
+invisible(lapply(libs, library, character.only = T))
+        </div>
+        <ul>
+        <li><strong>'%in%'</strong> est un opérateur de comparaison de vecteur indiquant si chaque élément d'un premier vecteur appartient à un deuxième. Dans ce cas, il vérifie si chaque élément de la liste libs est présent dans les noms des packages déjà installés.</li>
+        <li><strong>'rownames(installed.packages())'</strong> retourne les noms des packages déjà installés dans l'environnement R.</li>
+        <li><strong>'if (any(installed_libs == F)) {'</strong> vérifie s'il y a des packages qui ne sont pas encore installés en regardant si le vecteur logique contient au moins une valeur FALSE. Si tel est le cas, le bloc de code suivant est exécuté.</li>
+        <li><strong>'install.packages(libs[!installed_libs])'</strong> installe les packages qui ne sont pas encore installés. Elle utilise la fonction <strong>"install.packages"</strong> de R pour installer les packages manquants. Le vecteur <strong>"libs[!installed_libs]"</strong> sélectionne les noms des packages qui ne sont pas encore installés en utilisant les valeurs FALSE du vecteur logique <strong>"installed_libs"</strong>.</li>
+        <br>
+        <li>La fonction <strong>'lapply'</strong> est utilisée pour appliquer la fonction <strong>'library'</strong> à chaque élément de <strong>'libs'</strong>. Le paramètre <strong>'invisible'</strong> est utilisé pour masquer l'affichage des résultats dans la console.</li>
+        <li>Le paramètre <strong>'character.only = T'</strong> est utilisé pour s'assurer que </trong>'library'</strong> ne charge que des packages qui sont des chaînes de caractères et non des symboles ou des expressions.</li>
+    </ul>
+    <p></p>
+        <h2>Définition des constantes</h2>
+        <p>Nous allons couvrir 6 techniques dans ce tutoriel. Tout d'abord, nous définissons notre projection de base comme longlat, que nous utiliserons tout au long du tutoriel. Ensuite, nous définissons la projection de Lambert, qui nous sera utile lorsque nous réaliserons le cartogramme.</p>
+        <h3>Définition des projections</h3>
+        <div class="script">
+            # Constantes<br>
+# Définition des projections<br>
+# longlat<br>
+crsLONGLAT <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"<br>
+<br>
+# Lambert<br>
+crsLAEA <- "+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +datum=WGS84 +units=m +no_defs"<br>
+        </div>
+<p>Ce script définit deux <a href="https://www.nceas.ucsb.edu/sites/default/files/2020-04/OverviewCoordinateReferenceSystems.pdf" target="_blank">systèmes de coordonnées de référence (CRS en anglais)</a> différents : "longlat" et "Lambert".</p>
+<p>La première ligne définit le CRS <strong>"longlat"</strong> qui utilise une projection cartographique appelée "projection géographique" ou "projection plate carrée" qui est couramment utilisée pour les représentations cartographiques qui montrent les zones polaires. Elle définit également des informations supplémentaires comme le datum (WGS84), qui spécifie la forme de la Terre, et le towgs84 (0,0,0), qui spécifie la transformation des coordonnées entre différents datums.</p>
+<p>La deuxième ligne définit le CRS <strong>"Lambert"</strong> qui utilise la projection de Lambert Azimuthale Équivalente (LAEA) pour la projection cartographique. Cette projection est particulièrement adaptée aux représentations de zones polaires et aux régions circulaires. Cette ligne définit également des informations supplémentaires comme les coordonnées du centre de la projection, l'unité de mesure (mètres), et le datum (WGS84).</p>
+     <h3>Thème ggplot2</h3>
+       <p>Ensuite, l'auteur a créé son propre thème pour </strong>'ggplot2'</strong> afin d'éviter des répétitions. Ce thème a une apparence minimaliste avec un fond beige subtil et une légende horizontale placée en haut du graphique. Tout cela est enveloppé dans une fonction appelée <strong>"theme_for_the_win"</strong>.</p>
+<div class="script">
+    # Définition d'un nouveau thème pour ggplot2 avec des modifications personnalisées<br>
+    theme_for_the_win &lt;- function() {<br>
+      <br>
+      # Utilisation du thème minimal par défaut de ggplot2, puis ajout de modifications supplémentaires<br>
+      theme_minimal() +<br>
+        <br>
+        # Modifications spécifiques pour le texte<br>
+        theme(<br>
+          text = element_text(family = "Montserrat"),  # Police de caractère personnalisée<br>
+          axis.line = element_blank(),                 # Suppression des lignes d'axe<br>
+          axis.text.x = element_blank(),               # Suppression des étiquettes de l'axe x<br>
+          axis.text.y = element_blank(),               # Suppression des étiquettes de l'axe y<br>
+          axis.ticks = element_blank(),                # Suppression des graduations d'axe<br>
+          axis.title.y = element_blank(),              # Suppression du titre de l'axe y<br>
+          legend.position = c(.5, .99),                # Position de la légende en haut du graphique<br>
+          legend.text = element_text(size = 60, color = "grey20"), # Taille et couleur du texte de la légende<br>
+          legend.title = element_text(size = 70, color = "grey20"), # Taille et couleur du titre de la légende<br>
+          legend.spacing.y = unit(0.25, "cm"),         # Espacement vertical entre les éléments de la légende<br>
+          panel.grid.major = element_blank(),           # Suppression des grandes grilles<br>
+          panel.grid.minor = element_blank(),           # Suppression des petites grilles<br>
+          plot.margin = unit(c(t = 0, r = 0, b = 0, l = 0), "lines"), # Marges du graphique<br>
+          plot.background = element_rect(fill = "#f5f5f2", color = NA), # Couleur de fond du graphique<br>
+          panel.background = element_rect(fill = "#f5f5f2", color = NA), # Couleur de fond du panneau de traçage<br>
+          legend.background = element_rect(fill = "#f5f5f2", color = NA), # Couleur de fond de la légende<br>
+          panel.border = element_blank()               # Suppression des bordures du panneau de traçage<br>
+        )<br>
+    }<br>
+</div>
+<h3>Définition de la palette de couleur</h3>
+<p>On définit une palette de couleurs qui sera adaptés aux daltoniens:</p>
+<div class="script">
+    # colors<br>
+cols &lt;- rev(c(<br>
+    "#140e26", "#451a40",<br>
+    "#7d1d53", "#b32957", "#ccaead",<br>
+    "#eb804e", "#ffdc58"<br>
+))<br>
+</div>
+<p><strong>'rev'</strong> est une fonction du langage R qui inverse l'ordre des éléments d'un vecteur. Dans ce script, la fonction <strong>'rev'</strong> est utilisée pour inverser l'ordre des couleurs dans le vecteur <strong>'cols'</strong>. Ainsi, la première couleur de cols sera <strong>"ffdc58"</strong>, suivie de <strong>"eb804e"</strong>, puis <strong>"ccaead"</strong>, etc.</p>
+<h2>Récupération des données démographiques</h2>
+<p>Eurostat est l'office statistique de l'Union européenne. Il fournit des statistiques européennes comparables à l'échelle internationale, notamment dans les domaines économiques, sociaux, démographiques et environnementaux. Les données d'Eurostat sont utilisées par les décideurs politiques, les médias, les chercheurs et d'autres acteurs de la société civile pour comprendre et analyser les tendances et les développements dans l'Union européenne et dans ses États membres.</p>
+<div class="script">
+    # get NUTS3 shapefile<br>
+deu_nuts3 &lt;- giscoR::gisco_get_nuts(<br>
+  year = "2021",   # année des données<br>
+  epsg = "4326",   # système de référence de coordonnées<br>
+  resolution = "3",   # niveau de résolution de la géométrie<br>
+  nuts_level = "3",   # niveau de NUTS (Nomenclature des unités territoriales statistiques) des géométries souhaité<br>
+  country = "DE"   # pays concerné par les géométries<br>
+)
+</div>      
+<p>
+<ul>
+<li>Le système de référence de coordonnées (SRC) est un ensemble de conventions et de normes qui permettent de définir des coordonnées spatiales pour représenter des emplacements sur la Terre.</li>
+<li>Le niveau de résolution de la géométrie, également appelé niveau de détail, correspond à la finesse des données géographiques utilisées pour représenter une zone géographique. Plus le niveau de résolution est élevé, plus les données géographiques sont détaillées et précises.</li>
+<li>La Nomenclature des Unités Territoriales Statistiques (NUTS) est un système hiérarchique de classification des unités territoriales utilisé par l'Union Européenne pour la collecte et la diffusion des données régionales et locales. Le système NUTS est utilisé pour décrire les divisions territoriales dans l'ensemble de l'UE, en créant une nomenclature commune pour la production et la diffusion de statistiques régionales harmonisées. Le système NUTS est divisé en trois niveaux hiérarchiques, de NUTS 1 à NUTS 3, qui reflètent l'ampleur géographique des régions statistiques et leur degré de fragmentation.</li>
+<li><p>Les pays sont déterminés avec le code ISO2, la liste des codes selon le pays est disponible dans ce <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Country_codes" target="_blank">glossaire des codes de pays</a>.</p></li>
+</ul>
+</p>
+<div class="script">
+    # Récupérer les données de population<br>
+pop_df <- eurostat::get_eurostat("demo_r_pjangrp3", # Utiliser la fonction get_eurostat du package eurostat pour récupérer les données de population<br>
+    time_format = "num" # Spécifier le format de temps numérique<br>
+) |><br>
+    dplyr::filter( # Utiliser la fonction filter du package dplyr pour filtrer les données<br>
+        sex == "T" & # Sélectionner le sexe "Total"<br>
+            unit == "NR" & # Sélectionner l'unité "Nombre réel"<br>
+            age == "TOTAL" & # Sélectionner la tranche d'âge "Toutes les tranches d'âge"<br>
+            grepl("DE", geo) & # Sélectionner les données pour l'Allemagne (code géographique commençant par "DE")<br>
+            time == 2021 # Sélectionner les données pour l'année 2021<br>
+    ) |><br>
+    dplyr::select(geo, values) # Utiliser la fonction select du package dplyr pour sélectionner les colonnes "geo" (code géographique) et "values" (données de population)<br>
+    <br>
+names(pop_df)[1] <- "NUTS_ID" # Renommer la première colonne en "NUTS_ID" (identifiant de NUTS)<br>
+</div>
+<div class="script">
+    # 1. POLYGONES<br>
+# ------------<br>
+# Cette fonction permet de récupérer les polygones d'une zone géographique donnée.<br>
+get_polygon <- function() {<br>
+    # La fonction st_area retourne des mètres carrés, nous les convertissons en km carrés en divisant le résultat par 1000<br>
+    df$area_sqkm <- as.numeric(sf::st_area(df) / 1000000)<br>
+    <br>
+    # On crée un nouveau dataframe avec la densité de population par km carré<br>
+    deu_polygon <- df |><br>
+        dplyr::mutate(pop_per_sqr_km = values / area_sqkm)<br>
+        <br>
+    # On retourne le dataframe de polygones<br>
+    return(deu_polygon)<br>
+}<br>
+<br>
+# On appelle la fonction pour obtenir les polygones<br>
+deu_polygon <- get_polygon()<br>
+</div>
+<div class="script">
+    # min/max values<br>
+    #--------------<br>
+    vmin <- min(deu_polygon$pop_per_sqr_km, na.rm = T) # valeur minimale de la variable "pop_per_sqr_km" dans le dataframe "deu_polygon"<br>
+    vmax <- max(deu_polygon$pop_per_sqr_km, na.rm = T) # valeur maximale de la variable "pop_per_sqr_km" dans le dataframe "deu_polygon"<br>
+    <br>
+    # bins<br>
+    #-----<br>
+    brk <- round(classIntervals(deu_polygon$pop_per_sqr_km, # intervalles de classes équivalentes pour la variable "pop_per_sqr_km"<br>
+        n = 6, # nombre de classes<br>
+        style = "equal" # méthode de classification<br>
+    )$brks, 0) |><br>
+        head(-1) |><br>
+        tail(-1) |><br>
+        append(vmax)<br>
+        <br>
+    # breaks<br>
+    #-------<br>
+    breaks <- c(vmin, brk) # les limites des classes pour les couleurs<br>
+    
+</div>
+<div class="script">
+    # Fonction pour créer un graphique à partir des polygones<br>
+    make_polygon_map <- function() {<br>
+        <br>
+        # Création du graphique avec les polygones et la légende<br>
+        p1 <- ggplot(deu_polygon) +<br>
+            # Définition de la variable de remplissage pour chaque polygone<br>
+            geom_sf(aes(fill = pop_per_sqr_km),<br>
+                color = "grey20",<br>
+                size = .1<br>
+            ) +<br>
+            # Définition de la couleur de la légende<br>
+            scale_fill_gradientn(<br>
+                name = "",                  # Nom de la légende<br>
+                colours = cols,             # Couleurs utilisées pour la légende<br>
+                breaks = breaks,           # Points de rupture pour la légende<br>
+                labels = round(breaks, 0),  # Labels pour chaque point de rupture<br>
+                limits = c(vmin, vmax)      # Limites pour la légende<br>
+            ) +<br>
+            # Définition de la légende<br>
+            guides(fill = guide_legend(<br>
+                direction = "horizontal",   # Orientation de la légende<br>
+                keyheight = unit(1.15, units = "mm"),  # Hauteur de la clé de la légende<br>
+                keywidth = unit(15, units = "mm"),     # Largeur de la clé de la légende<br>
+                title.position = "top",     # Position du titre de la légende<br>
+                title.hjust = 0.5,          # Alignement horizontal du titre<br>
+                label.hjust = .5,           # Alignement horizontal des labels<br>
+                nrow = 1,                   # Nombre de rangées pour la légende<br>
+                byrow = T,                  # Afficher la légende rangée par rangée<br>
+                reverse = F,                # Inverser l'ordre de la légende<br>
+                label.position = "bottom"   # Position des labels par rapport à la clé<br>
+            )) +<br>
+            # Application du thème<br>
+            theme_for_the_win() +<br>
+            # Définition des titres<br>
+            labs(<br>
+                y = "",             # Titre pour l'axe y<br>
+                subtitle = "",      # Sous-titre<br>
+                x = "",             # Titre pour l'axe x<br>
+                title = "",         # Titre principal<br>
+                caption = ""        # Légende de la figure<br>
+            )<br>
+            <br>
+        # Retourne le graphique créé<br>
+        return(p1)<br>
+    }<br>
+    <br>
+    # Appel de la fonction pour créer le graphique<br>
+    map1 <- make_polygon_map()<br>
+    
+</div>
+</div>
+<!-- Fin texte -->
+<p>Autre site intéréssant :"<a href="https://justjensen.co/making-population-density-maps-with-rayrender-in-r/">Making Population Density Maps with Rayrender in R</a>" </p>
+    </div>
+    &lt;
+
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>
