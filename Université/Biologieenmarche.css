@@ -20,5 +20,50 @@
   .zone-texte .zone_sommaire{
     height: 6739px;
 
-    
+  }
+
+  strong{
+    color: lightseagreen;
+  }
+
+  .zone-cours{
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  .zone-cours h2{
+    display: flex;
+    justify-content: center;
+    color: #006699;
+    box-shadow: 0 0 3px black;
+    padding: 10px;
+    font-size: calc(0.5em + 1.5vw);
+  }
+
+  .zone-cours h3{
+    background-color: orange;
+    width: auto;
+    margin: 20px 0;
+  }
+
+  .zone-cours .div{
+    margin: 10px 0;
+      
+
+  }
+
+  .zone-cours span{
+    background-color: orange;
+    color: white;
+        box-shadow: 0 0 1px black;
+    font-size: calc(0.5em + 1.5vw);
+    font-weight: bold;
+    padding: 5px 20px;
+    text-align: left;
+  }
+
+  .zone-cours p{
+    font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.1em;
   }

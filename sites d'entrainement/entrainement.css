@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(32, 69, 150);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header a{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: white;
+}
+
+
+h1{
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+
+.content{
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+}
+
+.contour{
+    padding: 5px;
+    border: 5px solid rgb(32, 69, 150);
+    width: 30%;
+    height: auto;
+}
+
+.contour h2{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+.contour ul li{
+    display: flex;
+    justify-content: center;
+    
+}

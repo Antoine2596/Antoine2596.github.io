@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+       
+}
+
+body{
+    background-color: #f8f9fa;
+    height: 100vh;
+}
+
+
+.page{
+    position: relative;
+    width: 85%;
+    height: 100%;
+    background-color: #fff;
+    margin: auto;
+}
+
+/* header */
+header{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .left-header{
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+}
+
+
+
+header .center-header{
+    width: 60%;
+    background-color: grey;
+}
+
+header .right-header{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.logo .mw-logo-wordmark{
+    height: 100px;
+}

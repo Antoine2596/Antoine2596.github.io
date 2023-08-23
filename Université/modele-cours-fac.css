@@ -28,15 +28,24 @@
     color: white;
     font-family: Abhaya Libre, 'Open Sans', 'Helvetica Neue', sans-serif;
     z-index: 1;
+    transition: 0.5s;
     
   }
   
   .fondb{
     background-color: #00558b;
-    transition: background-color 0.5s ease;
     box-shadow: 0 0 10px black;
+    transition: 0.5s;
   }
-  
+
+  .hide{
+    height: 50px;
+    transition: 0.5s;
+
+    
+  }
+
+
   .bar-superieur .logo{
     position: absolute;
     width: auto;
@@ -47,6 +56,12 @@
   
   .logo-fac{
     height: 75px;
+    transition: 0.5s;
+  }
+
+  .hide .logo-fac{
+    height: 30px;
+    transition: 0.5s;
   }
   
   .nav-bar{
@@ -60,12 +75,26 @@
     justify-content: space-between;
   
   }
+
+  .hide .nav-bar{
+    font-size: 1em;
+  }
+
+
+
   
   .bar-superieur a{
     color: white;
     border: 2px solid white;
     border-radius: 100px;
     padding: 10px 20px;
+    transition: 0.5s;
+    
+  }
+
+  .hide a{
+    padding: 5px 10px;
+    transition: 0.5s;
   }
   
   .bar-superieur a:hover{
@@ -77,6 +106,8 @@
     background-color: white;
     transition: all 0.6s ease;
   }
+
+
   
   .bar-superieur.fondb a:hover{
     color: #006699;
@@ -87,7 +118,11 @@
     background-color: white;
     transition: all 0.4s ease;
   }
-  
+
+  .hide.bar-superieur.fondb a:hover{
+    padding: 5px 10px;
+  }
+
 
   
   .background-texte{
