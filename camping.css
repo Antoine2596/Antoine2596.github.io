@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+
+header{
+    background-color: white;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 1px black;
+}
+
+.logo{
+    position: relative;
+    background-image: url(image/logoCamping.png);
+    background-position: center;
+    background-size: cover;
+    height: 120px;
+    width: 25%;
+    top: 10px;
+}
+
+.language a{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    
+}
+
+.language a:hover{
+    background-color: rgb(1, 125, 1);
+    color: white;
+}
+
+a:visited{
+    color: black;
+}
+
+.choices{
+    height: 1000px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.images{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    top: 50px;
+    height: 300px;
+    width: 1000px;
+}
+
+.emplacements, .minichalets, .chalets{
+    width: 300px;
+    height: 100%;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.emplacements{
+    background-image: url(image/emplacement.png);
+}
+
+.minichalets{
+    background-image: url(image/miniChalet.jpg);
+}
+
+.chalets{
+    background-image: url(image/Chalet.jpg);
+}
+
+.emplacements:hover, 
+.minichalets:hover, 
+.chalets:hover{
+    filter: grayscale(0%);
+    scale: 1.1;
+    color: white;
+}
+
+.emplacements:hover p, 
+.minichalets:hover p, 
+.chalets:hover p{
+    color: white;
+}
+
+.contain{
+    position: relative;
+    top: 105%;
+    display: flex;
+    justify-content: center;
+    color: grey;
+    font-size: 1.5em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

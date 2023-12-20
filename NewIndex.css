@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Poppins';
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.5)) , url(https://image.jimcdn.com/app/cms/image/transf/dimension=1920x1080:format=jpg/path/sd65a69ec263b6fc1/image/i8525cd70bd4b24e1/version/1587576109/image.jpg);
+    background-size: cover;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    width: 100%;
+}
+
+.logo{
+    font-size: 2.5em;
+    color: #fff;
+    cursor: pointer;
+}
+
+header .navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.navbar a{
+    position: relative;
+    color: #ffff;
+    text-shadow: 0 0 1px black;
+    padding: 10px 55px; /* Espacement pour un meilleur clic */
+    border-radius: 8px; /* Arrondissement des bords */
+    transition: all 0.5s ease;
+    transform: scaleX(0);
+}
+
+
+
+.navbar a:hover{
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.195);
+    transition: all 0.5s ease;    
+}
+
+
+
+.navbar a::after { 
+    content: '';              /* Crée un élément pseudo-élément vide */
+    position: absolute;       /* Positionne l'élément par rapport à son parent le plus proche avec une position autre que "static" */
+    bottom: -5px;             /* Positionne l'élément à 5px au-dessus du bord inférieur de son parent */
+    left: 0;                  /* Positionne l'élément à partir du bord gauche de son parent */
+    width: 100%;              /* Donne à l'élément une largeur égale à celle de son parent */
+    height: 2px;              /* Donne à l'élément une hauteur de 2px */
+    background-color: #fff;   /* Définit la couleur d'arrière-plan de l'élément en blanc */
+    transform: scaleX(0);     /* Réduit horizontalement l'élément à une échelle de 0 (le rend invisible) */
+    transform-origin: right;  /* Définit le point d'origine de la transformation à droite */
+    transition: transform 0.5s ease; /* Ajoute une animation douce lors des modifications de la propriété "transform" */
+}
+
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}

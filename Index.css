@@ -3,114 +3,144 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
+    box-sizing: border-box; /* Ajout de box-sizing pour une meilleure gestion des tailles */
+    transition: all 0.3s ease; /* Transition douce pour les effets hover */
 }
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4; /* Ajout d'une couleur de fond légère */
 }
 
-header{
+header {
     height: 100vh;
     width: 100vw;
-    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.0)), url(https://image.jimcdn.com/app/cms/image/transf/dimension=1920x1080:format=jpg/path/sd65a69ec263b6fc1/image/i8525cd70bd4b24e1/version/1587576109/image.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
+                      url(https://image.jimcdn.com/app/cms/image/transf/dimension=1920x1080:format=jpg/path/sd65a69ec263b6fc1/image/i8525cd70bd4b24e1/version/1587576109/image.jpg);
     background-size: cover;
-
+    background-position: center; /* Centrage de l'image */
 }
 
-.navbar{
-
+.navbar {
     padding: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    box-sizing: border-box;
-
 }
 
-.navbar a{
+.navbar a {
     color: #fff;
     text-shadow: black 0 0 1px;
+    padding: 10px 15px; /* Espacement pour un meilleur clic */
+    border-radius: 8px; /* Arrondissement des bords */
 }
 
-.navbar a:hover{
+.navbar a:hover {
     text-shadow: 0 0 5px;
+    background-color: rgba(0, 0, 0, 0.2); /* Effet de fond au survol */
 }
 
-.navbar .logo{
-    font-size: 2em;
+.navbar .logo {
+    font-size: 2.5em; /* Augmentation de la taille pour la mettre en évidence */
     font-weight: bold;
+    letter-spacing: 2px; /* Espacement des lettres pour le style */
 }
 
-.navbar .nav-links ul{
+.navbar .nav-links ul {
     display: flex;
+    align-items: center; /* Centrage vertical */
 }
 
-.navbar .nav-links ul li{
+.navbar .nav-links ul li {
     margin: 0 25px;
+    position: relative; /* Pour les effets hover */
+}
+
+.navbar .nav-links ul li::after { 
+    content: '';              /* Crée un élément pseudo-élément vide */
+    position: absolute;       /* Positionne l'élément par rapport à son parent le plus proche avec une position autre que "static" */
+    bottom: -5px;             /* Positionne l'élément à 5px au-dessus du bord inférieur de son parent */
+    left: 0;                  /* Positionne l'élément à partir du bord gauche de son parent */
+    width: 100%;              /* Donne à l'élément une largeur égale à celle de son parent */
+    height: 2px;              /* Donne à l'élément une hauteur de 2px */
+    background-color: #fff;   /* Définit la couleur d'arrière-plan de l'élément en blanc */
+    transform: scaleX(0);     /* Réduit horizontalement l'élément à une échelle de 0 (le rend invisible) */
+    transform-origin: right;  /* Définit le point d'origine de la transformation à droite */
+    transition: transform 0.3s ease; /* Ajoute une animation douce lors des modifications de la propriété "transform" */
 }
 
 
+.navbar .nav-links ul li:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
 
-.navbar .menu{
+/* ... (reste du code) ... */
+
+/* Pour les médias queries, les modifications sont principalement pour une meilleure visibilité et espacement */
+
+.navbar .menu {
     display: none;
     position: absolute;
     top: 50px;
     right: 50px;
     width: 35px;
+    z-index: 10; /* Assurez-vous que le menu est toujours au-dessus des autres éléments */
 }
 
-
-
-
-
 @media screen and (max-width:1230px) {
-    .navbar .menu{
+    .navbar .menu {
         display: block;
     }
 
-    .navbar .logo{
+    .navbar .logo {
         position: absolute;
         top: 40px;
         left: 50px;
     }
-    .nav-links{
+
+    .nav-links {
         top: 0;
         left: 0;
         position: absolute;
-        background-color: rgba(211, 211, 211, 0.1);
-        backdrop-filter: blur(3px);
-        width : 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Fond plus foncé pour une meilleure lisibilité */
+        width: 100%;
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
         margin-left: -100%;
         transition: all 0.5s ease;
-        text-shadow: black 0 0 5px;
+        z-index: 5; /* Gardez le menu en dessous de l'icône hamburger */
     }
 
-    .mobile-menu{
+    .mobile-menu {
         margin-left: 0;
     }
 
-    .nav-links ul{
+    .nav-links ul {
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 20px; /* Espacement entre les éléments de la liste */
     }
 
-    .navbar .nav-links ul li{
+    .navbar .nav-links ul li {
         margin: 30px 0;
         font-size: 1.3em;
+        padding: 10px 20px; /* Padding pour un meilleur toucher */
+        border-radius: 10px; /* Arrondissement pour un meilleur style */
+        background-color: rgba(255, 255, 255, 0.1); /* Fond subtil pour chaque élément */
+    }
+
+    .navbar .nav-links ul li:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Effet de fond au survol */
     }
 
     .navbar .menu {
-        /* remplir l'espace */
         display: flex;
-        /* mettre en colonne */
         flex-direction: column;
-        /* séparer de 8px */
         gap: 12px;
         cursor: pointer;
     }
@@ -120,17 +150,30 @@ header{
         height: 2px;
         background-color: white;
         transform-origin: left;
-        transition:transform 0.5s ease, opacity 0.2s ease;
+        transition: transform 0.5s ease, opacity 0.2s ease;
     }
     
-    .navbar .menu.open .middle_line{
+    .navbar .menu.open .middle_line {
         opacity: 0;
     }
-    .navbar .menu.open .top_line{
+    
+    .navbar .menu.open .top_line {
         transform: rotate(45deg);
     }
     
-    .navbar .menu.open .bottom_line{
+    .navbar .menu.open .bottom_line {
         transform: rotate(-45deg);
     }
 }
+
+/* Effets additionnels */
+
+.nav-links a {
+    padding: 5px 10px; /* Padding pour un effet hover agréable */
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
